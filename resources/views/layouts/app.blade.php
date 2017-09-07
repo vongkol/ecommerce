@@ -22,6 +22,7 @@
     <!-- Main styles for this application -->
     <link href="{{asset('css/style.css')}}" rel="stylesheet">
     <link href="{{asset('css/custom.css')}}" rel="stylesheet">
+    <link href="{{asset('datepicker/css/bootstrap-datepicker.min.css')}}" rel="stylesheet">
     <script>
         var burl = "{{url('/')}}";
         var asset = "{{asset('img')}}";
@@ -75,7 +76,21 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{url('/')}}"><i class="fa fa-tachometer text-primary"></i> {{$lb_dashboard}} </a>
                     </li>
-                  
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{url('/customer')}}"><i class="fa fa-users"></i> Customer </a>
+                    </li>
+                    <li class="nav-item nav-dropdown">
+                        <a href="#" class="nav-link nav-dropdown-toggle">
+                            <i class="fa fa-dollar text-danger"></i> Subscription</a>
+                        <ul class="nav-dropdown-items">
+                            <li class="nav-item">
+                                <a href="{{url('/subscription')}}" class="nav-link"><i class="fa fa-list text-yellow"></i> List</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{url('/subscription/expire')}}" class="nav-link"><i class="fa fa-calendar-times-o text-success"></i> Expire</a>
+                            </li>
+                        </ul>
+                    </li>
                     <li class="nav-item nav-dropdown">
                         <a href="#" class="nav-link nav-dropdown-toggle">
                             <i class="fa fa-key text-danger"></i> {{$lb_security}}</a>
@@ -93,10 +108,12 @@
                             <i class="fa fa-cog text-success"></i> {{$lb_setting}}</a>
                         <ul class="nav-dropdown-items">
                             <li class="nav-item">
-                                <a class="nav-link" href="{{url('/branch')}}"><i class="fa fa-map-marker"></i> {{$lb_branch}}</a>
+                                <a class="nav-link" href="{{url('/category')}}"><i class="fa fa-tags"></i>Category</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{url('/category')}}"><i class="fa fa-tags"></i>Category</a>
+                                <a class="nav-link" href="{{url('/package_type')}}">
+                                    <i class="fa fa-th"></i>Package Type
+                                </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{url('/package')}}"><i class="fa fa-cubes"></i>Package</a>
