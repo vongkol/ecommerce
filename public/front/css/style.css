@@ -1,0 +1,80 @@
+/*menu	home page */
+.navbar-inverse {
+    background-color: #2b373a;
+    border-color: #2b373a;
+}
+.navbar-inverse .navbar-brand {
+    color: #9d9d9d;
+    margin-top: -16px;
+}
+
+.carousel-indicators .active {
+    width: 50px;
+    height: 12px;
+    margin: 0;
+    background-color: #fff;
+}
+
+.pagination-custom>li>a, .pagination-custom>li>span {
+    margin: 0 2px;
+    padding: 7px 15px;
+    border: 1px solid #ddd;
+    background: #06b99b;
+    color: #fff;
+}
+
+/*detail page*/
+
+
+
+/*public*/
+body {
+	background: #F5F5F5;
+}
+hr {
+	margin-top: 10px;
+    margin-bottom: 10px;
+}
+a, p, h1, h2, h3, h4, h5, h6 {
+    font-family: "Titillium Web", sans-serif;
+}
+.btn-default-custom {
+    color: #fff;
+    background-color: #06b99b;
+    border-color: #06b99b;
+}
+.border-radius-none {
+	border-radius: 0;
+}
+.background-cool-green {
+    background: #06b99b;
+}
+.background-black {
+    background-color: #2B373A;
+    color: #fff;
+}
+.background-white {
+    background: #fff;
+}
+.margin-button-none {
+	margin-bottom: 0;
+}
+.padding-none {
+	padding: 1px;
+}
+.bold {
+    font-weight: bold;
+}
+.cool-green {
+	color: #06b99b;
+}
+.gray {
+	color: #888;
+}
+
+.color-white {
+    color: #fff;
+}
+.text-decoration-none {
+    text-decoration: none !important;
+}
