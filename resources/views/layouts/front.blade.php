@@ -27,7 +27,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">
+                <a class="navbar-brand" href="{{url('home')}}">
                     <img src="{{asset('front/images/logo.png')}}" width="52">
                 </a>
             </div>

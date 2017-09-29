@@ -4,19 +4,19 @@
 <div class="thumbnail border-radius-none padding-none container-fluid">
                 <div class="carousel-inner" role="listbox">
                     <div class="item active">
-                      <img src="front/images/slide1.png" class="img-responsive" alt="Chania" style="width:100%;">
+                      <img src="{{asset('front/images/slide1.png')}}" class="img-responsive" alt="slide show">
                     </div>
 
                     <div class="item">
-                      <img src="front/images/slide2.png" class="img-responsive" alt="Chania" style="width:100%; ">
+                      <img src="{{asset('front/images/slide2.png')}}" class="img-responsive" alt="slide show">
                     </div>
 
                     <div class="item">
-                      <img src="front/images/slide3.png" class="img-responsive" alt="Flower" style="width:100%;">
+                      <img src="{{asset('front/images/slide3.png')}}" class="img-responsive" alt="slide show">
                     </div>
 
                     <div class="item">
-                      <img src="front/images/slide4.png" class="img-responsive" alt="Flower" >
+                      <img src="{{asset('front/images/slide4.png')}}" class="img-responsive" alt="slide show">
                     </div>
               </div>
             </div>
@@ -34,9 +34,9 @@
         <div class="row text-center">
             <div class="col-md-3 col-sm-6 hero-feature">
                 <div class="thumbnail border-radius-none padding-none">
-                    <img src="front/images/miniverse_m.jpg" alt="">
+                    <img src="{{asset('front/images/miniverse_m.jpg')}}">
                     <div class="caption">
-                        <h5 class="bold"><a href="detail.html" class="text-decoration-none"><span class="cool-green">Feature Label</span></a></h5>
+                        <h5 class="bold"><a href="{{url('/home/detail')}}" class="text-decoration-none"><span class="cool-green">Feature Label</span></a></h5>
                         <p class="gray">
                             <small>Lorem ipsum dolor sit amet, consectetur adipisicing elit. just simple data</small>
                         </p><hr>
@@ -56,9 +56,9 @@
 
             <div class="col-md-3 col-sm-6 hero-feature">
                 <div class="thumbnail border-radius-none padding-none">
-                    <img src="front/images/flat_m.jpg" alt="">
+                    <img src="{{asset('front/images/flat_m.jpg')}}">
                     <div class="caption">
-                         <h5 class="bold"><a href="detail.html" class="text-decoration-none"><span class="cool-green">Feature Label</span></a></h5>
+                         <h5 class="bold"><a href="{{url('/home/detail')}}" class="text-decoration-none"><span class="cool-green">Feature Label</span></a></h5>
                         <p class="gray"><small>Lorem ipsum dolor sit amet, consectetur adipisicing elit. just simple data</small></p><hr>
                         <div class="row">
                             <div class="col-sm-6 col-md-6">
@@ -76,9 +76,9 @@
 
             <div class="col-md-3 col-sm-6 hero-feature">
                 <div class="thumbnail border-radius-none padding-none">
-                    <img src="front/images/pixel_m.jpg" alt="">
+                    <img src="{{('front/images/pixel_m.jpg')}}">
                     <div class="caption">
-                        <h5 class="bold"><a href="detail.html" class="text-decoration-none"><span class="cool-green">Feature Label</span></a></h5>
+                        <h5 class="bold"><a href="{{url('/home/detail')}}" class="text-decoration-none"><span class="cool-green">Feature Label</span></a></h5>
                         <p class="gray"><small>Lorem ipsum dolor sit amet, consectetur adipisicing elit. just simple data</small></p><hr>
                         <div class="row">
                             <div class="col-sm-6 col-md-6">
@@ -96,9 +96,9 @@
 
             <div class="col-md-3 col-sm-6 hero-feature">
                 <div class="thumbnail border-radius-none padding-none">
-                    <img src="front/images/westeros_m.jpg" alt="">
+                    <img src="{{asset('front/images/westeros_m.jpg')}}" alt="">
                     <div class="caption">
-                         <h5 class="bold"><a href="detail.html" class="text-decoration-none"><span class="cool-green">Feature Label</span></a></h5>
+                         <h5 class="bold"><a href="{{url('/home/detail')}}" class="text-decoration-none"><span class="cool-green">Feature Label</span></a></h5>
                         <p class="gray"><small>Lorem ipsum dolor sit amet, consectetur adipisicing elit. just simple data</small></p><hr>
                         <div class="row">
                             <div class="col-sm-6 col-md-6">
@@ -119,9 +119,9 @@
         <div class="row text-center">
             <div class="col-md-3 col-sm-6 hero-feature">
                 <div class="thumbnail border-radius-none padding-none">
-                    <img src="front/images/miniverse_m.jpg" alt="">
+                    <img src="{{asset('front/images/miniverse_m.jpg')}}">
                     <div class="caption">
-                         <h5 class="bold"><a href="detail.html" class="text-decoration-none"><span class="cool-green">Feature Label</span></a></h5>
+                         <h5 class="bold"><a href="{{url('/home/detail')}}" class="text-decoration-none"><span class="cool-green">Feature Label</span></a></h5>
                         <p class="gray"><small>Lorem ipsum dolor sit amet, consectetur adipisicing elit. just simple data</small></p><hr>
                         <div class="row">
                             <div class="col-sm-6 col-md-6">
@@ -139,9 +139,9 @@
 
             <div class="col-md-3 col-sm-6 hero-feature">
                 <div class="thumbnail border-radius-none padding-none">
-                    <img src="front/images/flat_m.jpg" alt="">
+                    <img src="{{asset('front/images/flat_m.jpg')}}">
                     <div class="caption">
-                         <h5 class="bold"><a href="detail.html" class="text-decoration-none"><span class="cool-green">Feature Label</span></a></h5>
+                         <h5 class="bold"><a href="{{url('/home/detail')}}" class="text-decoration-none"><span class="cool-green">Feature Label</span></a></h5>
                         <p class="gray"><small>Lorem ipsum dolor sit amet, consectetur adipisicing elit. just simple data</small></p><hr>
                         <div class="row">
                             <div class="col-sm-6 col-md-6">
@@ -159,9 +159,9 @@
 
             <div class="col-md-3 col-sm-6 hero-feature">
                 <div class="thumbnail border-radius-none padding-none">
-                    <img src="front/images/pixel_m.jpg" alt="">
+                    <img src="{{asset('front/images/pixel_m.jpg')}}">
                     <div class="caption">
-                         <h5 class="bold"><a href="detail.html" class="text-decoration-none"><span class="cool-green">Feature Label</span></a></h5>
+                         <h5 class="bold"><a href="{{url('/home/detail')}}" class="text-decoration-none"><span class="cool-green">Feature Label</span></a></h5>
                         <p class="gray"><small>Lorem ipsum dolor sit amet, consectetur adipisicing elit. just simple data</small></p><hr>
                         <div class="row">
                             <div class="col-sm-6 col-md-6">
@@ -179,9 +179,9 @@
 
             <div class="col-md-3 col-sm-6 hero-feature">
                 <div class="thumbnail border-radius-none padding-none">
-                    <img src="front/images/westeros_m.jpg" alt="">
+                    <img src="{{asset('front/images/westeros_m.jpg')}}">
                     <div class="caption">
-                         <h5 class="bold"><a href="detail.html" class="text-decoration-none"><span class="cool-green">Feature Label</span></a></h5>
+                         <h5 class="bold"><a href="{{url('/home/detail')}}" class="text-decoration-none"><span class="cool-green">Feature Label</span></a></h5>
                         <p class="gray"><small>Lorem ipsum dolor sit amet, consectetur adipisicing elit. just simple data</small></p><hr>
                         <div class="row">
                             <div class="col-sm-6 col-md-6">
@@ -201,9 +201,9 @@
         <div class="row text-center">
             <div class="col-md-3 col-sm-6 hero-feature">
                 <div class="thumbnail border-radius-none padding-none">
-                    <img src="front/images/miniverse_m.jpg" alt="">
+                    <img src="{{asset('front/images/miniverse_m.jpg')}}">
                     <div class="caption">
-                         <h5 class="bold"><a href="detail.html" class="text-decoration-none"><span class="cool-green">Feature Label</span></a></h5>
+                         <h5 class="bold"><a href="{{url('/home/detail')}}" class="text-decoration-none"><span class="cool-green">Feature Label</span></a></h5>
                         <p class="gray"><small>Lorem ipsum dolor sit amet, consectetur adipisicing elit. just simple data</small></p><hr>
                         <div class="row">
                             <div class="col-sm-6 col-md-6">
@@ -221,9 +221,9 @@
 
             <div class="col-md-3 col-sm-6 hero-feature">
                 <div class="thumbnail border-radius-none padding-none">
-                    <img src="front/images/flat_m.jpg" alt="">
+                    <img src="{{asset('front/images/flat_m.jpg')}}">
                     <div class="caption">
-                         <h5 class="bold"><a href="detail.html" class="text-decoration-none"><span class="cool-green">Feature Label</span></a></h5>
+                         <h5 class="bold"><a href="{{url('/home/detail')}}" class="text-decoration-none"><span class="cool-green">Feature Label</span></a></h5>
                         <p class="gray"><small>Lorem ipsum dolor sit amet, consectetur adipisicing elit. just simple data</small></p><hr>
                         <div class="row">
                             <div class="col-sm-6 col-md-6">
@@ -241,9 +241,9 @@
 
             <div class="col-md-3 col-sm-6 hero-feature">
                 <div class="thumbnail border-radius-none padding-none">
-                    <img src="front/images/pixel_m.jpg" alt="">
+                    <img src="{{asset('front/images/pixel_m.jpg')}}">
                     <div class="caption">
-                         <h5 class="bold"><a href="detail.html" class="text-decoration-none"><span class="cool-green">Feature Label</span></a></h5>
+                         <h5 class="bold"><a href="{{url('/home/detail')}}" class="text-decoration-none"><span class="cool-green">Feature Label</span></a></h5>
                         <p class="gray"><small>Lorem ipsum dolor sit amet, consectetur adipisicing elit. just simple data</small></p><hr>
                         <div class="row">
                             <div class="col-sm-6 col-md-6">
@@ -260,9 +260,9 @@
             </div>
             <div class="col-md-3 col-sm-6 hero-feature">
                 <div class="thumbnail border-radius-none padding-none">
-                    <img src="front/images/westeros_m.jpg" alt="">
+                    <img src="{{asset('front/images/westeros_m.jpg')}}">
                     <div class="caption">
-                        <h5 class="bold"><a href="detail.html" class="text-decoration-none"><span class="cool-green">Feature Label</span></a></h5>
+                        <h5 class="bold"><a href="{{url('/home/detail')}}" class="text-decoration-none"><span class="cool-green">Feature Label</span></a></h5>
                         <p class="gray"><small>Lorem ipsum dolor sit amet, consectetur adipisicing elit. just simple data</small></p><hr>
                         <div class="row">
                             <div class="col-sm-6 col-md-6">
