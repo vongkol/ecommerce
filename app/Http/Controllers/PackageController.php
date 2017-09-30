@@ -3,35 +3,34 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use DB;
-use Session;
-use Auth;
 class PackageController extends Controller
 {
     // index
     public function index()
     {
-        $data['packages'] = DB::table('packages')
-            ->where('active',1)
-            ->paginate(18);
+        $data['packages'] = DB::table('packages')->where('active', 1)->orderBy('name')->get();
         return view('packages.index', $data);
     }
     // load create form
     public function create()
     {
-        return view('packages.create');
+        $data['package_types'] = 
+            DB::table('package_types')->where('active', 1)->orderBy('name')->get();
+        return view('packages.create', $data);
     }
-    // save new packages
     public function save(Request $r)
     {
-        $data = array(
+        $data = [
             'name' => $r->name,
-            'description' => $r->description,
             'type' => $r->type,
+            'description' => $r->description,
             'price' => $r->price,
-            'number_of_product' => $r->number_of_product
-        ); 
-        $sms = "The new package has been created successfully.";
+            'product_number' => $r->product_number,
+            'day_number' => $r->day
+        ];
+        $sms = "New package has been created successfully!";
         $sms1 = "Fail to create the new package, please check again!";
         $i = DB::table('packages')->insert($data);
         if ($i)
@@ -45,28 +44,23 @@ class PackageController extends Controller
             return redirect('/package/create')->withInput();
         }
     }
-    // delete
-    public function delete($id)
-    {
-        DB::table('packages')->where('id', $id)->update(['active'=>0]);
-        return redirect('/package');
-    }
+    // load edit form
     public function edit($id)
-    {   
-        $data['package'] = DB::table('packages')
-            ->where('id', $id)->first();
+    {
+        $data['package'] = DB::table('packages')->where('id', $id)->first();
+        $data['package_types'] = DB::table('package_types')->where('active', 1)->orderBy('name')->get();
         return view('packages.edit', $data);
     }
-    // update partner 
     public function update(Request $r)
     {
-        $data = array(
+        $data = [
             'name' => $r->name,
-            'description' => $r->description,
             'type' => $r->type,
+            'description' => $r->description,
             'price' => $r->price,
-            'number_of_product' => $r->number_of_product
-        );
+            'product_number' => $r->product_number,
+            'day_number' => $r->day
+        ];
         $sms = "All changes have been saved successfully.";
         $sms1 = "Fail to to save changes, please check again!";
         $i = DB::table('packages')->where('id', $r->id)->update($data);
@@ -80,5 +74,11 @@ class PackageController extends Controller
             $r->session()->flash('sms1', $sms1);
             return redirect('/package/edit/'.$r->id);
         }
+    }
+    // delete package
+    public function delete($id)
+    {
+        DB::table('packages')->where('id', $id)->update(['active'=>0]);
+        return redirect('/package');
     }
 }

@@ -4,7 +4,7 @@
         <div class="col-lg-12">
             <div class="card">
                 <div class="card-header text-bold">
-                    <i class="fa fa-align-justify"></i> New Package&nbsp;&nbsp;
+                    <i class="fa fa-align-justify"></i> New Package &nbsp;&nbsp;
                     <a href="{{url('/package')}}" class="btn btn-link btn-sm">Back To List</a>
                 </div>
                 <div class="card-block">
@@ -28,45 +28,48 @@
                             </div>
                         </div>
                     @endif
-
-                    <form 
-                        action="{{url('/package/save')}}" 
-                        class="form-horizontal"  
-                        method="post"
-                    >
+                    <form action="{{url('/package/save')}}" class="form-horizontal" method="post">
                         {{csrf_field()}}
                         <div class="form-group row">
-                            <label for="name" class="control-label col-lg-2 col-sm-2">Name<span class="text-danger">*</span></label>
+                            <label for="name" class="control-label col-lg-2 col-sm-2">
+                                Name <span class="text-danger">*</span>
+                            </label>
                             <div class="col-lg-6 col-sm-8">
-                                <input type="text" required autofocus name="name" id="name" class="form-control">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="product_of_number" class="control-label col-lg-2 col-sm-2">Type<span class="text-danger">*</span></label>
-                            <div class="col-lg-6 col-sm-8">
-                                <select class="form-control" name="type" id="type" required id="exampleSelect1">
-                                    <option value="Monthly">Monthly</option> 
-                                    <option value="Yearly">Yearly</option>                
-                                </select>
+                                <input type="text" required autofocus name="name" id="name" class="form-control" value="{{old('name')}}">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="price" class="control-label col-lg-2 col-sm-2">Price</label>
                             <div class="col-lg-6 col-sm-8">
-                                <input type="number" step="0.1" name="price" value="0" id="price" class="form-control">
+                                <input type="number" required name="price" id="price" class="form-control" value="0" min="0" step="1">
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="number_of_product" class="control-label col-lg-2 col-sm-2">Number of Product</label>
+                            <label for="type" class="control-label col-lg-2 col-sm-2">Package Type</label>
                             <div class="col-lg-6 col-sm-8">
-                                <input type="number" name="number_of_product" id="number_of_product" class="form-control">
+                                <select name="type" id="type" class="form-control">
+                                    @foreach($package_types as $type)
+                                        <option value="{{$type->name}}">{{$type->name}}</option>
+                                    @endforeach
+                                </select>
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="description" class="control-label col-lg-2 col-sm-2">Description</label>
+                            <label for="product_number" class="control-label col-lg-2 col-sm-2">Number of Product</label>
                             <div class="col-lg-6 col-sm-8">
-                                <textarea id="description" name="description" class="form-control">
-                                </textarea>
+                                <input type="number" name="product_number" id="product_number" class="form-control" value="0" min="0" step="1">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="day" class="control-label col-lg-2 col-sm-2">Number of day</label>
+                            <div class="col-lg-6 col-sm-8">
+                                <input type="number" name="day" id="day" class="form-control" value="0" min="0" step="1">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="description" class="control-label col-lg-21 col-sm-2">Description</label>
+                            <div class="col-lg-6 col-sm-8">
+                                <input type="text" name="description" id="description" class="form-control">
                             </div>
                         </div>
                         <div class="form-group row">
