@@ -5,11 +5,16 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use DB;
+use Auth;
 class PackageTypeController extends Controller
 {
     // index
     public function index()
     {
+        if(Auth::user()==null)
+        {
+            return redirect("/login");
+        }
         $data['package_types'] = DB::table('package_types')
                                 ->where('active', 1)
                                 ->orderBy('name')
@@ -19,11 +24,19 @@ class PackageTypeController extends Controller
     // load create form
     public function create()
     {
+        if(Auth::user()==null)
+        {
+            return redirect("/login");
+        }
         return view('package_types.create');
     }
     // save
     public function save(Request $r)
     {
+        if(Auth::user()==null)
+        {
+            return redirect("/login");
+        }
         $data = array(
             'name' => $r->name
         );
@@ -44,11 +57,19 @@ class PackageTypeController extends Controller
     // load edit form
     public function edit($id)
     {
+        if(Auth::user()==null)
+        {
+            return redirect("/login");
+        }
         $data['package_type'] = DB::table('package_types')->where('id', $id)->first();
         return view('package_types.edit', $data);
     }
     public function update(Request $r)
     {
+        if(Auth::user()==null)
+        {
+            return redirect("/login");
+        }
         $data = array(
             'name' => $r->name
         );
@@ -69,6 +90,10 @@ class PackageTypeController extends Controller
     // delete package type
     public function delete($id)
     {
+        if(Auth::user()==null)
+        {
+            return redirect("/login");
+        }
         DB::table('package_types')->where('id', $id)->update(['active'=>0]);
         return redirect('/package_type');
     }

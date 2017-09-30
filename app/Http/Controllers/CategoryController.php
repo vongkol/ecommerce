@@ -10,6 +10,10 @@ class CategoryController extends Controller
     // index
     public function index()
     {
+        if(Auth::user()==null)
+        {
+            return redirect("/login");
+        }
         $data['categories'] = DB::table('categories as a')
             ->leftjoin('categories as b','b.id','=','a.parent_id')
             ->select('a.*', 'b.name as parent_name')
@@ -20,6 +24,10 @@ class CategoryController extends Controller
     // load create form
     public function create()
     {
+        if(Auth::user()==null)
+        {
+            return redirect("/login");
+        }
         $data['categories'] = DB::table('categories as a')
             ->join('categories as b', 'b.id', '=', 'a.id')
             ->where('b.active', 1)->get();
@@ -28,6 +36,10 @@ class CategoryController extends Controller
     // save new category
     public function save(Request $r)
     {
+        if(Auth::user()==null)
+        {
+            return redirect("/login");
+        }
         $data = array(
             'name' => $r->name,
             'parent_id' => $r->parent
@@ -49,12 +61,20 @@ class CategoryController extends Controller
     // delete
     public function delete($id)
     {
+        if(Auth::user()==null)
+        {
+            return redirect("/login");
+        }
         DB::table('categories')->where('id', $id)->update(['active'=>0]);
         return redirect('/category');
     }
 
     public function edit($id)
-    {   
+    {
+        if(Auth::user()==null)
+        {
+            return redirect("/login");
+        }
         $data['cat'] = DB::table('categories as a')
             ->join('categories as b', 'b.id', '=', 'a.id')
             ->where('b.active', 1)->get();
@@ -66,6 +86,10 @@ class CategoryController extends Controller
     }
     public function update(Request $r)
     {
+        if(Auth::user()==null)
+        {
+            return redirect("/login");
+        }
         $data = array(
             'name' => $r->name, 
             'parent_id' => $r->parent

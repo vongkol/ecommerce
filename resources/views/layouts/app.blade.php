@@ -74,10 +74,19 @@
             <nav class="sidebar-nav">
                 <ul class="nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="{{url('/')}}"><i class="fa fa-tachometer text-primary"></i> {{$lb_dashboard}} </a>
+                        <a class="nav-link" href="#"><i class="fa fa-tachometer text-primary"></i> {{$lb_dashboard}} </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fa fa-users"></i> Product </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{url('/customer')}}"><i class="fa fa-users"></i> Customer </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fa fa-building"></i> Company </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{url('/package')}}"><i class="fa fa-cubes"></i>Package</a>
                     </li>
                     <li class="nav-item nav-dropdown">
                         <a href="#" class="nav-link nav-dropdown-toggle">
@@ -115,9 +124,7 @@
                                     <i class="fa fa-th"></i>Package Type
                                 </a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{url('/package')}}"><i class="fa fa-cubes"></i>Package</a>
-                            </li>
+
                         </ul>
                     </li>
                 </ul>
@@ -136,7 +143,7 @@
     </div>
 
     <footer class="app-footer">
-        Copy &copy; {{date('Y')}} by <a href="#">COCD</a>
+        Copy &copy; {{date('Y')}} by <a href="#">Master Malls</a>
         <span class="float-right">Powered by <a href="http://vdoo.biz" target="_blank">Vdoo</a>
         </span>
     </footer>

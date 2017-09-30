@@ -11,13 +11,14 @@
 |
 */
 
-Route::get('/',"HomeController@index");
+Route::get('/admin',"HomeController@index");
+Route::get('/',"FrontController@index");
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 // detail page
-Route::get('/home/detail', 'HomeController@detail');
+Route::get('/product/detail', 'FrontController@detail');
 // user route
 Route::get('/user', "UserController@index");
 Route::get('/user/profile', "UserController@load_profile");

@@ -19,11 +19,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('fronts.index');
+        return view('home');
     }
-    
-    public function detail()
-    {
-        return view('fronts.detail');
-    }
+
 }
