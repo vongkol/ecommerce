@@ -77,7 +77,7 @@
                         <a class="nav-link" href="#"><i class="fa fa-tachometer text-primary"></i> {{$lb_dashboard}} </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="fa fa-users"></i> Product </a>
+                        <a class="nav-link" href="#"><i class="fa fa-product-hunt"></i> Product </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{url('/customer')}}"><i class="fa fa-users"></i> Customer </a>
