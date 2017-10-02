@@ -17,7 +17,7 @@ class CompanyController extends Controller
         $data['companys'] = DB::table('shops')
             ->where('active',1)
             ->orderBy('id', 'desc')
-            ->paginate(18);
+            ->paginate(2);
         return view('companys.index', $data);
     }
     // load create form

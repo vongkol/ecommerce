@@ -136,7 +136,6 @@
                 <div class="animated fadeIn">
                     @yield('content')
                 </div>
-
             </div>
         </main>
 

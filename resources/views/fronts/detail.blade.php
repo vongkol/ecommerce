@@ -1,5 +1,6 @@
 @extends('layouts.front')
 @section('content')
+<div class="header-margin"></div>
 <div class="container">
     <div class="row">
         <div class="com-md-12">

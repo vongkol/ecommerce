@@ -1,7 +1,38 @@
 @extends('layouts.front')
 @section('content')
-<!-- Wrapper for slides -->
-<div class="thumbnail border-radius-none padding-none container-fluid">
+<div class="header-margin"></div>
+<div class="container">
+    <div class="row">    
+        <div class="col-xs-8 col-xs-offset-2">
+            <div class="input-group">
+                <div class="input-group-btn search-panel">
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                        <span id="search_concept">All</span> <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu">
+                    <li><a href="#contains">Phone</a></li>
+                    <li><a href="#its_equal">Watch</a></li>
+                    <li><a href="#greather_than">Ring</a></li>
+                    </ul>
+                </div>
+                <input type="hidden" name="search_param" value="all" id="search_param">         
+                <input type="text" class="form-control" name="x" placeholder="Search term...">
+                <span class="input-group-btn">
+                    <button class="btn btn-default btn-default-custom" type="button"><span class="glyphicon glyphicon-search"></span></button>
+                </span>
+            </div>
+        </div>
+    </div>
+    </div><br>
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+        <li data-target="#myCarousel" data-slide-to="3"></li>
+        </ol>
+        <div class="thumbnail border-radius-none padding-none container-fluid">
                 <div class="carousel-inner" role="listbox">
                     <div class="item active">
                       <img src="{{asset('front/images/slide1.png')}}" class="img-responsive" alt="slide show">
@@ -20,17 +51,12 @@
                     </div>
               </div>
             </div>
-        <!-- Left and right controls -->
         </div><hr>
-        <!-- Title -->
         <div class="row">
             <div class="col-lg-12">
                 <h3>Latest Product</h3>
             </div>
         </div>
-        <!-- /.row -->
-
-        <!-- Page Features -->
         <div class="row text-center">
             <div class="col-md-3 col-sm-6 hero-feature">
                 <div class="thumbnail border-radius-none padding-none">
@@ -53,7 +79,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="col-md-3 col-sm-6 hero-feature">
                 <div class="thumbnail border-radius-none padding-none">
                     <img src="{{asset('front/images/flat_m.jpg')}}">
@@ -73,7 +98,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="col-md-3 col-sm-6 hero-feature">
                 <div class="thumbnail border-radius-none padding-none">
                     <img src="{{('front/images/pixel_m.jpg')}}">
