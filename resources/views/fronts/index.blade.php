@@ -29,25 +29,15 @@
         <ol class="carousel-indicators">
         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
         <li data-target="#myCarousel" data-slide-to="1"></li>
-        <li data-target="#myCarousel" data-slide-to="2"></li>
-        <li data-target="#myCarousel" data-slide-to="3"></li>
         </ol>
         <div class="thumbnail border-radius-none padding-none container-fluid">
                 <div class="carousel-inner" role="listbox">
                     <div class="item active">
-                      <img src="{{asset('front/images/slide1.png')}}" class="img-responsive" alt="slide show">
+                      <img src="{{asset('front/images/slider1.png')}}" class="img-responsive" alt="slide show">
                     </div>
 
                     <div class="item">
-                      <img src="{{asset('front/images/slide2.png')}}" class="img-responsive" alt="slide show">
-                    </div>
-
-                    <div class="item">
-                      <img src="{{asset('front/images/slide3.png')}}" class="img-responsive" alt="slide show">
-                    </div>
-
-                    <div class="item">
-                      <img src="{{asset('front/images/slide4.png')}}" class="img-responsive" alt="slide show">
+                      <img src="{{asset('front/images/slider2.png')}}" class="img-responsive" alt="slide show">
                     </div>
               </div>
             </div>

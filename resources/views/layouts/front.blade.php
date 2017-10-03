@@ -12,7 +12,7 @@
     <link href="{{asset('front/css/style.css')}}" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Titillium+Web' rel='stylesheet' type='text/css'>
 </head>
-<body>
+<body class="cnt-homepage">
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
             <div class="navbar-header">
@@ -153,6 +153,9 @@
 <script src="{{asset('front/js/jquery.js')}}"></script>
 <!-- Bootstrap Core JavaScript -->
 <script src="{{asset('front/js/bootstrap.min.js')}}"></script>
-
+<script src="{{asset('front/js/owl.carousel.min.js')}}"></script>
+<script src="{{asset('front/js/echo.min.js')}}"></script>
+<script src="{{asset('front/js/jquery.rateit.min.js')}}"></script>
+<script src="{{asset('front/js/scripts.js')}}"></script>
 </body>
 </html>

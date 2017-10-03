@@ -8,9 +8,6 @@
 .header-margin {
     margin-top: 70px;
 }
-body {
-    background: #f0f3f4;
-}
 /*menu	home page */
 .navbar-nav>li>.dropdown-menu-custom {
     margin-top: 0;
