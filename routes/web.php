@@ -18,6 +18,7 @@ Auth::routes();
 
 Route::get('/buyer/login', 'BuyerController@login');
 Route::get('/buyer/register', 'BuyerController@register');
+Route::get('/buyer/buyer', 'BuyerController@buyer');
 
 Route::get('/home', 'HomeController@index')->name('home');
 // detail page

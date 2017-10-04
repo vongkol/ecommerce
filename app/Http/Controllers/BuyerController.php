@@ -17,4 +17,9 @@ class BuyerController extends Controller
     {
         return view('fronts.buyers.register');
     }
+    //login form
+    public function buyer()
+    {
+        return view('fronts.buyers.buyer');
+    }
 }

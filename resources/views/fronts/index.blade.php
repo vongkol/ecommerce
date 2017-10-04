@@ -2,7 +2,6 @@
 @section('content')
 <div class="header-margin"></div>
 <div class="container">
-    <div class="row">    
         <div class="col-xs-8 col-xs-offset-2">
             <div class="input-group">
                 <div class="input-group-btn search-panel">
@@ -20,9 +19,15 @@
                 <span class="input-group-btn">
                     <button class="btn btn-default btn-default-custom" type="button"><span class="glyphicon glyphicon-search"></span></button>
                 </span>
+                
             </div>
         </div>
-    </div>
+        <div class="col-sm-2">
+            <button class="btn btn-info btn-sm btn-add-card form-control">
+                <i class="fa fa-2x fa-shopping-cart"></i>
+                <label id="cart-badge" class="badge text-danger">4 Card</label>
+            </button>
+        </div>
     </div><br>
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
         <!-- Indicators -->

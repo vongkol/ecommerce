@@ -119,3 +119,6 @@ a, p, h1, h2, h3, h4, h5, h6 {
 .well-custom {
     margin-bottom: 0;
 }
+.btn-add-card {
+    padding: 2px 10px;
+}

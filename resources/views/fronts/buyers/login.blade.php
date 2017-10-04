@@ -6,7 +6,7 @@
         <div class="panel border-radius-none panel-default">
             <div class="panel-body">
             <div class="bold">Please login</div><hr>
-                <form action="">
+                <form action="{{url('/buyer/buyer')}}">
                     <label>Account:</label>
                     <input 
                         type="text" 
