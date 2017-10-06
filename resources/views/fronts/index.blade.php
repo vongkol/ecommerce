@@ -1,8 +1,8 @@
 @extends('layouts.front')
 @section('content')
 <div class="header-margin"></div>
-<div class="container">
-        <div class="col-xs-8 col-xs-offset-2">
+    <div class="search-fix">
+        <div class="col-xs-6 col-xs-offset-2">
             <div class="input-group">
                 <div class="input-group-btn search-panel">
                     <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
@@ -23,12 +23,13 @@
             </div>
         </div>
         <div class="col-sm-2">
-            <button class="btn btn-info btn-sm btn-add-card form-control">
+            <button class="btn btn-default btn-sm btn-add-card form-control">
                 <i class="fa fa-2x fa-shopping-cart"></i>
                 <label id="cart-badge" class="badge text-danger">4 Card</label>
             </button>
         </div>
-    </div><br>
+    </div>
+    <div class="padding-slider"></div>
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
         <!-- Indicators -->
         <ol class="carousel-indicators">
@@ -47,250 +48,251 @@
               </div>
             </div>
         </div><hr>
-        <div class="row">
-            <div class="col-lg-12">
-                <h3>Latest Product</h3>
-            </div>
-        </div>
-        <div class="row text-center">
-            <div class="col-md-3 col-sm-6 hero-feature">
-                <div class="thumbnail border-radius-none padding-none">
-                    <img src="{{asset('front/images/miniverse_m.jpg')}}">
-                    <div class="caption">
-                        <h5 class="bold"><a href="{{url('/product/detail')}}" class="text-decoration-none"><span class="cool-green">Feature Label</span></a></h5>
-                        <p class="gray">
-                            <small>Lorem ipsum dolor sit amet, consectetur adipisicing elit. just simple data</small>
-                        </p><hr>
-                        <div class="row">
-                            <div class="col-sm-6 col-md-6">
-                                <p class="margin-button-none"><i class="fa fa-shopping-cart cool-green"></i></p>
-                            </div>
-                            <div class="col-sm-6 col-md-6">
-                                <p class="bold margin-button-none">
-                                   <span class="bold cool-green"><small>$</small></span> 100.00 
-                                </p>
-                            </div>
-                        </div>    
-                    </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h3>Latest Product</h3>
                 </div>
             </div>
-            <div class="col-md-3 col-sm-6 hero-feature">
-                <div class="thumbnail border-radius-none padding-none">
-                    <img src="{{asset('front/images/flat_m.jpg')}}">
-                    <div class="caption">
-                         <h5 class="bold"><a href="{{url('/product/detail')}}" class="text-decoration-none"><span class="cool-green">Feature Label</span></a></h5>
-                        <p class="gray"><small>Lorem ipsum dolor sit amet, consectetur adipisicing elit. just simple data</small></p><hr>
-                        <div class="row">
-                            <div class="col-sm-6 col-md-6">
-                                <p class="margin-button-none"><i class="fa fa-shopping-cart cool-green"></i></p>
+            <div class="row">
+                <div class="col-md-3 col-sm-6">
+                    <div class="thumbnail border-radius-none padding-none">
+                        <img src="{{asset('front/images/miniverse_m.jpg')}}">
+                        <div class="caption">
+                            <h5 class="bold"><a href="{{url('/product/detail')}}" class="text-decoration-none"><span class="cool-green">Feature Label</span></a></h5>
+                            <p class="gray">
+                                <small>Lorem ipsum dolor sit amet, consectetur adipisicing elit. just simple data</small>
+                            </p><hr>
+                            <div class="row">
+                                <div class="col-sm-6 col-md-6">
+                                    <p class="margin-button-none"><i class="fa fa-shopping-cart cool-green"></i></p>
+                                </div>
+                                <div class="col-sm-6 col-md-6">
+                                    <p class="bold margin-button-none">
+                                    <span class="bold cool-green"><small>$</small></span> 100.00 
+                                    </p>
+                                </div>
+                            </div>    
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="thumbnail border-radius-none padding-none">
+                        <img src="{{asset('front/images/flat_m.jpg')}}">
+                        <div class="caption">
+                            <h5 class="bold"><a href="{{url('/product/detail')}}" class="text-decoration-none"><span class="cool-green">Feature Label</span></a></h5>
+                            <p class="gray"><small>Lorem ipsum dolor sit amet, consectetur adipisicing elit. just simple data</small></p><hr>
+                            <div class="row">
+                                <div class="col-sm-6 col-md-6">
+                                    <p class="margin-button-none"><i class="fa fa-shopping-cart cool-green"></i></p>
+                                </div>
+                                <div class="col-sm-6 col-md-6">
+                                    <p class="bold margin-button-none">
+                                    <span class="bold cool-green"><small>$</small></span> 133.00 
+                                    </p>
+                                </div>
                             </div>
-                            <div class="col-sm-6 col-md-6">
-                                <p class="bold margin-button-none">
-                                   <span class="bold cool-green"><small>$</small></span> 133.00 
-                                </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="thumbnail border-radius-none padding-none">
+                        <img src="{{('front/images/pixel_m.jpg')}}">
+                        <div class="caption">
+                            <h5 class="bold"><a href="{{url('/product/detail')}}" class="text-decoration-none"><span class="cool-green">Feature Label</span></a></h5>
+                            <p class="gray"><small>Lorem ipsum dolor sit amet, consectetur adipisicing elit. just simple data</small></p><hr>
+                            <div class="row">
+                                <div class="col-sm-6 col-md-6">
+                                    <p class="margin-button-none"><i class="fa fa-shopping-cart cool-green"></i></p>
+                                </div>
+                                <div class="col-sm-6 col-md-6">
+                                    <p class="bold margin-button-none">
+                                    <span class="bold cool-green"><small>$</small></span> 231.00 
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-6">
+                    <div class="thumbnail border-radius-none padding-none">
+                        <img src="{{asset('front/images/westeros_m.jpg')}}" alt="">
+                        <div class="caption">
+                            <h5 class="bold"><a href="{{url('/product/detail')}}" class="text-decoration-none"><span class="cool-green">Feature Label</span></a></h5>
+                            <p class="gray"><small>Lorem ipsum dolor sit amet, consectetur adipisicing elit. just simple data</small></p><hr>
+                            <div class="row">
+                                <div class="col-sm-6 col-md-6">
+                                    <p class="margin-button-none"><i class="fa fa-shopping-cart cool-green"></i></i></p>
+                                </div>
+                                <div class="col-sm-6 col-md-6">
+                                    <p class="bold margin-button-none">
+                                    <span class="bold cool-green"><small>$</small></span> 299.00 
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-3 col-sm-6 hero-feature">
-                <div class="thumbnail border-radius-none padding-none">
-                    <img src="{{('front/images/pixel_m.jpg')}}">
-                    <div class="caption">
-                        <h5 class="bold"><a href="{{url('/product/detail')}}" class="text-decoration-none"><span class="cool-green">Feature Label</span></a></h5>
-                        <p class="gray"><small>Lorem ipsum dolor sit amet, consectetur adipisicing elit. just simple data</small></p><hr>
-                        <div class="row">
-                            <div class="col-sm-6 col-md-6">
-                                <p class="margin-button-none"><i class="fa fa-shopping-cart cool-green"></i></p>
+            <!-- /.row -->
+                    <!-- Page Features -->
+            <div class="row">
+                <div class="col-md-3 col-sm-6">
+                    <div class="thumbnail border-radius-none padding-none">
+                        <img src="{{asset('front/images/miniverse_m.jpg')}}">
+                        <div class="caption">
+                            <h5 class="bold"><a href="{{url('/product/detail')}}" class="text-decoration-none"><span class="cool-green">Feature Label</span></a></h5>
+                            <p class="gray"><small>Lorem ipsum dolor sit amet, consectetur adipisicing elit. just simple data</small></p><hr>
+                            <div class="row">
+                                <div class="col-sm-6 col-md-6">
+                                    <p class="margin-button-none"><i class="fa fa-shopping-cart cool-green"></i></i></p>
+                                </div>
+                                <div class="col-sm-6 col-md-6">
+                                    <p class="bold margin-button-none">
+                                    <span class="bold cool-green"><small>$</small></span> 100.00 
+                                    </p>
+                                </div>
+                            </div>    
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="thumbnail border-radius-none padding-none">
+                        <img src="{{asset('front/images/flat_m.jpg')}}">
+                        <div class="caption">
+                            <h5 class="bold"><a href="{{url('/product/detail')}}" class="text-decoration-none"><span class="cool-green">Feature Label</span></a></h5>
+                            <p class="gray"><small>Lorem ipsum dolor sit amet, consectetur adipisicing elit. just simple data</small></p><hr>
+                            <div class="row">
+                                <div class="col-sm-6 col-md-6">
+                                    <p class="margin-button-none"><i class="fa fa-shopping-cart cool-green"></i></i></p>
+                                </div>
+                                <div class="col-sm-6 col-md-6">
+                                    <p class="bold margin-button-none">
+                                    <span class="bold cool-green"><small>$</small></span> 133.00 
+                                    </p>
+                                </div>
                             </div>
-                            <div class="col-sm-6 col-md-6">
-                                <p class="bold margin-button-none">
-                                   <span class="bold cool-green"><small>$</small></span> 231.00 
-                                </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-6">
+                    <div class="thumbnail border-radius-none padding-none">
+                        <img src="{{asset('front/images/pixel_m.jpg')}}">
+                        <div class="caption">
+                            <h5 class="bold"><a href="{{url('/product/detail')}}" class="text-decoration-none"><span class="cool-green">Feature Label</span></a></h5>
+                            <p class="gray"><small>Lorem ipsum dolor sit amet, consectetur adipisicing elit. just simple data</small></p><hr>
+                            <div class="row">
+                                <div class="col-sm-6 col-md-6">
+                                    <p class="margin-button-none"><i class="fa fa-shopping-cart cool-green"></i></i></p>
+                                </div>
+                                <div class="col-sm-6 col-md-6">
+                                    <p class="bold margin-button-none">
+                                    <span class="bold cool-green"><small>$</small></span> 231.00 
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-6">
+                    <div class="thumbnail border-radius-none padding-none">
+                        <img src="{{asset('front/images/westeros_m.jpg')}}">
+                        <div class="caption">
+                            <h5 class="bold"><a href="{{url('/product/detail')}}" class="text-decoration-none"><span class="cool-green">Feature Label</span></a></h5>
+                            <p class="gray"><small>Lorem ipsum dolor sit amet, consectetur adipisicing elit. just simple data</small></p><hr>
+                            <div class="row">
+                                <div class="col-sm-6 col-md-6">
+                                    <p class="margin-button-none"><i class="fa fa-shopping-cart cool-green"></i></i></p>
+                                </div>
+                                <div class="col-sm-6 col-md-6">
+                                    <p class="bold margin-button-none">
+                                    <span class="bold cool-green"><small>$</small></span> 299.00 
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="col-md-3 col-sm-6 hero-feature">
-                <div class="thumbnail border-radius-none padding-none">
-                    <img src="{{asset('front/images/westeros_m.jpg')}}" alt="">
-                    <div class="caption">
-                         <h5 class="bold"><a href="{{url('/product/detail')}}" class="text-decoration-none"><span class="cool-green">Feature Label</span></a></h5>
-                        <p class="gray"><small>Lorem ipsum dolor sit amet, consectetur adipisicing elit. just simple data</small></p><hr>
-                        <div class="row">
-                            <div class="col-sm-6 col-md-6">
-                                <p class="margin-button-none"><i class="fa fa-shopping-cart cool-green"></i></i></p>
-                            </div>
-                            <div class="col-sm-6 col-md-6">
-                                <p class="bold margin-button-none">
-                                   <span class="bold cool-green"><small>$</small></span> 299.00 
-                                </p>
+            <div class="row">
+                <div class="col-md-3 col-sm-6">
+                    <div class="thumbnail border-radius-none padding-none">
+                        <img src="{{asset('front/images/miniverse_m.jpg')}}">
+                        <div class="caption">
+                            <h5 class="bold"><a href="{{url('/product/detail')}}" class="text-decoration-none"><span class="cool-green">Feature Label</span></a></h5>
+                            <p class="gray"><small>Lorem ipsum dolor sit amet, consectetur adipisicing elit. just simple data</small></p><hr>
+                            <div class="row">
+                                <div class="col-sm-6 col-md-6">
+                                    <p class="margin-button-none"><i class="fa fa-shopping-cart cool-green"></i></i></p>
+                                </div>
+                                <div class="col-sm-6 col-md-6">
+                                    <p class="bold margin-button-none">
+                                    <span class="bold cool-green"><small>$</small></span> 100.00 
+                                    </p>
+                                </div>
+                            </div>    
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-6">
+                    <div class="thumbnail border-radius-none padding-none">
+                        <img src="{{asset('front/images/flat_m.jpg')}}">
+                        <div class="caption">
+                            <h5 class="bold"><a href="{{url('/product/detail')}}" class="text-decoration-none"><span class="cool-green">Feature Label</span></a></h5>
+                            <p class="gray"><small>Lorem ipsum dolor sit amet, consectetur adipisicing elit. just simple data</small></p><hr>
+                            <div class="row">
+                                <div class="col-sm-6 col-md-6">
+                                    <p class="margin-button-none"><i class="fa fa-shopping-cart cool-green"></i></i></p>
+                                </div>
+                                <div class="col-sm-6 col-md-6">
+                                    <p class="bold margin-button-none">
+                                    <span class="bold cool-green"><small>$</small></span> 133.00 
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-        <!-- /.row -->
-                <!-- Page Features -->
-        <div class="row text-center">
-            <div class="col-md-3 col-sm-6 hero-feature">
-                <div class="thumbnail border-radius-none padding-none">
-                    <img src="{{asset('front/images/miniverse_m.jpg')}}">
-                    <div class="caption">
-                         <h5 class="bold"><a href="{{url('/product/detail')}}" class="text-decoration-none"><span class="cool-green">Feature Label</span></a></h5>
-                        <p class="gray"><small>Lorem ipsum dolor sit amet, consectetur adipisicing elit. just simple data</small></p><hr>
-                        <div class="row">
-                            <div class="col-sm-6 col-md-6">
-                                <p class="margin-button-none"><i class="fa fa-shopping-cart cool-green"></i></i></p>
-                            </div>
-                            <div class="col-sm-6 col-md-6">
-                                <p class="bold margin-button-none">
-                                   <span class="bold cool-green"><small>$</small></span> 100.00 
-                                </p>
-                            </div>
-                        </div>    
-                    </div>
-                </div>
-            </div>
 
-            <div class="col-md-3 col-sm-6 hero-feature">
-                <div class="thumbnail border-radius-none padding-none">
-                    <img src="{{asset('front/images/flat_m.jpg')}}">
-                    <div class="caption">
-                         <h5 class="bold"><a href="{{url('/product/detail')}}" class="text-decoration-none"><span class="cool-green">Feature Label</span></a></h5>
-                        <p class="gray"><small>Lorem ipsum dolor sit amet, consectetur adipisicing elit. just simple data</small></p><hr>
-                        <div class="row">
-                            <div class="col-sm-6 col-md-6">
-                                <p class="margin-button-none"><i class="fa fa-shopping-cart cool-green"></i></i></p>
-                            </div>
-                            <div class="col-sm-6 col-md-6">
-                                <p class="bold margin-button-none">
-                                   <span class="bold cool-green"><small>$</small></span> 133.00 
-                                </p>
+                <div class="col-md-3 col-sm-6">
+                    <div class="thumbnail border-radius-none padding-none">
+                        <img src="{{asset('front/images/pixel_m.jpg')}}">
+                        <div class="caption">
+                            <h5 class="bold"><a href="{{url('/product/detail')}}" class="text-decoration-none"><span class="cool-green">Feature Label</span></a></h5>
+                            <p class="gray"><small>Lorem ipsum dolor sit amet, consectetur adipisicing elit. just simple data</small></p><hr>
+                            <div class="row">
+                                <div class="col-sm-6 col-md-6">
+                                    <p class="margin-button-none"><i class="fa fa-shopping-cart cool-green"></i></i></p>
+                                </div>
+                                <div class="col-sm-6 col-md-6">
+                                    <p class="bold margin-button-none">
+                                    <span class="bold cool-green"><small>$</small></span> 231.00 
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-
-            <div class="col-md-3 col-sm-6 hero-feature">
-                <div class="thumbnail border-radius-none padding-none">
-                    <img src="{{asset('front/images/pixel_m.jpg')}}">
-                    <div class="caption">
-                         <h5 class="bold"><a href="{{url('/product/detail')}}" class="text-decoration-none"><span class="cool-green">Feature Label</span></a></h5>
-                        <p class="gray"><small>Lorem ipsum dolor sit amet, consectetur adipisicing elit. just simple data</small></p><hr>
-                        <div class="row">
-                            <div class="col-sm-6 col-md-6">
-                                <p class="margin-button-none"><i class="fa fa-shopping-cart cool-green"></i></i></p>
-                            </div>
-                            <div class="col-sm-6 col-md-6">
-                                <p class="bold margin-button-none">
-                                   <span class="bold cool-green"><small>$</small></span> 231.00 
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-3 col-sm-6 hero-feature">
-                <div class="thumbnail border-radius-none padding-none">
-                    <img src="{{asset('front/images/westeros_m.jpg')}}">
-                    <div class="caption">
-                         <h5 class="bold"><a href="{{url('/product/detail')}}" class="text-decoration-none"><span class="cool-green">Feature Label</span></a></h5>
-                        <p class="gray"><small>Lorem ipsum dolor sit amet, consectetur adipisicing elit. just simple data</small></p><hr>
-                        <div class="row">
-                            <div class="col-sm-6 col-md-6">
-                                <p class="margin-button-none"><i class="fa fa-shopping-cart cool-green"></i></i></p>
-                            </div>
-                            <div class="col-sm-6 col-md-6">
-                                <p class="bold margin-button-none">
-                                   <span class="bold cool-green"><small>$</small></span> 299.00 
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="row text-center">
-            <div class="col-md-3 col-sm-6 hero-feature">
-                <div class="thumbnail border-radius-none padding-none">
-                    <img src="{{asset('front/images/miniverse_m.jpg')}}">
-                    <div class="caption">
-                         <h5 class="bold"><a href="{{url('/product/detail')}}" class="text-decoration-none"><span class="cool-green">Feature Label</span></a></h5>
-                        <p class="gray"><small>Lorem ipsum dolor sit amet, consectetur adipisicing elit. just simple data</small></p><hr>
-                        <div class="row">
-                            <div class="col-sm-6 col-md-6">
-                                <p class="margin-button-none"><i class="fa fa-shopping-cart cool-green"></i></i></p>
-                            </div>
-                            <div class="col-sm-6 col-md-6">
-                                <p class="bold margin-button-none">
-                                   <span class="bold cool-green"><small>$</small></span> 100.00 
-                                </p>
-                            </div>
-                        </div>    
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-3 col-sm-6 hero-feature">
-                <div class="thumbnail border-radius-none padding-none">
-                    <img src="{{asset('front/images/flat_m.jpg')}}">
-                    <div class="caption">
-                         <h5 class="bold"><a href="{{url('/product/detail')}}" class="text-decoration-none"><span class="cool-green">Feature Label</span></a></h5>
-                        <p class="gray"><small>Lorem ipsum dolor sit amet, consectetur adipisicing elit. just simple data</small></p><hr>
-                        <div class="row">
-                            <div class="col-sm-6 col-md-6">
-                                <p class="margin-button-none"><i class="fa fa-shopping-cart cool-green"></i></i></p>
-                            </div>
-                            <div class="col-sm-6 col-md-6">
-                                <p class="bold margin-button-none">
-                                   <span class="bold cool-green"><small>$</small></span> 133.00 
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-3 col-sm-6 hero-feature">
-                <div class="thumbnail border-radius-none padding-none">
-                    <img src="{{asset('front/images/pixel_m.jpg')}}">
-                    <div class="caption">
-                         <h5 class="bold"><a href="{{url('/product/detail')}}" class="text-decoration-none"><span class="cool-green">Feature Label</span></a></h5>
-                        <p class="gray"><small>Lorem ipsum dolor sit amet, consectetur adipisicing elit. just simple data</small></p><hr>
-                        <div class="row">
-                            <div class="col-sm-6 col-md-6">
-                                <p class="margin-button-none"><i class="fa fa-shopping-cart cool-green"></i></i></p>
-                            </div>
-                            <div class="col-sm-6 col-md-6">
-                                <p class="bold margin-button-none">
-                                   <span class="bold cool-green"><small>$</small></span> 231.00 
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6 hero-feature">
-                <div class="thumbnail border-radius-none padding-none">
-                    <img src="{{asset('front/images/westeros_m.jpg')}}">
-                    <div class="caption">
-                        <h5 class="bold"><a href="{{url('/product/detail')}}" class="text-decoration-none"><span class="cool-green">Feature Label</span></a></h5>
-                        <p class="gray"><small>Lorem ipsum dolor sit amet, consectetur adipisicing elit. just simple data</small></p><hr>
-                        <div class="row">
-                            <div class="col-sm-6 col-md-6">
-                                <p class="margin-button-none"><i class="fa fa-shopping-cart cool-green"></i></i></p>
-                            </div>
-                            <div class="col-sm-6 col-md-6">
-                                <p class="bold margin-button-none">
-                                   <span class="bold cool-green"><small>$</small></span> 299.00 
-                                </p>
+                <div class="col-md-3 col-sm-6">
+                    <div class="thumbnail border-radius-none padding-none">
+                        <img src="{{asset('front/images/westeros_m.jpg')}}">
+                        <div class="caption">
+                            <h5 class="bold"><a href="{{url('/product/detail')}}" class="text-decoration-none"><span class="cool-green">Feature Label</span></a></h5>
+                            <p class="gray"><small>Lorem ipsum dolor sit amet, consectetur adipisicing elit. just simple data</small></p><hr>
+                            <div class="row">
+                                <div class="col-sm-6 col-md-6">
+                                    <p class="margin-button-none"><i class="fa fa-shopping-cart cool-green"></i></i></p>
+                                </div>
+                                <div class="col-sm-6 col-md-6">
+                                    <p class="bold margin-button-none">
+                                    <span class="bold cool-green"><small>$</small></span> 299.00 
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </div>

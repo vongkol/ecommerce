@@ -46,8 +46,14 @@
                     <li>
                         <a href="#">Laptop</a>
                     </li>
-                   
-                </ul>
+                    <li>
+                    <a href="#">About Us</a>
+                    </li>
+                    <li>
+                        <a href="#">Contact Us</a>
+                    </li>
+                    
+                    </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> <span class="glyphicon glyphicon-user"></span> Buyer<span class="caret"></span></a>
@@ -96,7 +102,7 @@
                 </div>
         </div>
     </nav>
-    <div class="container">
+    <div class="container-fluit">
     <section>
         @yield('content')
     </section>

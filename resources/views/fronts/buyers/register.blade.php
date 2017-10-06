@@ -1,7 +1,7 @@
 @extends('layouts.front')
 @section('content')
-<div class="header-margin"></div>
-<div class="row">
+<div class="header-margin-top"></div>
+<div class="container">
     <div class="col-md-4 col-sm-4 col-md-offset-2">
         <div class="panel border-radius-none panel-default">
             <div class="panel-body">
