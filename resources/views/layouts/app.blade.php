@@ -83,7 +83,7 @@
                         <a class="nav-link" href="{{url('/customer')}}"><i class="fa fa-users"></i> Customer </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="fa fa-building"></i> Company </a>
+                        <a class="nav-link" href="{{url('/company')}}"><i class="fa fa-building"></i> Company </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{url('/package')}}"><i class="fa fa-cubes"></i>Package</a>
@@ -136,7 +136,6 @@
                 <div class="animated fadeIn">
                     @yield('content')
                 </div>
-
             </div>
         </main>
 

@@ -16,6 +16,10 @@ Route::get('/',"FrontController@index");
 
 Auth::routes();
 
+Route::get('/buyer/login', 'BuyerController@login');
+Route::get('/buyer/register', 'BuyerController@register');
+Route::get('/buyer/buyer', 'BuyerController@buyer');
+
 Route::get('/home', 'HomeController@index')->name('home');
 // detail page
 Route::get('/product/detail', 'FrontController@detail');
@@ -36,6 +40,14 @@ Route::post('/user/save-password', "UserController@update_password");
 Route::get('/user/branch/{id}', "UserController@branch");
 Route::post('/user/branch/save', "UserController@add_branch");
 Route::get('/user/branch/delete/{id}', "UserController@delete_branch");
+// Company
+Route::get('/company', "CompanyController@index");
+Route::get('/company/view/{id}', "CompanyController@view");
+Route::get('/company/create', "CompanyController@create");
+Route::get('/company/edit/{id}', "CompanyController@edit");
+Route::get('/company/delete/{id}', "CompanyController@delete");
+Route::post('/company/save', "CompanyController@save");
+Route::post('/company/update', "CompanyController@update");
 // role
 Route::get('/role', "RoleController@index");
 Route::get('/role/create', "RoleController@create");

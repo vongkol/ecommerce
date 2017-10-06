@@ -1,0 +1,138 @@
+
+  .single-product .gallery-holder .gallery-thumbs .owl-item .item:hover {
+    border: 1px solid #12cca7;
+  }
+  .single-product .product-tabs .nav.nav-tabs.nav-tab-cell li a:hover,
+  .single-product .product-tabs .nav.nav-tabs.nav-tab-cell li a:focus {
+    background: #12cca7;
+  }
+  .product-tabs .tab-content .tab-pane .product-reviews .reviews .review .author span {
+    color: #12cca7;
+  }
+  .single-product .gallery-holder #owl-single-product .single-product-gallery-item {
+    border: 1px solid #e5e5e5;
+  }
+  .single-product .gallery-holder .gallery-thumbs {
+    margin: 15px 0 0;
+    position: relative;
+    text-align: left;
+  }
+  .single-product .gallery-holder .gallery-thumbs .owl-item .item {
+    margin-right: 10px;
+    border: 1px solid #e5e5e5;
+  }
+  .single-product .product-info .name {
+    font-size: 20px;
+    line-height: 18px;
+    font-family: 'FjallaOneRegular';
+    color: #555;
+    margin-top: 5px;
+  }
+  .single-product .product-info .rating-reviews .reviews .lnk {
+    color: #aaaaaa;
+  }
+  .single-product .product-info .product-social-link .social-icons {
+    display: inline-block;
+  }
+  .single-product .product-info .product-social-link .social-icons ul li a {
+    color: #888888;
+    font-size: 16px;
+    -webkit-transition: all 0.2s linear 0s;
+    -moz-transition: all 0.2s linear 0s;
+    -o-transition: all 0.2s linear 0s;
+    transition: all 0.2s linear 0s;
+    padding: 5px 6px;
+  }
+  .single-product .product-tabs .nav.nav-tabs.nav-tab-cell > li > a:hover:after,
+  .single-product .product-tabs .nav.nav-tabs.nav-tab-cell > li > a:focus:after {
+    border-style: solid;
+    border-width: 7.5px 1px 7.5px 10px;
+    content: "";
+    height: 0;
+    position: absolute;
+    top: 20px;
+    width: 0;
+    right: -8px;
+  }
+  .single-product .product-tabs .tab-content .tab-pane {
+    padding: 24px;
+  }
+  .single-product .product-tabs .tab-content .tab-pane .text {
+    line-height: 20px;
+  }
+  .single-product .upsell-product .product .product-info .name {
+    margin-top: 20px;
+    font-size: 16px;
+  }
+  .single-product #owl-single-product-thumbnails .owl-controls {
+    position: absolute;
+    text-align: center;
+    top: auto;
+    width: 100%;
+    margin-top: 10px;
+  }
+  .single-product #owl-single-product-thumbnails .owl-controls .owl-pagination .owl-page {
+    display: inline-block;
+  }
+
+  .single-product .sidebar .sidebar-module-container .sidebar-widget .section-title {
+    margin-top: 0px;
+  }
+  .cnt-homepage .single-product .single-product-gallery .gallery-thumbs .nav-holder {
+    background-color: #FFFFFF;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    width: 30px;
+    z-index: 50;
+  }
+  .cnt-homepage .single-product .single-product-gallery .gallery-thumbs .nav-holder.left {
+    left: 0px;
+  }
+  .cnt-homepage .single-product .single-product-gallery .gallery-thumbs .nav-holder.right {
+    right: 0;
+  }
+  .cnt-homepage .single-product .single-product-gallery .gallery-thumbs .nav-holder .prev-btn {
+    left: 0;
+  }
+  .cnt-homepage .single-product .single-product-gallery .gallery-thumbs .nav-holder .prev-btn:after {
+    content: "\f104";
+  }
+  .cnt-homepage .single-product .single-product-gallery .gallery-thumbs .nav-holder .next-btn {
+    right: 0px;
+  }
+  .cnt-homepage .single-product .single-product-gallery .gallery-thumbs .nav-holder .next-btn:after {
+    content: "\f105";
+  }
+  .cnt-homepage .single-product .single-product-gallery .gallery-thumbs .nav-holder .prev-btn,
+  .cnt-homepage .single-product .single-product-gallery .gallery-thumbs .nav-holder .next-btn {
+    background-color: #fff;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+    display: inline-block;
+    height: 100%;
+    position: absolute;
+    vertical-align: top;
+    width: 90%;
+    z-index: 100;
+    border: 1px solid #e5e5e5;
+    color: #dadada;
+  }
+  .cnt-homepage .single-product .single-product-gallery .gallery-thumbs .nav-holder .prev-btn:after,
+  .cnt-homepage .single-product .single-product-gallery .gallery-thumbs .nav-holder .next-btn:after {
+    bottom: 0;
+    font-family: fontawesome;
+    font-size: 30px;
+    height: 30px;
+    left: 0;
+    line-height: 30px;
+    margin: auto;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    top: 0;
+  }
+  .single-product .second-gallery-thumb.gallery-thumbs {
+    padding: 0 40px;
+  }

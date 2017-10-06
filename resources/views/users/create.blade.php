@@ -76,7 +76,6 @@
                                 <br>
                                 <img src="{{asset('profile/default.png')}}" alt="" width="72" id="preview">
                             </div>
-
                         </div>
                         <div class="form-group row">
                             <label class="control-label col-lg-1 col-sm-2">&nbsp;</label>
