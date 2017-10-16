@@ -1,37 +1,21 @@
 @extends('layouts.front')
 @section('content')
+<link rel="stylesheet" href="{{asset('front/css/login.css')}}">
 <div class="header-margin-top"></div>
 <div class="container">
-    <div class="col-md-4 col-sm-4 col-md-offset-2">
-        <div class="panel border-radius-none panel-default">
-            <div class="panel-body">
-            <div class="bold">Please login</div><hr>
-                <form action="{{url('/buyer/buyer')}}">
-                    <label>Account:</label>
-                    <input 
-                        type="text" 
-                        class="form-control border-radius-none" 
-                        placeholder="Username" 
-                        required
-                    ><br>
-                    <label>Password:</label> <a href="#" class="pull-right"> Forget password?</a>
-                    <input 
-                        type="password" 
-                        class="form-control border-radius-none" 
-                        placeholder="Password"
-                        required
-                    ><br>
-                    <input 
-                        type="submit" 
-                        class="btn border-radius-none btn-default text-center form-control" 
-                        value="Sing in"
-                    >
-                </form>
+    <div class="login-form">
+        <form action="" method="post">
+            <h2 class="text-center">Mastermalls</h2>	
+            <div class="form-group">
+                <input type="email" class="form-control" placeholder="Email" required="required">
+                <input type="password" class="form-control" placeholder="Password" required="required">
             </div>
-        </div>
-    </div>
-    <div class="col-md-4">
-        <img src="{{asset('img/online-shop.png')}}" width="100%">
+            <div class="form-group">
+                <button type="submit" class="btn btn-default btn-block">Login</button>
+            </div>
+            <p class="text-center"><a href="#">Forgot Password?</a></p>     
+        </form>
+        <p class="text-center small">Not Registered? <a href="#">Create an Account</a></p>
     </div>
 </div>
 @endsection

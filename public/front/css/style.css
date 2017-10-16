@@ -13,6 +13,9 @@
 .padding-slider {
     padding-top: 54px;
 }
+body {
+    background: #f4f4f4;
+}
 /*menu	home page */
 .navbar-nav>li>.dropdown-menu-custom {
     margin-top: 0;
@@ -63,6 +66,17 @@ ul.dropdown-menu-custom li .item:after{
     margin: 0;
     background-color: #fff;
 }
+.thumbnailm .caption {
+    padding: 9px;
+    color: #333;
+    box-shadow: 0 0 1px 1px hsla(0,0%,7%,.1), 0 3px 1px 0 hsla(0,0%,7%,.1);
+}
+.thumbnailm .caption:hover,
+.thumbnailm .caption:focus
+ {
+    box-shadow: 0 2px 8px 2px hsla(0,0%,7%,.15);
+}
+
 
 /* pagination */
 .pagination-custom>li>a, .pagination-custom>li>span {

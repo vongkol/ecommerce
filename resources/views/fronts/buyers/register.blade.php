@@ -1,47 +1,31 @@
 @extends('layouts.front')
 @section('content')
+<link rel="stylesheet" href="{{asset('front/css/register.css')}}">
 <div class="header-margin-top"></div>
 <div class="container">
-    <div class="col-md-4 col-sm-4 col-md-offset-2">
-        <div class="panel border-radius-none panel-default">
-            <div class="panel-body">
-            <div class="bold">Create a New Account</div><hr>
-                <form action="">
-                    <label>Username:</label>
-                    <input 
-                        type="text" 
-                        class="form-control border-radius-none" 
-                        placeholder="Username" 
-                    ><br>
-                    <label>Email address:</label>
-                    <input 
-                        type="text" 
-                        class="form-control border-radius-none" 
-                        placeholder="example@gmail.com" 
-                    ><br>
-                    <label>Create password:</label>
-                    <input 
-                        type="password" 
-                        class="form-control border-radius-none" 
-                        placeholder="Password" 
-                    ><br>
-                    <label>Confirm your password:</label>
-                    <input 
-                        type="password" 
-                        class="form-control border-radius-none" 
-                        placeholder="Enter password again" 
-                    ><br>
-                    <input 
-                        type="submit" 
-                        class="btn btn-default text-center form-control border-radius-none" 
-                        value="Create Your Account"
-                    >
-                </form>
+    <div class="signup-form">
+        <form action="" method="post">
+            <h2>Register</h2>
+            <p class="hint-text">Create a New Account. It's free and only takes a minute.</p>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-xs-6"><input type="text" class="form-control" name="first_name" placeholder="First Name" required="required"></div>
+                    <div class="col-xs-6"><input type="text" class="form-control" name="last_name" placeholder="Last Name" required="required"></div>
+                </div>        	
             </div>
-        </div>
-    </div>
-    <div class="col-md-4">
-        <img src="{{asset('img/online-shop.png')}}" width="100%">
+            <div class="form-group">
+                <input type="email" class="form-control" name="email" placeholder="Email" required="required">
+            </div>
+            <div class="form-group">
+                <input type="password" class="form-control" name="password" placeholder="Password" required="required">
+            </div>
+            <div class="form-group">
+                <input type="password" class="form-control" name="confirm_password" placeholder="Confirm Password" required="required">
+            </div>        
+            <div class="form-group">
+                <button type="submit" class="btn btn-default btn-lg btn-block">Register Now</button>
+            </div>
+        </form>
     </div>
 </div>
 @endsection
