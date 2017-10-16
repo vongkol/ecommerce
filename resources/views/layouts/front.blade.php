@@ -107,7 +107,7 @@
         @yield('content')
     </section>
     </div>
-    <footer>
+    <footer id="footer">
     <div class="well well-custom border-radius-none background-black">
         <div class="row"> 
             <div class="col-md-3">
