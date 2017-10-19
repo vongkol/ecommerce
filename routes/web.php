@@ -16,9 +16,26 @@ Route::get('/',"FrontController@index");
 
 Auth::routes();
 
+// customer
 Route::get('/buyer/login', 'BuyerController@login');
 Route::get('/buyer/register', 'BuyerController@register');
-Route::get('/buyer/buyer', 'BuyerController@buyer');
+Route::post('/buyer/save', 'BuyerController@save');
+Route::post('/buyer/is-login', 'BuyerController@is_login');
+Route::get('/buyer/logout', 'BuyerController@logout');
+// shop owner
+Route::get('/shop-owner/profile', 'ShopOwnerController@index');
+Route::get('/shop-owner/login', 'ShopOwnerController@login');
+Route::get('/shop-owner/register', 'ShopOwnerController@register');
+Route::post('/shop-owner/save', 'ShopOwnerController@save');
+Route::post('/shop-owner/is-login', 'ShopOwnerController@is_login');
+Route::get('/shop-owner/logout', 'ShopOwnerController@logout');
+Route::get('/shop-owner/buyer', 'ShopOwnerController@buyer');
+Route::get('/shop-owner/dashboard', 'ShopOwnerController@dashboard');
+Route::get('/shop-owner/forget-password', 'ShopOwnerForgetPasswordController@index');
+Route::post('/shop-owner/forgot/recovery', 'ShopOwnerForgetPasswordController@reset_password');
+Route::post('/shop-owner/save-password', "ShopOwnerForgetPasswordController@save_password");
+Route::get('/service/reset/{id}', "ShopOwnerForgetPasswordController@new_password");
+Route::post('/service/update', "ShopOwnerForgetPasswordController@update_password");
 
 Route::get('/home', 'HomeController@index')->name('home');
 // detail page

@@ -67,29 +67,6 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="gender" class="control-label col-lg-2 col-sm-2">Gender<span class="text-danger">*</span></label>
-                            <div class="col-lg-6 col-sm-8">
-                                <select class="form-control" name="gender" id="gender"  id="exampleSelect1">
-                                    <option value="Male">Male</option> 
-                                    <option value="Female">Female</option>                
-                                </select>
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="dob" class="control-label col-lg-2 col-sm-2">
-                                Date of Birth
-                            </label>
-                            <div class="col-lg-6 col-sm-8">
-                                <input 
-                                    type="text" 
-                                    name="dob" 
-                                    id="dob" 
-                                    class="form-control"
-                                    value="{{ old('dob') }}"
-                                >
-                            </div>
-                        </div>
-                        <div class="form-group row">
                             <label for="phone" class="control-label col-lg-2 col-sm-2">
                                 Phone<span class="text-danger">*</span>
                             </label>

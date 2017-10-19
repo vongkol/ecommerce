@@ -52,53 +52,84 @@
                     <li>
                         <a href="#">Contact Us</a>
                     </li>
-                    
-                    </ul>
+                </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> <span class="glyphicon glyphicon-user"></span> Buyer<span class="caret"></span></a>
+                @if(Session::has('customer'))
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> <span class="glyphicon glyphicon-user"></span> Hi, {{session('customer')->first_name}}<span class="caret"></span></a>
                     <ul class="dropdown-menu dropdown-menu-custom" role="menu">
                         <li>
-                            <a href="{{url('/buyer/login')}}">
+                            <a href="{{url('/buyer/logout')}}">
                                 <span class="item">
                                     <span class="item-left">
-                                        Login
-                                    </span>
-                                </span>
-                            </a> 
-                        </li>
-                        <li>  
-                            <a href="{{url('/buyer/register')}}">
-                                <span class="item">
-                                    <span class="item-left">
-                                        Register
+                                        logout
                                     </span>
                                 </span>
                             </a> 
                         </li>
                     </ul>
+                @else
                     <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> <span class="glyphicon glyphicon-shopping-cart"></span> Shop Owner<span class="caret"></span></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> <span class="glyphicon glyphicon-user"></span> Buyer<span class="caret"></span></a>
+                        <ul class="dropdown-menu dropdown-menu-custom" role="menu">
+                            <li>
+                                <a href="{{url('/buyer/login')}}">
+                                    <span class="item">
+                                        <span class="item-left">
+                                            Login
+                                        </span>
+                                    </span>
+                                </a> 
+                            </li>
+                            <li>  
+                                <a href="{{url('/buyer/register')}}">
+                                    <span class="item">
+                                        <span class="item-left">
+                                            Register
+                                        </span>
+                                    </span>
+                                </a> 
+                            </li>
+                        </ul>
+                @endif
+                @if(Session::has('shop_owner'))
+                    <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> <span class="glyphicon glyphicon-user"></span> Hi, {{session('shop_owner')->first_name}}<span class="caret"></span></a>
                     <ul class="dropdown-menu dropdown-menu-custom" role="menu">
                         <li>
-                            <a href="#">
+                            <a href="{{url('/shop-owner/logout')}}">
                                 <span class="item">
                                     <span class="item-left">
-                                        Login
+                                        logout
                                     </span>
                                 </span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <span class="item">
-                                    <span class="item-left">
-                                        Register
-                                    </span>
-                                </span>
-                            </a>
+                            </a> 
                         </li>
                     </ul>
+                    @else
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> <span class="glyphicon glyphicon-user"></span> Shop Owner<span class="caret"></span></a>
+                        <ul class="dropdown-menu dropdown-menu-custom" role="menu">
+                            <li>
+                                <a href="{{url('/shop-owner/login')}}">
+                                    <span class="item">
+                                        <span class="item-left">
+                                            Login
+                                        </span>
+                                    </span>
+                                </a> 
+                            </li>
+                            <li>  
+                                <a href="{{url('/shop-owner/register')}}">
+                                    <span class="item">
+                                        <span class="item-left">
+                                            Register
+                                        </span>
+                                    </span>
+                                </a> 
+                            </li>
+                        </ul>
+                    @endif
                 </div>
         </div>
     </nav>

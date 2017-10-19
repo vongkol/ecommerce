@@ -21,8 +21,6 @@
                                 <th>&numero;</th>
                                 <th>First Name</th>
                                 <th>Last Name</th>
-                                <th>Gender</th>
-                                <th>Date of Birth</th>
                                 <th>Phone</th>
                                 <th>Email</th>
                                 <th>Username</th>
@@ -36,8 +34,6 @@
                                     <td>{{$i++}}</td>
                                     <td>{{$cus->first_name}}</td>
                                     <td>{{$cus->last_name}}</td>
-                                    <td>{{$cus->gender}}</td>
-                                    <td>{{$cus->dob}}</td>
                                     <td>{{$cus->phone}}</td>
                                     <td>{{$cus->email}}</td>
                                     <td>{{$cus->username}}</td>

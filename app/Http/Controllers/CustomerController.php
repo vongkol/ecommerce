@@ -38,8 +38,6 @@ class CustomerController extends Controller
             $data = array(
                 'first_name' => $r->first_name,
                 'last_name' => $r->last_name,
-                'gender' => $r->gender,
-                'dob' => $r->dob,
                 'phone' => $r->phone,
                 'email' => $r->email,
                 'username' => $r->username,
@@ -102,8 +100,6 @@ class CustomerController extends Controller
             $data = array(
                 'first_name' => $r->first_name,
                 'last_name' => $r->last_name,
-                'gender' => $r->gender,
-                'dob' => $r->dob,
                 'phone' => $r->phone,
                 'email' => $r->email,
                 'username' => $r->username,
