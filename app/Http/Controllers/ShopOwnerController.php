@@ -17,8 +17,70 @@ class ShopOwnerController extends Controller
             return redirect('/shop-owner/login');
         }
         return view('fronts.shop_owner.index');
+}
+    // load edit profile form
+    public function edit(Request $r)
+    {
+        $shop_owner = $r->session()->get('shop_owner');
+        if($shop_owner==NULL)
+        {
+            return redirect('/shop-owner/login');
+        }
+        $data['shop_owner'] = DB::table('shop_owners')->where('id', session('shop_owner')->id)->first();
+        return view('fronts.shop_owner.edit_profile', $data);
     }
 
+      // update shop owner profile
+      public function update(Request $r)
+      {
+          $data = [
+              'first_name' => $r->first_name,
+              'last_name' => $r->last_name,
+              'gender' => $r->gender,
+              'dob' => $r->dob,
+              'phone' => $r->phone,
+              'email' => $r->email,
+              'username' => $r->username
+          ];
+          // check if username or email already exist or not
+          $count_username = DB::table('shop_owners')->where('id',"!=", $r->id)
+              ->where('username', $r->username)
+              ->count();
+          $count_email = DB::table('shop_owners')->where('id', "!=", $r->id)
+              ->where('email', $r->email)
+              ->count();
+          if($count_email>0)
+          {
+              $r->session()->flash('sms1', "The email '{$r->email}' already exist. Change a new one!");
+              return redirect('/shop-owner/profile/edit');
+          }
+          if($count_username>0)
+          {
+              $r->session()->flash('sms1', "The username '{$r->username}' already exist. Change a new one!");
+              return redirect('/seeker/profile/edit');
+          }
+          // upload photo
+        //   if($r->hasFile("photo")) {
+        //       $file = $r->file('photo');
+        //       $file_name = $r->id . "-" .$file->getClientOriginalName();
+        //       $destinationPath = 'uploads/photo/';
+        //       $file->move($destinationPath, $file_name);
+        //       $data["profile_photo"] = $file_name;
+        //   }
+          $i = DB::table('shop_owners')->where('id', $r->id)->update($data);
+          if($i)
+          {
+              $r->session()->flash('sms', "Your profile has been saved successfully!");
+               // save user to session
+              $user = DB::table('shop_owners')->where('id', $r->id)->first();
+              $r->session()->put('shop_owner', $user);
+              return redirect('/shop-owner/profile');
+          }
+          else{
+              $r->session()->flash('sms1', "Fail to save changes. You may not make any changes in your input!");
+              return redirect('/shop-owner/profile/edit');
+          }
+      }
     //login form
     public function login()
     {

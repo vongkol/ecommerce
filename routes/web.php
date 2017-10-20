@@ -29,6 +29,8 @@ Route::post('/buyer/service/update', "BuyerForgetPasswordController@update_passw
 
 // shop owner
 Route::get('/shop-owner/profile', 'ShopOwnerController@index');
+Route::get('/shop-owner/profile/edit', 'ShopOwnerController@edit');
+Route::post('/shop-owner/update', "ShopOwnerController@update");
 Route::get('/shop-owner/login', 'ShopOwnerController@login');
 Route::get('/shop-owner/register', 'ShopOwnerController@register');
 Route::post('/shop-owner/save', 'ShopOwnerController@save');

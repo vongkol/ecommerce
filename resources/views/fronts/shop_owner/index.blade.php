@@ -1,30 +1,30 @@
 @extends('layouts.shop_owner')
 @section('content')
-    @if(Session::has('sms'))
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="alert alert-success border-radius-none" role="alert">
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">&times;</span></button>
-                    {{session('sms')}}
-                </div>
-            </div>
-        </div>
-    @endif
-    @if(Session::has('sms1'))
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="alert alert-danger border-radius-none" role="alert">
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">&times;</span></button>
-                    {{session('sms1')}}
-                </div>
-            </div>
-        </div>
-    @endif
     <div class="panel panel-default border-radius-none">
         <div class="panel-heading">My Profile</div>
         <div class="panel-body">
+            @if(Session::has('sms'))
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="alert alert-success border-radius-none" role="alert">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span></button>
+                            {{session('sms')}}
+                        </div>
+                    </div>
+                </div>
+            @endif
+            @if(Session::has('sms1'))
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="alert alert-danger border-radius-none" role="alert">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span></button>
+                            {{session('sms1')}}
+                        </div>
+                    </div>
+                </div>
+            @endif
             <div class="col-md-6 col-sm-12">
                 <div class="form-group row">
                     <label for="first_name" class="control-label col-sm-5">First Name</label>
@@ -71,8 +71,9 @@
                     </div>
                 </div>
                 <div class="form-group row">
-                    <div class="col-sm-12">
-                        <a href="{{url('/shop-owner/edit/profile')}}" class="btn btn-primary border-radius-none">Edit Profile</a>
+                    <label class="control-label col-sm-5">&nbsp;</label>
+                    <div class="col-sm-7">
+                        <a href="{{url('/shop-owner/profile/edit')}}" class="btn btn-primary border-radius-none">Edit Profile</a>
                     </div>
                 </div>
             </div>
