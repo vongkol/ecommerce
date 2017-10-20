@@ -32,19 +32,19 @@
                 <div class="row">
                     <div class="col-md-6 col-sm-12">
                         <div class="form-group row">
-                            <label for="first_name" class="control-label col-sm-4">First Name</label>
+                            <label for="first_name" class="control-label col-sm-4">First Name <span class="text-danger">*</span></label>
                             <div class="col-sm-8">
                                 <input type="text" class="form-control border-radius-none" required name="first_name" id="first_name" value="{{$shop_owner->first_name}}">
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="last_name" class="control-label col-sm-4">Last Name</label>
+                            <label for="last_name" class="control-label col-sm-4">Last Name <span class="text-danger">*</span></label>
                             <div class="col-sm-8">
                                 <input type="text" class="form-control border-radius-none" id="last_name" name="last_name" required value="{{$shop_owner->last_name}}">
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="gender" class="control-label col-sm-4">Gender</label>
+                            <label for="gender" class="control-label col-sm-4">Gender <span class="text-danger">*</span></label>
                             <div class="col-sm-8">
                                 <select name="gender" id="gender" class="form-control border-radius-none">
                                     <option value="Male" {{$shop_owner->gender=='Male'?'selected':''}}>Male</option>
@@ -62,19 +62,19 @@
                     </div>
                     <div class="col-md-6 col-sm-12">
                         <div class="form-group row">
-                            <label for="phone" class="control-label col-sm-4">Phone</label>
+                            <label for="phone" class="control-label col-sm-4">Phone <span class="text-danger">*</span></label>
                             <div class="col-sm-8">
-                                <input type="text" class="form-control border-radius-none" id="phone" name="phone" value="{{$shop_owner->phone}}">
+                                <input type="text" class="form-control border-radius-none" id="phone" name="phone" required value="{{$shop_owner->phone}}">
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="email" class="control-label col-sm-4">Email</label>
+                            <label for="email" class="control-label col-sm-4">Email <span class="text-danger">*</span></label>
                             <div class="col-sm-8">
                                 <input type="text" class="form-control border-radius-none" id="email" required name="email" value="{{$shop_owner->email}}">
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="username" class="control-label col-sm-4">Username</label>
+                            <label for="username" class="control-label col-sm-4">Username <span class="text-danger">*</span></label>
                             <div class="col-sm-8">
                                 <input type="text" class="form-control border-radius-none" id="username" required name="username" value="{{$shop_owner->username}}">
                             </div>
