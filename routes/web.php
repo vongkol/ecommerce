@@ -22,6 +22,11 @@ Route::get('/buyer/register', 'BuyerController@register');
 Route::post('/buyer/save', 'BuyerController@save');
 Route::post('/buyer/is-login', 'BuyerController@is_login');
 Route::get('/buyer/logout', 'BuyerController@logout');
+Route::get('/buyer/forget-password', 'BuyerForgetPasswordController@index');
+Route::post('/buyer/forgot/recovery', 'BuyerForgetPasswordController@reset_password');
+Route::get('/buyer/service/reset/{id}', "BuyerForgetPasswordController@new_password");
+Route::post('/buyer/service/update', "BuyerForgetPasswordController@update_password");
+
 // shop owner
 Route::get('/shop-owner/profile', 'ShopOwnerController@index');
 Route::get('/shop-owner/login', 'ShopOwnerController@login');

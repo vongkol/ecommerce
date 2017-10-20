@@ -1,15 +1,6 @@
 @extends('layouts.front')
 @section('content')
 <link rel="stylesheet" href="{{asset('front/css/login.css')}}">
-<style>
-    .login-form form {
-        color: #405e9e;
-        background: #fff;
-    }
-    .ps {
-        color: #405e9e;
-    }
-</style>
 <div class="header-margin-top"></div>
 <div class="container">
     @if(Session::has('sms'))
@@ -34,15 +25,12 @@
         </div>
     @endif
     <div class="login-form">
-        <form action="{{url('/shop-owner/save-password')}}" accept-charset="UTF-8" method="post">
+        <form action="{{url('/buyer/forgot/recovery')}}" accept-charset="UTF-8" method="post">
             {{csrf_field()}}
             <h2 class="text-center">Account help</h2>	
             Enter an your E-mail using with this Mastermalls Account <br><br>
             <div class="form-group">
-                <input type="password" name="password" placeholder="New Password" class="form-control" required>
-            </div>
-            <div class="form-group">
-                <input type="password" name="confirm_password" placeholder="Confirm Password" class="form-control" required>
+                <input type="email" id="email" name="email" placeholder="E-mail" class="form-control" required autofocus value="{{old("email")}}">
             </div>
             <div class="form-group">
                 <button type="submit" class="btn btn-default btn-block">Submit</button>
