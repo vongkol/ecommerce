@@ -8,8 +8,7 @@
                     <a href="{{url('/category/create')}}" class="btn btn-link btn-sm">New</a>
                 </div>
                 <div class="card-block">
-
-                    <table class="table table-condensed table-striped table-responsive">
+                    <table class="tbl">
                         <thead>
                             <tr>
                                 <th>&numero;</th>

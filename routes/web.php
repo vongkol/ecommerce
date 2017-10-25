@@ -17,7 +17,10 @@ Route::get('/',"FrontController@index");
 Auth::routes();
 
 // customer
+Route::get('/buyer/profile', 'BuyerController@index');
 Route::get('/buyer/login', 'BuyerController@login');
+Route::get('/buyer/profile/edit', 'BuyerController@edit');
+Route::post('/buyer/update', "BuyerController@update");
 Route::get('/buyer/register', 'BuyerController@register');
 Route::post('/buyer/save', 'BuyerController@save');
 Route::post('/buyer/is-login', 'BuyerController@is_login');
@@ -30,13 +33,12 @@ Route::post('/buyer/service/update', "BuyerForgetPasswordController@update_passw
 // shop owner
 Route::get('/shop-owner/profile', 'ShopOwnerController@index');
 Route::get('/shop-owner/profile/edit', 'ShopOwnerController@edit');
-Route::post('/shop-owner/update', "ShopOwnerController@update");
+Route::post('/shop-owner/profile/update', "ShopOwnerController@update");
 Route::get('/shop-owner/login', 'ShopOwnerController@login');
-Route::get('/shop-owner/register', 'ShopOwnerController@register');
-Route::post('/shop-owner/save', 'ShopOwnerController@save');
+Route::get('/shop-owner/account/register', 'ShopOwnerController@register');
+Route::post('/shop-owner/account/save', 'ShopOwnerController@save');
 Route::post('/shop-owner/is-login', 'ShopOwnerController@is_login');
 Route::get('/shop-owner/logout', 'ShopOwnerController@logout');
-Route::get('/shop-owner/buyer', 'ShopOwnerController@buyer');
 Route::get('/shop-owner/dashboard', 'ShopOwnerController@dashboard');
 Route::get('/shop-owner/forget-password', 'ShopOwnerForgetPasswordController@index');
 Route::post('/shop-owner/forgot/recovery', 'ShopOwnerForgetPasswordController@reset_password');
@@ -186,5 +188,25 @@ Route::get('/subscription/detail/{id}', "SubscriptionController@detail");
 Route::post('/subscription/save', "SubscriptionController@save");
 Route::post('/subscription/update', "SubscriptionController@update");
 Route::post('/subscription/approve', "SubscriptionController@approve");
+// Shop owner
+Route::get('/shop-owner', "ManageShopOwnerController@index");
+Route::get('/shop-owner/create', "ManageShopOwnerController@create");
+Route::get('/shop-owner/edit/{id}', "ManageShopOwnerController@edit");
+Route::get('/shop-owner/delete/{id}', "ManageShopOwnerController@delete");
+Route::post('/shop-owner/save', "ManageShopOwnerController@save");
+Route::post('/shop-owner/update', "ManageShopOwnerController@update");
+//Front Shop
+Route::get('/shop-owner/shop', "FrontShopController@index");
+Route::get('/shop-owner/shop/create', "FrontShopController@create");
+Route::post('/shop-owner/shop/save', "FrontShopController@save");
+Route::get('/shop-owner/shop/edit', "FrontShopController@edit");
+Route::post('/shop-owner/shop/update', "FrontShopController@update");
+//Front Product
+Route::get('/shop-owner/product', "FrontProductController@index");
+Route::get('/shop-owner/product/create', "FrontProductController@create");
+Route::get('/shop-owner/product/delete/{id}', "FrontProductController@delete");
+Route::get('/shop-owner/product/edit/{id}', "FrontProductController@edit");
+Route::post('/shop-owner/product/update', "FrontProductController@update");
+Route::get('/shop-owner/product/detail/{id}', "FrontProductController@view");
 // test
 Route::get('/test', "TestController@index");

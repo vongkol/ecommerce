@@ -1,7 +1,7 @@
-@extends('layouts.shop_owner')
+@extends('layouts.buyer')
 @section('content')
     <div class="panel panel-default border-radius-none">
-        <div class="panel-heading bold">My Profile</div>
+        <div class="panel-heading bold"><span class="text-primary">My Profile</span></div>
         <div class="panel-body">
             @if(Session::has('sms'))
                 <div class="row">
@@ -27,53 +27,41 @@
             @endif
             <div class="col-md-6 col-sm-12">
                 <div class="form-group row">
-                    <label for="first_name" class="control-label col-sm-5">First Name</label>
+                    <label class="col-sm-5">First Name</label>
                     <div class="col-sm-7">
-                        <p id="first_name">{{session('shop_owner')->first_name}}</p>
+                        <p>{{session('customer')->first_name}}</p>
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label for="last_name" class="control-label col-sm-5">Last Name</label>
+                    <label class="col-sm-5">Last Name</label>
                     <div class="col-sm-7">
-                        <p id="last_name">{{session('shop_owner')->last_name}}</p>
+                        <p>{{session('customer')->last_name}}</p>
                     </div>
-                </div>
+                </div>  
                 <div class="form-group row">
-                    <label for="gender" class="control-label col-sm-5">Gender</label>
+                    <label class="col-sm-5">Username</label>
                     <div class="col-sm-7">
-                        <p id="gender">{{session('shop_owner')->gender}}</p>
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label for="dob" class="control-label col-sm-5">Date of Birth</label>
-                    <div class="col-sm-7">
-                        <p id="dob">{{session('shop_owner')->dob}}</p>
+                        <p>{{session('customer')->username}}</p>
                     </div>
                 </div>
             </div>
             <div class="col-md-6 col-sm-12">
                 <div class="form-group row">
-                    <label for="phone" class="control-label col-sm-5">Phone</label>
+                    <label class="col-sm-5">Phone</label>
                     <div class="col-sm-7">
-                        <p id="phone">{{session('shop_owner')->phone}}</p>
+                        <p>{{session('customer')->phone}}</p>
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label for="email" class="control-label col-sm-5">Email</label>
+                    <label class="col-sm-5">Email</label>
                     <div class="col-sm-7">
-                        <p id="email">{{session('shop_owner')->email}}</p>
+                        <p>{{session('customer')->email}}</p>
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label for="username" class="control-label col-sm-5">Username</label>
+                    <label class="col-sm-5">&nbsp;</label>
                     <div class="col-sm-7">
-                        <p id="username">{{session('shop_owner')->username}}</p>
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label class="control-label col-sm-5">&nbsp;</label>
-                    <div class="col-sm-7">
-                        <a href="{{url('/shop-owner/profile/edit')}}" class="btn btn-primary border-radius-none">Edit Profile</a>
+                        <a href="{{url('/buyer/profile/edit')}}" class="btn btn-primary border-radius-none">Edit Profile</a>
                     </div>
                 </div>
             </div>

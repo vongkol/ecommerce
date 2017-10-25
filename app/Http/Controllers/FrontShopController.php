@@ -5,36 +5,42 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use DB;
 use Auth;
-class CompanyController extends Controller
+use Session;
+class FrontShopController extends Controller
 {
-    // index
-    public function index()
+    public function index(Request $r)
     {
-        if(Auth::user()==null)
+        // check if shop owner login
+        $shop_owner = $r->session()->get('shop_owner');
+        if($shop_owner==NULL)
         {
-            return redirect("/login");
+             return redirect('/shop-owner/login');
         }
-        $data['companys'] = DB::table('shops')
-            ->where('active',1)
-            ->orderBy('id', 'desc')
-            ->paginate(18);
-        return view('companys.index', $data);
+        $data['shop'] = DB::table('shops')
+            ->where('shops.shop_owner_id', $shop_owner->id)
+            ->where('active',1)->first();
+
+        return view('fronts.shop.index', $data);
     }
     // load create form
-    public function create()
+    public function create(Request $r)
     {
-        if(Auth::user()==null)
+        // check if shop owner login
+        $shop_owner = $r->session()->get('shop_owner');
+        if($shop_owner==NULL)
         {
-            return redirect("/login");
+             return redirect('/shop-owner/login');
         }
-        return view('companys.create');
+        return view('fronts.shop.create');
     }
     // save new company
     public function save(Request $r)
     {
-        if(Auth::user()==null)
+        // check if shop owner login
+        $shop_owner = $r->session()->get('shop_owner');
+        if($shop_owner==NULL)
         {
-            return redirect("/login");
+             return redirect('/shop-owner/login');
         }
         $data = array(
             'name' => $r->name,
@@ -44,7 +50,7 @@ class CompanyController extends Controller
             'phone' => $r->phone,
             'email' => $r->email,
             'payment' => $r->payment,
-            'shop_owner_id' => $r->shop_owner_id
+            'shop_owner_id' => $shop_owner->id
         );
         if($r->logo)
         {
@@ -60,40 +66,35 @@ class CompanyController extends Controller
         if ($i)
         {
             $r->session()->flash('sms', $sms);
-            return redirect('/company/create');
+            return redirect('/shop-owner/shop');
         }
         else
         {
             $r->session()->flash('sms1', $sms1);
-            return redirect('/company/create')->withInput();
+            return redirect('/company/shop/create')->withInput();
         }
-    }
-    // delete
-    public function delete($id)
-    {
-        if(Auth::user()==null)
-        {
-            return redirect("/login");
-        }
-        DB::table('shops')->where('id', $id)->update(['active'=>0]);
-        return redirect('/company');
     }
 
-    public function edit($id)
+    public function edit(Request $r)
     {
-        if(Auth::user()==null)
+        // check if shop owner login
+        $shop_owner = $r->session()->get('shop_owner');
+        if($shop_owner==NULL)
         {
-            return redirect("/login");
+             return redirect('/shop-owner/login');
         }
-        $data['company'] = DB::table('shops')->where('id', $id)->first();
-        return view('companys.edit', $data);
+        $data['shop'] = DB::table('shops')->where('shop_owner_id', $shop_owner->id)->first();
+        return view('fronts.shop.edit', $data);
     }
+
     public function update(Request $r)
     {
-        if(Auth::user()==null)
-        {
-            return redirect("/login");
-        }
+       // check if shop owner login
+       $shop_owner = $r->session()->get('shop_owner');
+       if($shop_owner==NULL)
+       {
+            return redirect('/shop-owner/login');
+       }
         $data = array(
             'name' => $r->name,
             'description' => $r->description,
@@ -101,8 +102,7 @@ class CompanyController extends Controller
             'contact_person' => $r->contact_person,
             'phone' => $r->phone,
             'email' => $r->email,
-            'payment' => $r->payment,
-            'shop_owner_id' => $r->shop_owner_id
+            'payment' => $r->payment
         );
         if($r->logo)
         {
@@ -118,19 +118,12 @@ class CompanyController extends Controller
         if ($i)
         {
             $r->session()->flash('sms', $sms);
-            return redirect('/company/edit/'.$r->id);
+            return redirect('/shop-owner/shop');
         }
         else
         {
             $r->session()->flash('sms1', $sms1);
-            return redirect('/company/edit/'.$r->id);
+            return redirect('/shop-owner/shop/edit');
         }
-    }
-    // view detail
-    public function view($id) 
-    {
-        $data['company'] = DB::table('shops')
-            ->where('id',$id)->first();
-        return view('companys.view', $data);
     }
 }

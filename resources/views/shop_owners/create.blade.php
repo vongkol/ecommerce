@@ -4,8 +4,8 @@
         <div class="col-lg-12">
             <div class="card">
                 <div class="card-header text-bold">
-                    <i class="fa fa-align-justify"></i> New Company&nbsp;&nbsp;
-                    <a href="{{url('/company')}}" class="btn btn-link btn-sm">Back To List</a>
+                    <i class="fa fa-align-justify"></i> New Shop Owner&nbsp;&nbsp;
+                    <a href="{{url('/shop-owner')}}" class="btn btn-link btn-sm">Back To List</a>
                 </div>
                 <div class="card-block">
                     @if(Session::has('sms'))
@@ -28,126 +28,138 @@
                             </div>
                         </div>
                     @endif
-                    <form action="{{url('/company/update')}}" 
+                    <form action="{{url('/shop-owner/save')}}" 
                         class="form-horizontal" 
                         method="post" 
-                        enctype="multipart/form-data"
+                        id="form_provider"
+                        onsubmit="check(event)"
                     >
                         {{csrf_field()}}
-                        <input type="hidden" id="id" name="id" value="{{$company->id}}">
                         <div class="form-group row">
-                            <label class="control-label col-lg-2 col-sm-2">
-                                Shop Owner ID <span class="text-danger">*</span>
+                            <label for="first_name" class="control-label col-lg-2 col-sm-2">
+                                First Name <span class="text-danger">*</span>
                             </label>
                             <div class="col-lg-6 col-sm-8">
                                 <input 
                                     type="text" 
                                     required 
                                     autofocus 
-                                    name="shop_owner_id"
-                                    value="{{$company->shop_owner_id}}"
+                                    name="first_name" 
+                                    id="first_name" 
                                     class="form-control"
+                                    value="{{ old('first_name') }}" 
                                 >
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label class="control-label col-lg-2 col-sm-2">
-                                Name <span class="text-danger">*</span>
+                            <label for="last_name" class="control-label col-lg-2 col-sm-2">
+                                Last Name <span class="text-danger">*</span>
                             </label>
                             <div class="col-lg-6 col-sm-8">
                                 <input 
                                     type="text" 
                                     required 
-                                    name="name"
-                                    value="{{$company->name}}"
+                                    name="last_name" 
+                                    id="last_name" 
                                     class="form-control"
+                                    value="{{ old('last_name') }}" 
                                 >
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label class="control-label col-lg-2 col-sm-2">
-                                Address <span class="text-danger">*</span>
-                            </label>
+                            <label for="gender" class="control-label col-lg-2 col-sm-2">Gender<span class="text-danger">*</span></label>
                             <div class="col-lg-6 col-sm-8">
-                                <input 
-                                    type="text"
-                                    name="address" 
-                                    required
-                                    value="{{$company->address}}"
-                                    class="form-control"
-                                >
+                                <select class="form-control" name="gender" id="gender"  id="exampleSelect1">
+                                    <option value="Male">Male</option> 
+                                    <option value="Female">Female</option>                
+                                </select>
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label class="control-label col-lg-2 col-sm-2">
-                                Contact Person <span class="text-danger">*</span>
+                            <label for="dob" class="control-label col-lg-2 col-sm-2">
+                                Date of Birth
                             </label>
                             <div class="col-lg-6 col-sm-8">
                                 <input 
                                     type="text" 
-                                    name="contact_person" 
-                                    required
-                                    value="{{$company->contact_person}}"
+                                    name="dob" 
+                                    id="dob" 
                                     class="form-control"
+                                    value="{{ old('dob') }}"
                                 >
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label class="control-label col-lg-2 col-sm-2">
-                                Phone <span class="text-danger">*</span>
+                            <label for="phone" class="control-label col-lg-2 col-sm-2">
+                                Phone<span class="text-danger">*</span>
                             </label>
                             <div class="col-lg-6 col-sm-8">
                                 <input 
                                     type="text" 
                                     name="phone" 
-                                    required
-                                    value="{{$company->phone}}"
+                                    id="phone" 
+                                    required 
                                     class="form-control"
+                                    value="{{ old('phone') }}"
                                 >
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label class="control-label col-lg-2 col-sm-2">
-                                E-mail <span class="text-danger">*</span>
+                            <label for="email" class="control-label col-lg-2 col-sm-2">
+                                Email<span class="text-danger">*</span>
                             </label>
                             <div class="col-lg-6 col-sm-8">
                                 <input 
                                     type="email" 
                                     name="email" 
-                                    required
-                                    value="{{$company->email}}"
+                                    id="email" 
+                                    required 
                                     class="form-control"
+                                    value="{{ old('email') }}"
                                 >
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label class="control-label col-lg-2 col-sm-2">
-                                Payment
+                            <label for="username" class="control-label col-lg-2 col-sm-2">
+                                Username<span class="text-danger">*</span>
                             </label>
                             <div class="col-lg-6 col-sm-8">
                                 <input 
                                     type="text" 
-                                    name="payment" 
-                                    value="{{$company->payment}}"
+                                    name="username" 
+                                    id="username" 
+                                    required 
+                                    class="form-control"
+                                    value="{{old('username')}}" 
+                                >
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="password" class="control-label col-lg-2 col-sm-2">
+                                Password<span class="text-danger">*</span>
+                            </label>
+                            <div class="col-lg-6 col-sm-8">
+                                <input 
+                                    type="password" 
+                                    name="password" 
+                                    id="password" 
+                                    required 
                                     class="form-control"
                                 >
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label class="control-label col-lg-2 col-sm-2">Logo</label>
-                            <div class="col-lg-6 col-sm-6">
-                                <input type="file" name="logo" id="logo" class="form-control" onchange="loadFile(event)">
-                                <br>
-                                <img src="{{asset('upload/company/'.$company->logo)}}" alt="" width="150" id="preview">
-                            </div>
-                            
-                        </div>
-                        <div class="form-group row">
-                            <label class="control-label col-lg-2 col-sm-2">
-                                Description
+                            <label for="confirm_password" class="control-label col-lg-2 col-sm-2">
+                                Confirm Password<span class="text-danger">*</span>
                             </label>
-                            <div class="col-lg-6 col-sm-6">
-                                <textarea name="description"  rows="3" class="form-control">{{$company->description}}</textarea>
+                            <div class="col-lg-6 col-sm-8">
+                                <input 
+                                    type="password" 
+                                    name="confirm_password" 
+                                    id="confirm_password" 
+                                    required 
+                                    class="form-control"
+                                >
                             </div>
                         </div>
                         <div class="form-group row">
@@ -161,12 +173,21 @@
                 </div>
             </div>
         </div>
-@endsection
-@section('js')
-    <script>
-        function loadFile(e){
-            var output = document.getElementById('preview');
-            output.src = URL.createObjectURL(e.target.files[0]);
+    </div>
+<script charset="utf-8" type="text/javascript">
+    function check(event)
+    {
+        var password = document.getElementById("password").value;
+        var confirm_password = document.getElementById("confirm_password").value;
+
+        if( password != confirm_password) {
+            document.getElementById("confirm_password").style.border="1px solid red";
+            event.preventDefault();
+        } 
+
+        if( password === confirm_password){
+            document.getElementById("form_provider").submit();
         }
-    </script>
+    }
+</script>
 @endsection

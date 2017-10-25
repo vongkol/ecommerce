@@ -3,7 +3,7 @@
 <link rel="stylesheet" href="{{asset('front/css/owl.carousel.css')}}">
 <link rel="stylesheet" href="{{asset('front/css/owl.transitions.css')}}">
 <link rel="stylesheet" href="{{asset('front/css/detail-product.css')}}">
-<div class="header-margin-top"></div>
+<div class="header-pd-top"></div>
 		    <div class="homepage-container container">
 			    <div class='row single-product outer-bottom-sm'>
 				    <div class='col-md-7'>

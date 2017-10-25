@@ -58,11 +58,20 @@
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> <span class="glyphicon glyphicon-user"></span> Hi, {{session('customer')->first_name}}<span class="caret"></span></a>
                     <ul class="dropdown-menu dropdown-menu-custom" role="menu">
+                        <li>  
+                            <a href="{{url('/buyer/profile')}}">
+                                <span class="item">
+                                    <span class="item-left">
+                                        My Profile
+                                    </span>
+                                </span>
+                            </a> 
+                        </li>
                         <li>
                             <a href="{{url('/buyer/logout')}}">
                                 <span class="item">
                                     <span class="item-left">
-                                        logout
+                                        Logout
                                     </span>
                                 </span>
                             </a> 
@@ -94,13 +103,34 @@
                 @endif
                 @if(Session::has('shop_owner'))
                     <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> <span class="glyphicon glyphicon-user"></span> Hi, {{session('shop_owner')->first_name}}<span class="caret"></span></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-shopping-bag"></i> Hi, {{session('shop_owner')->first_name}}<span class="caret"></span></a>
                     <ul class="dropdown-menu dropdown-menu-custom" role="menu">
                         <li>
+                            <a href="{{url('/shop-owner/profile')}}">
+                                <span class="item">
+                                    <span class="item-left">
+                                        My Profile
+                                    </span>
+                                </span>
+                            </a> 
+                            <a href="{{url('/shop-owner/shop')}}">
+                                <span class="item">
+                                    <span class="item-left">
+                                        My Shop
+                                    </span>
+                                </span>
+                            </a> 
+                            <a href="{{url('/shop-owner/product')}}">
+                                <span class="item">
+                                    <span class="item-left">
+                                        My Product
+                                    </span>
+                                </span>
+                            </a> 
                             <a href="{{url('/shop-owner/logout')}}">
                                 <span class="item">
                                     <span class="item-left">
-                                        logout
+                                        Logout
                                     </span>
                                 </span>
                             </a> 
@@ -108,7 +138,7 @@
                     </ul>
                     @else
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> <span class="glyphicon glyphicon-user"></span> Shop Owner<span class="caret"></span></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-shopping-bag"></i> Shop Owner<span class="caret"></span></a>
                         <ul class="dropdown-menu dropdown-menu-custom" role="menu">
                             <li>
                                 <a href="{{url('/shop-owner/login')}}">
@@ -120,7 +150,7 @@
                                 </a> 
                             </li>
                             <li>  
-                                <a href="{{url('/shop-owner/register')}}">
+                                <a href="{{url('/shop-owner/account/register')}}">
                                     <span class="item">
                                         <span class="item-left">
                                             Register
@@ -133,6 +163,31 @@
                 </div>
         </div>
     </nav>
+    <div class="search-fix container">
+        <div class="col-xs-9 col-sm-8 col-xs-offset-1 pd-0">
+            <div class="input-group">
+                <div class="input-group-btn input-group-btn-m search-panel">
+                    <select class="form-control form-search-m" id="cat_s_list">
+                        <option>All Categories</option>
+                        <option>All Categories & with smart phone</option>
+                        <option>Book and Food</option>
+                        <option>Beauty Care</option>
+                    </select>
+                </div>       
+                <input type="text" class="form-control search-m" name="search" placeholder="I'm mastermalls for...">
+                <span class="input-group-btn">
+                    <button class="btn btn-default btn-default-custom" type="button"><span class="glyphicon glyphicon-search"></span></button>
+                </span>
+                
+            </div>
+        </div>
+        <div class="col-sm-2 col-xs-3 pd-0">
+            <button class="btn btn-default btn-sm btn-add-card form-control">
+                <i class="fa fa-2x fa-shopping-cart"></i>
+                <label id="cart-badge" class="badge badge-m text-danger">4 Card</label>
+            </button>
+        </div>
+    </div>
     <div class="container-fluit">
     <section>
         @yield('content')

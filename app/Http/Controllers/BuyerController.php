@@ -8,6 +8,70 @@ use Session;
 use Auth;
 class BuyerController extends Controller
 {
+    public function index(Request $r) {
+        // check if buyer login
+        $buyer = $r->session()->get('customer');
+        if($buyer==NULL)
+        {
+            return redirect('/buyer/login');
+        }
+        return view('fronts.buyers.index');
+    }
+     // load edit profile form
+     public function edit(Request $r)
+     {
+         $buyer = $r->session()->get('customer');
+         if($buyer==NULL)
+         {
+             return redirect('/buyer/login');
+         }
+         $data['buyer'] = DB::table('customers')->where('id', session('customer')->id)->first();
+         return view('fronts.buyers.edit_profile', $data);
+     }
+
+    // update buyer profile
+    public function update(Request $r)
+    {
+        $data = [
+            'first_name' => $r->first_name,
+            'last_name' => $r->last_name,
+            'phone' => $r->phone,
+            'email' => $r->email,
+            'username' => $r->username
+        ];
+        // check if username or email already exist or not
+        $count_username = DB::table('customers')->where('id',"!=", $r->id)
+            ->where('username', $r->username)
+            ->count();
+        $count_email = DB::table('customers')->where('id', "!=", $r->id)
+            ->where('email', $r->email)
+            ->count();
+        if($count_email>0)
+        {
+            $r->session()->flash('sms1', "The email '{$r->email}' already exist. Change a new one!");
+            return redirect('/buyer/profile/edit');
+        }
+        if($count_username>0)
+        {
+            $r->session()->flash('sms1', "The username '{$r->username}' already exist. Change a new one!");
+            return redirect('/buyers/profile/edit');
+        }
+
+        $i = DB::table('customers')->where('id', $r->id)->update($data);
+        if($i)
+        {
+            $r->session()->flash('sms', "Your profile has been saved successfully!");
+            // save user to session
+            $user = DB::table('customers')->where('id', $r->id)->first();
+            $r->session()->put('customer', $user);
+            return redirect('/buyer/profile');
+        }
+        else{
+            $r->session()->flash('sms1', "Fail to save changes. You may not make any changes in your input!");
+            return redirect('/buyer/profile/edit');
+        }
+    }
+ 
     //login form
     public function login()
     {

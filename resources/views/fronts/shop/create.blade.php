@@ -1,7 +1,7 @@
 @extends('layouts.shop_owner')
 @section('content')
     <div class="panel panel-default border-radius-none">
-        <div class="panel-heading bold">My Profile</div>
+        <div class="panel-heading bold">My Shop</div>
         <div class="panel-body">
             @if(Session::has('sms'))
                 <div class="row">
@@ -26,37 +26,34 @@
                 </div>
             @endif
         <div class="col-md-12 col-sm-12">
-                <form name="frm" action="{{url('/shop-owner/profile/update')}}" method="post" class="from-horizontal" onsubmit="return confirm('You want to save changes?')">
+            <form enctype="multipart/form-data"  action="{{url('/shop-owner/shop/save')}}" method="post" class="from-horizontal">
                 {{csrf_field()}}
-                <input type="hidden" name="id" value="{{$shop_owner->id}}">
                 <div class="row">
                     <div class="col-md-6 col-sm-12">
                         <div class="form-group row">
-                            <label class="col-sm-4">First Name <span class="text-danger">*</span></label>
+                            <label class="col-sm-4">Name <span class="text-danger">*</span></label>
                             <div class="col-sm-8">
-                                <input type="text" class="form-control border-radius-none" required name="first_name" id="first_name" value="{{$shop_owner->first_name}}">
+                                <input type="text" class="form-control border-radius-none" required name="name">
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label class="col-sm-4">Last Name <span class="text-danger">*</span></label>
+                            <label class="col-sm-4">Contact Person <span class="text-danger">*</span></label>
                             <div class="col-sm-8">
-                                <input type="text" class="form-control border-radius-none" id="last_name" name="last_name" required value="{{$shop_owner->last_name}}">
+                                <input type="text" class="form-control border-radius-none" required name="contact_person">
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label class="col-sm-4">Gender <span class="text-danger">*</span></label>
+                            <label class="col-sm-4">Address <span class="text-danger">*</span></label>
                             <div class="col-sm-8">
-                                <select name="gender" id="gender" class="form-control border-radius-none">
-                                    <option value="Male" {{$shop_owner->gender=='Male'?'selected':''}}>Male</option>
-                                    <option value="Female"  {{$shop_owner->gender=='Female'?'selected':''}}>Female</option>
-                                </select>
+                                <input type="text" class="form-control border-radius-none" name="address" required>
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label class="col-sm-4">Date of Birth</label>
+                            <label class="col-sm-4">
+                                Description
+                            </label>
                             <div class="col-sm-8">
-                                <input type="text" class="form-control border-radius-none" id="dob" name="dob" 
-                                value="{{$shop_owner->dob}}" placeholder="dd/mm/yyyy">
+                                <textarea name="description" class="form-control" rows="3"></textarea>
                             </div>
                         </div>
                     </div>
@@ -64,26 +61,34 @@
                         <div class="form-group row">
                             <label class="col-sm-4">Phone <span class="text-danger">*</span></label>
                             <div class="col-sm-8">
-                                <input type="text" class="form-control border-radius-none" id="phone" name="phone" required value="{{$shop_owner->phone}}">
+                                <input type="text" class="form-control border-radius-none" id="" name="phone" required>
                             </div>
                         </div>
                         <div class="form-group row">
                             <label class="col-sm-4">Email <span class="text-danger">*</span></label>
                             <div class="col-sm-8">
-                                <input type="text" class="form-control border-radius-none" id="email" required name="email" value="{{$shop_owner->email}}">
+                                <input type="email" class="form-control border-radius-none" id="email" required name="email">
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label class="col-sm-4">Username <span class="text-danger">*</span></label>
+                            <label class="col-sm-4">Payment</label>
                             <div class="col-sm-8">
-                                <input type="text" class="form-control border-radius-none" id="username" required name="username" value="{{$shop_owner->username}}">
+                                <input type="text" class="form-control border-radius-none" name="payment">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-4">Logo</label>
+                            <div class="col-sm-8">
+                                <input type="file" name="logo" id="logo" class="form-control" onchange="loadFile(event)">
+                                <br>
+                                <img src="{{asset('upload/company/default-logo.png')}}" alt="logo" width="100" id="img">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label class="col-sm-4">&nbsp;</label>
                             <div class="col-sm-8">
-                                <button type="submit" class="btn btn-primary border-radius-none">Save Changes</button>
-                                <a href="{{url('/shop-owner/profile')}}" class="btn btn-danger border-radius-none">Cancel</a>
+                                <button type="submit" class="btn btn-primary border-radius-none">Save</button>
+                                <a href="{{url('/shop-owner/shop')}}" class="btn btn-danger border-radius-none">Cancel</a>
                             </div>
                         </div>
                     </div>
@@ -91,4 +96,11 @@
             </form>
         </div>
     </div>
+<script>
+    function loadFile(e){
+        var output = document.getElementById('img');
+        output.width = 150;
+        output.src = URL.createObjectURL(e.target.files[0]);
+    }
+</script>
 @endsection

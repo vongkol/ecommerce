@@ -36,13 +36,26 @@
                         {{csrf_field()}}
                         <div class="form-group row">
                             <label class="control-label col-lg-2 col-sm-2">
-                                Name <span class="text-danger">*</span>
+                                Shop Owner ID <span class="text-danger">*</span>
                             </label>
                             <div class="col-lg-6 col-sm-8">
                                 <input 
                                     type="text" 
                                     required 
                                     autofocus 
+                                    name="shop_owner_id"
+                                    class="form-control"
+                                >
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="control-label col-lg-2 col-sm-2">
+                                Name <span class="text-danger">*</span>
+                            </label>
+                            <div class="col-lg-6 col-sm-8">
+                                <input 
+                                    type="text" 
+                                    required 
                                     name="name"
                                     class="form-control"
                                 >
@@ -50,48 +63,52 @@
                         </div>
                         <div class="form-group row">
                             <label class="control-label col-lg-2 col-sm-2">
-                                Address
+                                Address <span class="text-danger">*</span>
                             </label>
                             <div class="col-lg-6 col-sm-8">
                                 <input 
                                     type="text"
                                     name="address" 
+                                    required
                                     class="form-control"
                                 >
                             </div>
                         </div>
                         <div class="form-group row">
                             <label class="control-label col-lg-2 col-sm-2">
-                                Contact Person
+                                Contact Person <span class="text-danger">*</span>
                             </label>
                             <div class="col-lg-6 col-sm-8">
                                 <input 
                                     type="text" 
                                     name="contact_person" 
+                                    required
                                     class="form-control"
                                 >
                             </div>
                         </div>
                         <div class="form-group row">
                             <label class="control-label col-lg-2 col-sm-2">
-                                Phone
+                                Phone <span class="text-danger">*</span>
                             </label>
                             <div class="col-lg-6 col-sm-8">
                                 <input 
                                     type="text" 
                                     name="phone" 
+                                    required
                                     class="form-control"
                                 >
                             </div>
                         </div>
                         <div class="form-group row">
                             <label class="control-label col-lg-2 col-sm-2">
-                                E-mail
+                                E-mail <span class="text-danger">*</span>
                             </label>
                             <div class="col-lg-6 col-sm-8">
                                 <input 
                                     type="email" 
                                     name="email" 
+                                    required
                                     class="form-control"
                                 >
                             </div>
@@ -120,8 +137,8 @@
                             <label class="control-label col-lg-2 col-sm-2">
                                 Description
                             </label>
-                            <div class="col-lg-10 col-sm-10">
-                                <textarea name="description" id="" cols="30" rows="10" class="ckeditor"></textarea>
+                            <div class="col-lg-6 col-sm-6">
+                                <textarea name="description" class="form-control" rows="3"></textarea>
                             </div>
                         </div>
                         <div class="form-group row">
@@ -143,5 +160,4 @@
             output.src = URL.createObjectURL(e.target.files[0]);
         }
     </script>
-    <script src="{{asset('js/ckeditor/ckeditor.js')}}"></script>
 @endsection

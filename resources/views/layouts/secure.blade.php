@@ -58,7 +58,7 @@
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> <span class="glyphicon glyphicon-user"></span> Hi, {{session('customer')->first_name}}<span class="caret"></span></a>
                     <ul class="dropdown-menu dropdown-menu-custom" role="menu">
-                        <li>
+                        <li>  
                             <a href="{{url('/buyer/profile')}}">
                                 <span class="item">
                                     <span class="item-left">
@@ -103,7 +103,7 @@
                 @endif
                 @if(Session::has('shop_owner'))
                     <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> <i class="fa fa-shopping-bag"></i> Hi, {{session('shop_owner')->first_name}}<span class="caret"></span></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-shopping-bag"></i> Hi, {{session('shop_owner')->first_name}}<span class="caret"></span></a>
                     <ul class="dropdown-menu dropdown-menu-custom" role="menu">
                         <li>
                             <a href="{{url('/shop-owner/profile')}}">
@@ -138,7 +138,7 @@
                     </ul>
                     @else
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> <span class="fa fa-shopping-bag"></span> Shop Owner<span class="caret"></span></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-shopping-bag"></i> Shop Owner<span class="caret"></span></a>
                         <ul class="dropdown-menu dropdown-menu-custom" role="menu">
                             <li>
                                 <a href="{{url('/shop-owner/login')}}">
@@ -164,26 +164,9 @@
         </div>
     </nav>
     <div class="container-fluit">
-    <div class="pd-top"></div>
-        <div class="container">
-            <div class="col-md-3 col-sm-3">
-                <div class="panel panel-default border-radius-none">
-                    <div class="panel-heading">
-                        <span class="orange bold">Manage Account</span>
-                    </div>
-                    <div class="panel-body">
-                        <p><a href="{{url('/shop-owner/profile')}}">My Profile</a></p>
-                        <p><a href="{{url('/shop-owner/shop')}}">My Shop</a></p> 
-                        <p><a href="{{url('/shop-owner/product')}}">My Product</a></p> 
-                        <hr>
-                        <p><a href="{{url('/shop-owner/logout')}}">Sing Out</a></p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-9 col-sm-9">
-                @yield('content')
-            </div>
-        </div>
+    <section>
+        @yield('content')
+    </section>
     </div>
     <footer id="footer">
     <div class="well well-custom border-radius-none background-black">

@@ -1,7 +1,7 @@
-@extends('layouts.shop_owner')
+@extends('layouts.buyer')
 @section('content')
     <div class="panel panel-default border-radius-none">
-        <div class="panel-heading bold">My Profile</div>
+        <div class="panel-heading bold"><span class="text-primary">My Profile</span></div>
         <div class="panel-body">
             @if(Session::has('sms'))
                 <div class="row">
@@ -26,37 +26,27 @@
                 </div>
             @endif
         <div class="col-md-12 col-sm-12">
-                <form name="frm" action="{{url('/shop-owner/profile/update')}}" method="post" class="from-horizontal" onsubmit="return confirm('You want to save changes?')">
+                <form name="frm" action="{{url('/buyer/update')}}" method="post" class="from-horizontal" onsubmit="return confirm('You want to save changes?')">
                 {{csrf_field()}}
-                <input type="hidden" name="id" value="{{$shop_owner->id}}">
+                <input type="hidden" name="id" value="{{$buyer->id}}">
                 <div class="row">
                     <div class="col-md-6 col-sm-12">
                         <div class="form-group row">
                             <label class="col-sm-4">First Name <span class="text-danger">*</span></label>
                             <div class="col-sm-8">
-                                <input type="text" class="form-control border-radius-none" required name="first_name" id="first_name" value="{{$shop_owner->first_name}}">
+                                <input type="text" class="form-control border-radius-none" required name="first_name" value="{{$buyer->first_name}}">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label class="col-sm-4">Last Name <span class="text-danger">*</span></label>
                             <div class="col-sm-8">
-                                <input type="text" class="form-control border-radius-none" id="last_name" name="last_name" required value="{{$shop_owner->last_name}}">
+                                <input type="text" class="form-control border-radius-none" name="last_name" required value="{{$buyer->last_name}}">
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label class="col-sm-4">Gender <span class="text-danger">*</span></label>
+                            <label class="col-sm-4">Username <span class="text-danger">*</span></label>
                             <div class="col-sm-8">
-                                <select name="gender" id="gender" class="form-control border-radius-none">
-                                    <option value="Male" {{$shop_owner->gender=='Male'?'selected':''}}>Male</option>
-                                    <option value="Female"  {{$shop_owner->gender=='Female'?'selected':''}}>Female</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label class="col-sm-4">Date of Birth</label>
-                            <div class="col-sm-8">
-                                <input type="text" class="form-control border-radius-none" id="dob" name="dob" 
-                                value="{{$shop_owner->dob}}" placeholder="dd/mm/yyyy">
+                                <input type="text" class="form-control border-radius-none" required name="username" value="{{$buyer->username}}">
                             </div>
                         </div>
                     </div>
@@ -64,26 +54,20 @@
                         <div class="form-group row">
                             <label class="col-sm-4">Phone <span class="text-danger">*</span></label>
                             <div class="col-sm-8">
-                                <input type="text" class="form-control border-radius-none" id="phone" name="phone" required value="{{$shop_owner->phone}}">
+                                <input type="text" class="form-control border-radius-none" name="phone" required value="{{$buyer->phone}}">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label class="col-sm-4">Email <span class="text-danger">*</span></label>
                             <div class="col-sm-8">
-                                <input type="text" class="form-control border-radius-none" id="email" required name="email" value="{{$shop_owner->email}}">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label class="col-sm-4">Username <span class="text-danger">*</span></label>
-                            <div class="col-sm-8">
-                                <input type="text" class="form-control border-radius-none" id="username" required name="username" value="{{$shop_owner->username}}">
+                                <input type="email" class="form-control border-radius-none" required name="email" value="{{$buyer->email}}">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label class="col-sm-4">&nbsp;</label>
                             <div class="col-sm-8">
                                 <button type="submit" class="btn btn-primary border-radius-none">Save Changes</button>
-                                <a href="{{url('/shop-owner/profile')}}" class="btn btn-danger border-radius-none">Cancel</a>
+                                <a href="{{url('/buyer/profile')}}" class="btn btn-danger border-radius-none">Cancel</a>
                             </div>
                         </div>
                     </div>

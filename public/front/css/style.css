@@ -4,14 +4,14 @@
 .hero-feature {
     margin-bottom: 10px;
 }
-.header-margin {
-    margin-top: 51px;
+.header-pd-top {
+    padding-top: 120px;
 }
-.header-margin-top {
-    margin-top: 80px;
+.pd-top {
+    padding-top: 80px;
 }
 .padding-slider {
-    padding-top: 54px;
+    padding-top: 105px;
 }
 body {
     background: #f4f4f4;
@@ -19,7 +19,9 @@ body {
 body ,
 input[type="text"], 
 input[type="email"], 
-input[type="password"]  {
+input[type="password"],
+.dropdown-menu-custom,
+.form-control {
     font-size: 12px;
 }
 /*menu	home page */
@@ -101,27 +103,29 @@ ul.dropdown-menu-custom li .item:after{
     padding: 7px 15px;
     border: 1px solid #ddd;
     background: #4267b2;
+}
+.btn-trade,
+.pagination-custom>li>a, .pagination-custom>li>span,
+.btn-all-cat,
+.btn-eli,
+.btn-cus 
+ {
     color: #fff;
 }
 .btn-cus {
-    color: #E91E63;
-    border: 1px solid #E91E63;
+    background:  #E91E63;
 }
 .btn-all-cat {
-    color: #06b99b;
-    border: 1px solid #06b99b;
+    background: #06b99b;
 }
 .btn-trade {
-    color: #FFC107;
-    border: 1px solid #FFC107;
+    background: #FFEB3B;
 }
 .btn-eli {
-    color: #9C27B0;
-    border: 1px solid #9C27B0;
+    background: #9C27B0;
 } 
 .btn-group-menu {
     height: 55px;
-    background: #fff;
 }
 .group-menu {
     border-bottom: 1px solid #eee;
@@ -189,7 +193,13 @@ a, p, h1, h2, h3, h4, h5, h6 {
     z-index: 1;
     padding: 10px;
     background: #fff;
+    width: 100%;
     border-bottom: 1px solid #eee;
+    margin-top: 51px;
+}
+.input-group-btn-m {
+    width: 150px;
+    max-width: 150px;
 }
 .padding-custom {
     padding-left: 10px;
@@ -213,6 +223,43 @@ a, p, h1, h2, h3, h4, h5, h6 {
 }
 
 @media (max-width: 479px) {
+    .form-search-m,
+    .search-m,
+    .btn-add-card,
+    .btn-default-custom
+    {
+        height: 25px;
+        font-size: 10px;
+        padding: 1px;
+    }
+    .pd-0 {
+        padding-right: 2px;
+        padding-left: 2px;
+    }
+    .badge-m {
+        margin-top: 4px;
+        font-size: 10px;
+    }
+    /* Overriding styles */
+    ::-webkit-input-placeholder {
+        font-size: 10px!important;
+    }
+    :-moz-placeholder { /* Firefox 18- */
+        font-size: 10px!important;
+    }
+    ::-moz-placeholder {  /* Firefox 19+ */
+        font-size: 10px!important;
+    }
+    .btn-default-custom,
+    .search-m {
+        padding: 2px 6px;
+    }
+    .input-group-btn-m {
+        width: 90px;
+    }
+    .col-xs-offset-1 {
+        margin-left: 0;
+    }
     .w-100 {
         width: 98%!important;
         font-size: 9px;   
@@ -227,6 +274,9 @@ a, p, h1, h2, h3, h4, h5, h6 {
     .btn-group-menu {
         padding: 0px;
         height: 25px;
+    }
+    .padding-slider {
+        padding-top: 96px;
     }
 }
 

@@ -1,4 +1,4 @@
-@extends('layouts.front')
+@extends('layouts.secure')
 @section('content')
 <link rel="stylesheet" href="{{asset('front/css/login.css')}}">
 <style>
@@ -10,7 +10,7 @@
         color: #405e9e;
     }
 </style>
-<div class="header-margin-top"></div>
+<div class="pd-top"></div>
 <div class="container">
     @if(Session::has('sms'))
         <div class="alert alert-success" role="alert">
@@ -46,7 +46,7 @@
             </div>
             <p class="text-center"><a href="{{url('shop-owner/forget-password')}}"><span class="ps">Forgot Password?</span></a></p>     
         </form>
-        <p class="text-center small">Not Registered? <a href="{{url('shop-owner/register')}}">Create an Account</a></p>
+        <p class="text-center small">Not Registered? <a href="{{url('shop-owner/account/register')}}">Create an Account</a></p>
     </div>
 </div>
 @endsection

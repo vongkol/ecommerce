@@ -1,4 +1,4 @@
-@extends('layouts.front')
+@extends('layouts.secure')
 @section('content')
 <link rel="stylesheet" href="{{asset('front/css/register.css')}}">
 <style>
@@ -11,7 +11,7 @@
         color: #888;
     }
 </style>
-<div class="header-margin-top"></div>
+<div class="pd-top"></div>
 <div class="container">
     @if(Session::has('sms'))
         <div class="alert alert-success" role="alert">
@@ -34,7 +34,7 @@
         </div>
     @endif
     <div class="signup-form">
-        <form action="{{url('/shop-owner/save')}}" accept-charset="UTF-8" method="post" onsubmit="check(event)">
+        <form action="{{url('/shop-owner/account/save')}}" accept-charset="UTF-8" method="post" onsubmit="check(event)">
             {{csrf_field()}}
             <h2>Register</h2>
             <p class="hint-text"><sapn class="ps">Create a New Account. It's free and only takes a minute.</sapn></p>

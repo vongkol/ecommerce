@@ -1,34 +1,6 @@
 @extends('layouts.front')
 @section('content')
-<div class="header-margin"></div>
-    <div class="search-fix">
-        <div class="col-xs-6 col-xs-offset-2">
-            <div class="input-group">
-                <div class="input-group-btn search-panel">
-                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                        <span id="search_concept">All</span> <span class="caret"></span>
-                    </button>
-                    <ul class="dropdown-menu" role="menu">
-                    <li><a href="#contains">Phone</a></li>
-                    <li><a href="#its_equal">Watch</a></li>
-                    <li><a href="#greather_than">Ring</a></li>
-                    </ul>
-                </div>
-                <input type="hidden" name="search_param" value="all" id="search_param">         
-                <input type="text" class="form-control" name="x" placeholder="Search term...">
-                <span class="input-group-btn">
-                    <button class="btn btn-default btn-default-custom" type="button"><span class="glyphicon glyphicon-search"></span></button>
-                </span>
-                
-            </div>
-        </div>
-        <div class="col-sm-2">
-            <button class="btn btn-default btn-sm btn-add-card form-control">
-                <i class="fa fa-2x fa-shopping-cart"></i>
-                <label id="cart-badge" class="badge text-danger">4 Card</label>
-            </button>
-        </div>
-    </div>
+<!-- <div class="header-margin-top"></div> -->
     <div class="padding-slider"></div>
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
         <!-- Indicators -->
@@ -87,7 +59,7 @@
                                 </div>
                                 <div class="col-sm-6 col-md-6">
                                     <p class="bold margin-button-none">
-                                    <span class="bold cool-green"><small>$</small></span> 100.00 
+                                    <span class="bold cool-green">$</span> 100.00 
                                     </p>
                                 </div>
                             </div>    
@@ -106,7 +78,7 @@
                                 </div>
                                 <div class="col-sm-6 col-md-6">
                                     <p class="bold margin-button-none">
-                                    <span class="bold cool-green"><small>$</small></span> 133.00 
+                                    <span class="bold cool-green">$</span> 133.00 
                                     </p>
                                 </div>
                             </div>
@@ -125,7 +97,7 @@
                                 </div>
                                 <div class="col-sm-6 col-md-6">
                                     <p class="bold margin-button-none">
-                                    <span class="bold cool-green"><small>$</small></span> 231.00 
+                                    <span class="bold cool-green">$</span> 231.00 
                                     </p>
                                 </div>
                             </div>
@@ -145,7 +117,7 @@
                                 </div>
                                 <div class="col-sm-6 col-md-6">
                                     <p class="bold margin-button-none">
-                                    <span class="bold cool-green"><small>$</small></span> 299.00 
+                                    <span class="bold cool-green">$</span> 299.00 
                                     </p>
                                 </div>
                             </div>
@@ -227,7 +199,7 @@
                                 </div>
                                 <div class="col-sm-6 col-md-6">
                                     <p class="bold margin-button-none">
-                                    <span class="bold cool-green"><small>$</small></span> 299.00 
+                                    <span class="bold cool-green">$</span> 299.00 
                                     </p>
                                 </div>
                             </div>

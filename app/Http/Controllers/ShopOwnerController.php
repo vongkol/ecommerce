@@ -17,7 +17,7 @@ class ShopOwnerController extends Controller
             return redirect('/shop-owner/login');
         }
         return view('fronts.shop_owner.index');
-}
+    }
     // load edit profile form
     public function edit(Request $r)
     {
@@ -59,14 +59,6 @@ class ShopOwnerController extends Controller
               $r->session()->flash('sms1', "The username '{$r->username}' already exist. Change a new one!");
               return redirect('/seeker/profile/edit');
           }
-          // upload photo
-        //   if($r->hasFile("photo")) {
-        //       $file = $r->file('photo');
-        //       $file_name = $r->id . "-" .$file->getClientOriginalName();
-        //       $destinationPath = 'uploads/photo/';
-        //       $file->move($destinationPath, $file_name);
-        //       $data["profile_photo"] = $file_name;
-        //   }
           $i = DB::table('shop_owners')->where('id', $r->id)->update($data);
           if($i)
           {
@@ -131,13 +123,13 @@ class ShopOwnerController extends Controller
         return view('fronts.shop_owner.register');
     }
 
-     // save new customer
+     // save new shop owner
      public function save(Request $r)
      {
         // check the email if it is valid or not
         if (!filter_var($r->email, FILTER_VALIDATE_EMAIL)) {
             $r->session()->flash('sms1', "Your email is invalid. Check it again!");
-            return redirect('/shop-owner/register')->withInput();
+            return redirect('/shop-owner/account/register')->withInput();
         }
         $email = DB::table('shop_owners')
             ->where('email', $r->email)
@@ -162,14 +154,14 @@ class ShopOwnerController extends Controller
             $sms1 = "Cannot register your account. Please check inputs again!";
             $i = DB::table('shop_owners')->insert($data);
             if ($i)
-            {
+            {       
                 $r->session()->flash('sms', $sms);
                 return redirect('/shop-owner/login');
             }
             else
             {
                 $r->session()->flash('sms1', $sms1);
-                return redirect('/shop-owner/register')->withInput();
+                return redirect('/shop-owner/account/register')->withInput();
             }
         } else {
             if ($email > 0) {
@@ -179,7 +171,7 @@ class ShopOwnerController extends Controller
                 $sms1 = "Your username already exit. Please use a different one!";
             }
             $r->session()->flash('sms1', $sms1);
-            return redirect('/shop-owner/register')->withInput();
+            return redirect('/shop-owner/account/register')->withInput();
         } 
     }
     // load form forget password

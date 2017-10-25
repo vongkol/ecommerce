@@ -1,7 +1,7 @@
-@extends('layouts.front')
+@extends('layouts.secure')
 @section('content')
 <link rel="stylesheet" href="{{asset('front/css/login.css')}}">
-<div class="header-margin-top"></div>
+<div class="pd-top"></div>
 <div class="container">
     @if(Session::has('sms'))
         <div class="alert alert-success" role="alert">

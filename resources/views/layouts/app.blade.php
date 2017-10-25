@@ -83,6 +83,9 @@
                         <a class="nav-link" href="{{url('/customer')}}"><i class="fa fa-users"></i> Customer </a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="{{url('/shop-owner')}}"><i class="fa fa-shopping-cart"></i> Shop Owner </a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="{{url('/company')}}"><i class="fa fa-building"></i> Company </a>
                     </li>
                     <li class="nav-item">

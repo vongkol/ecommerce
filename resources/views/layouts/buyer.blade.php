@@ -66,8 +66,6 @@
                                     </span>
                                 </span>
                             </a> 
-                        </li>
-                        <li>
                             <a href="{{url('/buyer/logout')}}">
                                 <span class="item">
                                     <span class="item-left">
@@ -103,7 +101,7 @@
                 @endif
                 @if(Session::has('shop_owner'))
                     <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> <i class="fa fa-shopping-bag"></i> Hi, {{session('shop_owner')->first_name}}<span class="caret"></span></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-shopping-bag"></i> Hi, {{session('shop_owner')->first_name}}<span class="caret"></span></a>
                     <ul class="dropdown-menu dropdown-menu-custom" role="menu">
                         <li>
                             <a href="{{url('/shop-owner/profile')}}">
@@ -120,14 +118,7 @@
                                     </span>
                                 </span>
                             </a> 
-                            <a href="{{url('/shop-owner/product')}}">
-                                <span class="item">
-                                    <span class="item-left">
-                                        My Product
-                                    </span>
-                                </span>
-                            </a>
-                            <a href="{{url('/shop-owner/logout')}}">
+                            <a href="{{url('/shop-owner/shop/logout')}}">
                                 <span class="item">
                                     <span class="item-left">
                                         Logout
@@ -138,7 +129,7 @@
                     </ul>
                     @else
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> <span class="fa fa-shopping-bag"></span> Shop Owner<span class="caret"></span></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-shopping-bag"></i> Shop Owner<span class="caret"></span></a>
                         <ul class="dropdown-menu dropdown-menu-custom" role="menu">
                             <li>
                                 <a href="{{url('/shop-owner/login')}}">
@@ -172,9 +163,7 @@
                         <span class="orange bold">Manage Account</span>
                     </div>
                     <div class="panel-body">
-                        <p><a href="{{url('/shop-owner/profile')}}">My Profile</a></p>
-                        <p><a href="{{url('/shop-owner/shop')}}">My Shop</a></p> 
-                        <p><a href="{{url('/shop-owner/product')}}">My Product</a></p> 
+                        <p><a href="{{url('/buyer/profile')}}">My Profile</a></p>
                         <hr>
                         <p><a href="{{url('/shop-owner/logout')}}">Sing Out</a></p>
                     </div>
