@@ -86,10 +86,14 @@ class BuyerController extends Controller
         $user = DB::table('customers')->where('active',1)->where('username', $username)->first();
         if($user!=null)
         {
-           
             if(password_verify($pass, $user->password))
             {
                 if($r->session()->get('customer')!=NULL)
+                {
+                    $r->session()->forget('customer');
+                    $r->session()->flush();
+                }
+                if ($r->session()->get('shop_owner')!=NULL)
                 {
                     $r->session()->forget('customer');
                     $r->session()->flush();

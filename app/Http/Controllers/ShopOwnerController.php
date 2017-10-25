@@ -94,6 +94,11 @@ class ShopOwnerController extends Controller
                     $r->session()->forget('shop_owner');
                     $r->session()->flush();
                 }
+                if($r->session()->get('customer')!=NULL)
+                {
+                    $r->session()->forget('shop_owner');
+                    $r->session()->flush();
+                } 
                 // save user to session
                 $r->session()->put('shop_owner', $user);
                 return redirect('/shop-owner/profile');
@@ -112,7 +117,7 @@ class ShopOwnerController extends Controller
     // logout function
     public function logout(Request $request)
     {
-        $request->session()->forget('customer');
+        $request->session()->forget('shop_owner');
         $request->session()->flush();
         return redirect('/');
     }
