@@ -27,7 +27,7 @@
                 </div>
             @endif
         <div class="col-md-12 col-sm-12">
-            <form enctype="multipart/form-data"  action="{{url('/shop-owner/shop/save')}}" method="post" class="from-horizontal">
+            <form enctype="multipart/form-data"  action="{{url('/shop-owner/product/save')}}" method="post" class="from-horizontal">
                 {{csrf_field()}}
                 @foreach ($shop_id as $s_id)
                     <input type="hidden" value="{{$s_id}}" name="shop_id">
@@ -61,7 +61,7 @@
                         <div class="form-group row">
                             <label class="col-sm-4">Quantity</label>
                             <div class="col-sm-8">
-                                <input type="text" class="form-control border-radius-none" name="quantity">
+                                <input type="number" class="form-control border-radius-none" name="quantity">
                             </div>
                         </div> 
                     </div>
@@ -84,6 +84,15 @@
                             </label>
                             <div class="col-sm-8">
                                 <textarea name="short_description" class="form-control" rows="4"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12">
+                            <label class="col-sm-12">Product Image</label>
+                            <div class="col-sm-12">
+                                <input type="file" name="images[]" class="form-control" onchange="loadFile(event)" multiple>
+                                <br>
                             </div>
                         </div>
                     </div>

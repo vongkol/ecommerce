@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use DB;
 use Auth;
 use Session;
+use DateTime;
 class FrontProductController extends Controller
 {
     public function index(Request $r)
@@ -26,10 +27,33 @@ class FrontProductController extends Controller
                 ->where('products.shop_id', $data['shop']->id)
                 ->where('active',1)
                 ->orderBy('id', 'desc')
-                ->paginate(18);
+                ->paginate(10);
         }
         return view('fronts.products.index', $data);
     }
+    //  save new item detail
+    public function saveProductImage(Request $r)
+    {
+        $images=array();
+        if($files=$r->file('images')){
+            foreach($files as $file){
+                $name=$file->getClientOriginalName();
+                $destinationPath = 'upload/product/'; // usually in public folder
+                $file->move($destinationPath, $name);
+                $images[]=$name;
+                foreach($images as $img) {
+                    $product = array (
+                        'product_id' => $i,
+                        'image' => $img
+                    );
+                }
+                $p = DB::table('images')->insert($product);
+                if($p) {
+                    return json_encode($item);        
+                }
+            }
+        }
+   }   
     // load create form
     public function create(Request $r)
     {
@@ -79,9 +103,28 @@ class FrontProductController extends Controller
             'short_description' => $r->short_description,
             'category_id' => $r->category
         );
+
         $sms = "The new product has been created successfully.";
         $sms1 = "Fail to create the new product, please check again!";
-        $i = DB::table('products')->insert($data);
+        $i = DB::table('products')->insertGetId($data);
+
+        $images=array();
+        if($files=$r->file('images')){
+            foreach($files as $file){
+                $name=$file->getClientOriginalName();
+                $destinationPath = 'upload/product/'; // usually in public folder
+                $file->move($destinationPath, $name);
+                $images[]=$name;
+                foreach($images as $img) {
+                    $product = array (
+                        'product_id' => $i,
+                        'image' => $img
+                    );
+                }
+                $p = DB::table('images')->insert($product);
+            }
+        }
+
         if ($i)
         {
             $r->session()->flash('sms', $sms);
@@ -115,7 +158,6 @@ class FrontProductController extends Controller
        {
             return redirect('/shop-owner/login');
        }
-       
         $data = array(
             'name' => $r->name,
             'quantity' => $r->quantity,
@@ -129,6 +171,7 @@ class FrontProductController extends Controller
         $sms = "All changes have been saved successfully.";
         $sms1 = "Fail to to save changes, please check again!";
         $i = DB::table('products')->where('id', $r->id)->update($data);
+    
         if ($i)
         {
             $r->session()->flash('sms', $sms);
@@ -146,6 +189,48 @@ class FrontProductController extends Controller
         DB::table('products')->where('id', $id)->update(['active'=>0]);
         return redirect('/shop-owner/product');
     }
+
+     // delete product image
+     public function delete_img($id, $product_id)
+     {
+         DB::table('images')->where('id', $id)->update(['active'=>0]);
+         return redirect('/shop-owner/product/detail/'.$product_id);
+     }
+
+     public function edit_img($id)
+     {   
+         $data['image'] = DB::table('images')
+            ->where('images.id', $id)
+            ->where('active',1)
+            ->first();
+         return view('fronts.products.edit_img',$data);
+     }
+
+     public function update_img(Request $r)
+     {
+         if($r->image)
+         {
+             $file = $r->file('image');
+             $file_name = $file->getClientOriginalName();
+             $destinationPath = 'upload/poduct/'; // usually in public folder
+             $file->move($destinationPath, $file_name);
+             $data['image'] = $file_name;
+         }
+
+         $sms = "All changes have been saved successfully.";
+         $sms1 = "Fail to to save changes, please check again!";
+         $i = DB::table('images')->where('id', $r->id)->update($data);
+         if ($i)
+         {
+             $r->session()->flash('sms', $sms);
+             return redirect('/shop-owner/product/detail/'.$r->product_id);
+         }
+         else
+         {
+             $r->session()->flash('sms1', $sms1);
+             return redirect('/shop-owner/product/img/edit/'.$r->id);
+         }
+     }
     // view detail
     public function view($id) 
     {
@@ -154,6 +239,12 @@ class FrontProductController extends Controller
             ->join('categories' , 'categories.id', '=', 'products.category_id')
             ->select('products.*', 'shops.name as shop_name', 'categories.name as cat_name')
             ->where('products.id',$id)->first();
+        $data['images'] = DB::table('images')
+            ->join('products', 'products.id', '=', 'images.product_id')
+            ->select('images.*','images.id as img_id')
+            ->where('images.product_id', $id)
+            ->where('images.active',1)
+            ->get();
         return view('fronts.products.view', $data);
     }
 }

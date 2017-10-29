@@ -204,9 +204,15 @@ Route::post('/shop-owner/shop/update', "FrontShopController@update");
 //Front Product
 Route::get('/shop-owner/product', "FrontProductController@index");
 Route::get('/shop-owner/product/create', "FrontProductController@create");
+Route::post('/shop-owner/product/save', "FrontProductController@save");
 Route::get('/shop-owner/product/delete/{id}', "FrontProductController@delete");
 Route::get('/shop-owner/product/edit/{id}', "FrontProductController@edit");
 Route::post('/shop-owner/product/update', "FrontProductController@update");
 Route::get('/shop-owner/product/detail/{id}', "FrontProductController@view");
+Route::get('/shop-owner/product/img/edit/{id}', "FrontProductController@edit_img");
+Route::post('/shop-owner/product/img/update', "FrontProductController@update_img");
+Route::get('/shop-owner/product/img/delete/{id}/{product_id}', "FrontProductController@delete_img");
+Route::post('/shop-owner/product_img/{product_id}/save', "FrontProductController@saveProductImage");
+
 // test
 Route::get('/test', "TestController@index");

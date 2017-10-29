@@ -1,7 +1,9 @@
 @extends('layouts.shop_owner')
 @section('content')
     <div class="panel panel-default border-radius-none">
-        <div class="panel-heading bold">My Product</div>
+        <div class="panel-heading bold">My Product
+            / <a href="{{url('/shop-owner/product')}}" class="text-info">Back to List</a>
+        </div>
         <div class="panel-body">
             @if(Session::has('sms'))
                 <div class="row">
@@ -58,7 +60,7 @@
                         <div class="form-group row">
                             <label class="col-sm-4">Quantity</label>
                             <div class="col-sm-8">
-                                <input type="text" class="form-control border-radius-none" name="quantity" value="{{$product->quantity}}">
+                                <input type="number" class="form-control border-radius-none" name="quantity" value="{{$product->quantity}}">
                             </div>
                         </div> 
                     </div>
