@@ -212,7 +212,7 @@ class FrontProductController extends Controller
          {
              $file = $r->file('image');
              $file_name = $file->getClientOriginalName();
-             $destinationPath = 'upload/poduct/'; // usually in public folder
+             $destinationPath = 'upload/product/'; // usually in public folder
              $file->move($destinationPath, $file_name);
              $data['image'] = $file_name;
          }
