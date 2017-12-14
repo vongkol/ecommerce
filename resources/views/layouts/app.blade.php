@@ -89,6 +89,9 @@
                         <a class="nav-link" href="{{url('/company')}}"><i class="fa fa-building"></i> Company </a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="{{url('/page')}}"><i class="fa fa-columns"></i> Page </a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="{{url('/package')}}"><i class="fa fa-cubes"></i>Package</a>
                     </li>
                     <li class="nav-item nav-dropdown">
