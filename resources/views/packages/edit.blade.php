@@ -31,23 +31,23 @@
                         <form action="{{url('/package/update')}}" class="form-horizontal" method="post">
                             {{csrf_field()}}
                             <div class="form-group row">
-                                <label for="name" class="control-label col-lg-1 col-sm-2">
+                                <label class="control-label col-sm-2">
                                     Name <span class="text-danger">*</span>
                                 </label>
-                                <div class="col-lg-6 col-sm-8">
+                                <div class="col-sm-5">
                                     <input type="text" required autofocus name="name" id="name" class="form-control" value="{{$package->name}}">
                                     <input type="hidden" name="id" value="{{$package->id}}">
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="price" class="control-label col-lg-1 col-sm-2">Price</label>
-                                <div class="col-lg-6 col-sm-8">
+                                <label class="control-label col-sm-2">Price</label>
+                                <div class="col-sm-5">
                                     <input type="number" required name="price" id="price" class="form-control" value="{{$package->price}}" min="0" step="1">
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="type" class="control-label col-lg-1 col-sm-2">Package Type</label>
-                                <div class="col-lg-6 col-sm-8">
+                                <label class="control-label col-sm-2">Package Type</label>
+                                <div class="col-sm-5">
                                     <select name="type" id="type" class="form-control">
                                         @foreach($package_types as $type)
                                             <option value="{{$type->name}}" {{$type->name===$package->type?'selected':''}}>{{$type->name}}</option>
@@ -56,31 +56,30 @@
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="product_number" class="control-label col-lg-1 col-sm-2">Number of Job</label>
-                                <div class="col-lg-6 col-sm-8">
+                                <label class="control-label col-sm-2">Product Number</label>
+                                <div class="col-sm-5">
                                     <input type="number" name="product_number" id="product_number" class="form-control" value="{{$package->product_number}}" min="0" step="1">
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="day" class="control-label col-lg-1 col-sm-2">Number of Day</label>
-                                <div class="col-lg-6 col-sm-8">
+                                <label class="control-label col-sm-2">Number of Day</label>
+                                <div class="col-sm-5">
                                     <input type="number" name="day" id="day" class="form-control" value="{{$package->day_number}}" min="0" step="1">
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="description" class="control-label col-lg-1 col-sm-2">Description</label>
-                                <div class="col-lg-6 col-sm-8">
+                                <label class="control-label col-sm-2">Description</label>
+                                <div class="col-sm-5">
                                     <input type="text" name="description" id="description" class="form-control" value="{{$package->description}}">
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label class="control-label col-lg-1 col-sm-2">&nbsp;</label>
-                                <div class="col-lg-6 col-sm-8">
+                                <label class="control-label col-sm-2">&nbsp;</label>
+                                <div class="col-sm-5">
                                     <button class="btn btn-primary" type="submit">Save Change</button>
                                 </div>
                             </div>
                         </form>
-
                 </div>
             </div>
         </div>

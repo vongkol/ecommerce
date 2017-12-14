@@ -31,9 +31,9 @@
                     <form action="{{url('/subscription/save')}}" class="form-horizontal" method="post">
                         {{csrf_field()}}
                         <div class="form-group row">
-                            <label for="customer_id" class="control-label col-lg-2 col-sm-2">Customer ID</label>
+                            <label for="shop_owner_id" class="control-label col-lg-2 col-sm-2">Shoo Owner ID</label>
                             <div class="col-lg-4 col-sm-8">
-                                <input type="text" name="customer_id" id="customer_id" required autofocus class="form-control">
+                                <input type="text" name="shop_owner_id" id="shop_owner_id" required autofocus class="form-control">
                             </div>
                         </div>
                         <div class="form-group row">

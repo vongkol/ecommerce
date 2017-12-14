@@ -213,6 +213,9 @@ Route::get('/shop-owner/product/img/edit/{id}', "FrontProductController@edit_img
 Route::post('/shop-owner/product/img/update', "FrontProductController@update_img");
 Route::get('/shop-owner/product/img/delete/{id}/{product_id}', "FrontProductController@delete_img");
 Route::post('/shop-owner/product_img/{product_id}/save', "FrontProductController@saveProductImage");
+Route::post('/shop-owner/unsubscribe', "FrontSubscriptonController@unsubscribe");
+Route::post('/shop-owner/subscribe', "FrontSubscriptonController@subscribe");
+Route::get('/shop-owner/subscription', "FrontSubscriptonController@subscription");
 // Page
 Route::get('/page', "PageController@index");
 Route::get('/page/create', "PageController@create");
@@ -221,6 +224,30 @@ Route::get('/page/delete/{id}', "PageController@delete");
 Route::get('/page/edit/{id}', "PageController@edit");
 Route::post('/page/update', "PageController@update");
 Route::get('/page/view/{id}', "PageController@view");
+// package type
+Route::get('/package_type', "PackageTypeController@index");
+Route::get('/package_type/create', "PackageTypeController@create");
+Route::get('/package_type/edit/{id}', "PackageTypeController@edit");
+Route::get('/package_type/delete/{id}', "PackageTypeController@delete");
+Route::post('/package_type/save', "PackageTypeController@save");
+Route::post('/package_type/update', "PackageTypeController@update");
+// Package
+Route::get('/package', "PackageController@index");
+Route::get('/package/create', "PackageController@create");
+Route::get('/package/edit/{id}', "PackageController@edit");
+Route::get('/package/delete/{id}', "PackageController@delete");
+Route::post('/package/save', "PackageController@save");
+Route::post('/package/update', "PackageController@update");
+// subscription
+Route::get('/subscription', "SubscriptionController@index");
+Route::get('/subscription/expire', "SubscriptionController@expire");
+Route::get('/subscription/create', "SubscriptionController@create");
+Route::get('/subscription/delete/{id}', "SubscriptionController@delete");
+Route::get('/subscription/edit/{id}', "SubscriptionController@edit");
+Route::get('/subscription/detail/{id}', "SubscriptionController@detail");
+Route::post('/subscription/save', "SubscriptionController@save");
+Route::post('/subscription/update', "SubscriptionController@update");
+Route::post('/subscription/approve', "SubscriptionController@approve");
 
 // test
 Route::get('/test', "TestController@index");

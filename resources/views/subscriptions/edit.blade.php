@@ -32,9 +32,9 @@
                         {{csrf_field()}}
                         <input type="hidden" name="id" id="id" value="{{$subscription->id}}">
                         <div class="form-group row">
-                            <label for="customer_id" class="control-label col-lg-2 col-sm-2">Customer ID</label>
+                            <label for="shop_owner_id" class="control-label col-lg-2 col-sm-2">Shop Owner ID</label>
                             <div class="col-lg-4 col-sm-8">
-                                <input type="text" name="customer_id" id="customer_id" required autofocus class="form-control" value="{{$subscription->customer_id}}" readonly>
+                                <input type="text" name="shop_owner_id" id="shop_owner_id" required autofocus class="form-control" value="{{$subscription->shop_owner_id}}" readonly>
                             </div>
                         </div>
                         <div class="form-group row">
@@ -56,7 +56,7 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="job" class="control-label col-lg-2 col-sm-2">Number of Job</label>
+                            <label for="product_number" class="control-label col-lg-2 col-sm-2">Product Number</label>
                             <div class="col-lg-4 col-sm-8">
                                 <input type="text" name="product_number" id="product_number" required class="form-control" value="{{$subscription->product_number}}">
                             </div>

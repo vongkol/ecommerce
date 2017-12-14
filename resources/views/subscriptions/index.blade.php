@@ -13,13 +13,13 @@
                         <thead>
                         <tr>
                             <th>ID</th>
-                            <th>Customer Name</th>
+                            <th>Shop Owner Name</th>
                             <th>Email</th>
                             <th>Phone</th>
                             <th>Package Name</th>
                             <th>Price</th>
                             <th>Days</th>
-                            <th>Jobs</th>
+                            <th>Product Number</th>
                             <th>Expired Date</th>
                             <th>Status</th>
                             <th>Action</th>

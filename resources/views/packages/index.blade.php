@@ -16,7 +16,7 @@
                             <th>Name</th>
                             <th>Price</th>
                             <th>Type</th>
-                            <th>Number of Job</th>
+                            <th>Product Number</th>
                             <th>Number of Day</th>
                             <th>Action</th>
                         </tr>

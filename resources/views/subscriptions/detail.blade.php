@@ -31,57 +31,49 @@
                     <form action="{{url('/subscription/approve')}}" class="form-horizontal" method="post">
                         {{csrf_field()}}
                         <div class="form-group row">
-                            <label class="control-label col-lg-2 col-sm-2">Subscription ID</label>
-                            <div class="col-lg-4 col-sm-8">
-                                <p>{{$subscription->id}}</p>
+                            <div class="col-lg-6 col-sm-6">
+                                <span class="text-primary">Subscription ID</span> :
+                                {{$subscription->id}}
                                 <input type="hidden" name="id" value="{{$subscription->id}}">
                                 <input type="hidden" name="status" value="{{$subscription->status}}">
                             </div>
-                        </div>
-                        <div class="form-group row">
-                            <label class="control-label col-lg-2 col-sm-2">Employer ID</label>
-                            <div class="col-lg-4 col-sm-8">
-                                <p>{{$subscription->customer_id}}</p>
+                            <div class="col-lg-2 col-sm-2">
+                                <span class="text-primary">Employer ID</span> : 
+                                {{$subscription->shop_owner_id}}
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label class="control-label col-lg-2 col-sm-2">Employer Name</label>
-                            <div class="col-lg-4 col-sm-8">
-                                <p>{{$subscription->first_name . ' ' . $subscription->last_name}}</p>
+                            <div class="col-lg-6 col-sm-6">
+                                <span class="text-primary">Employer Name</span> :
+                                {{$subscription->first_name . ' ' . $subscription->last_name}}
+                            </div>
+                            <div class="col-lg-6 col-sm-6">
+                                <span class="text-primary">Price</span> :
+                                {{$subscription->price}}
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label class="control-label col-lg-2 col-sm-2">Price</label>
-                            <div class="col-lg-4 col-sm-8">
-                               <p>{{$subscription->price}}</p>
+                            <div class="col-lg-6 col-sm-6">
+                                <span class="text-primary">Number of Day</span> : 
+                                {{$subscription->day_number}}
+                            </div>
+                            <div class="col-lg-6 col-sm-6">
+                                <span class="text-primary">Number of Job</span>  : 
+                                {{$subscription->product_number}}
+                            </div>
+                             
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-lg-6 col-sm-6">
+                                <span class="text-primary">Expired Date</span> : 
+                                {{$subscription->expired_date}}
+                            </div>
+                            <div class="col-lg-6 col-sm-6">
+                                <span class="text-primary">Status</span> : 
+                                {{$subscription->status==0?'Pending':'Approved'}}
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label class="control-label col-lg-2 col-sm-2">Number of Day</label>
-                            <div class="col-lg-4 col-sm-8">
-                                <p>{{$subscription->day_number}}</p>
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label class="control-label col-lg-2 col-sm-2">Number of Job</label>
-                            <div class="col-lg-4 col-sm-8">
-                                <p>{{$subscription->product_number}}</p>
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label class="control-label col-lg-2 col-sm-2">Expired Date</label>
-                            <div class="col-lg-4 col-sm-8">
-                                <p>{{$subscription->expired_date}}</p>
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label class="control-label col-lg-2 col-sm-2">Status</label>
-                            <div class="col-lg-4 col-sm-8">
-                                <p>{{$subscription->status==0?'Pending':'Approved'}}</p>
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label class="control-label col-lg-2 col-sm-2">&nbsp;</label>
                             <div class="col-lg-6 col-sm-8">
                                 @if($subscription->status==0)
                                 <button class="btn btn-primary" type="submit">Approve</button>
@@ -96,14 +88,8 @@
         </div>
     </div>
     <script type="text/javascript">
-        CKEDITOR.replace( 'description',
-            {
-                customConfig : 'config.js',
-                toolbar : 'simple'
-            })
         $(document).ready(function(){
             $("#expired_date").inputmask('9999-99-99');
         });
     </script>
-    <script src="{{asset('js/ckeditor/ckeditor.js')}}"></script>
 @endsection
