@@ -55,20 +55,74 @@
                     </div>
                 </div>
             @endif
+            @if($counter<=0)
+                <div class="row">
+                    <div class="col-sm-12">
+                        <strong class="text-danger">
+                        @if(session('lang')=='en')
+                            You don't have a subscription yet. Please do subscribe one of the following packages to be able post jobs.
+                        @else
+                            លោកអ្នកមិនទាន់បានទិញគម្រោងណាមួយនៅឡើយទេ។ សូមទិញគម្រោងណាមួយនៅខាងក្រោមនេះ។                            
+                        @endif
+                        </strong>
+                        <p></p>
+                    </div>
+                </div>
+            @else
+                <div class="row px">
+                    <div class="col-sm-12">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <p>Package Name : <strong>{{$subscription->name}}</strong></p>
+                                <p>Price : <strong>$ {{$subscription->price}}</strong></p>
+                                <p>Plan Type: <strong>{{$subscription->type}}</strong></p>
+                                <p>Total Product: <strong>{{$subscription->product_number}}</strong></p>
+                               
+                            </div>
+                            <div class="col-sm-6">
+                                <p>Duration: <strong>{{$subscription->day_number}} days</strong></p>
+                                <p>Expire Date: <strong>{{$subscription->expired_date}}</strong></p>
+                                <p>Product Remaining: <strong>{{$subscription->product_number - $product_count}}</strong></p>
+                                <p>Status: <strong><label class="label label-warning">{{$subscription->status==0?'Pending':'Approved'}}</label></strong></p>
+                                <form action="{{url('/shop-owner/unsubscribe')}}" onsubmit="return confirm('You want to unsubscribe?')" method="post">
+                                    {{csrf_field()}}
+                                    <input type="hidden" name="id" id="id" value="{{$subscription->id}}">
+                                    <input type="submit" value="Unsubscription" class="btn btn-danger btn-sm">
+                                </form>
+                            </div>
+                        </div>
+                        <hr>
+                    </div>
+                </div>
+            @endif
             <div class="card-block">
             @foreach($packages as $package)
                 <div class="col-md-3 text-center pd-none">
                     <div class="panel panel-success panel-pricing">
                         <div class="panel-body text-center">
-                            <p><strong>$ {{$package->price}} / {{$package->name}}</strong></p>
+                            <strong>$ {{$package->price}} / {{$package->name}}</strong>
                         </div>
                         <ul class="list-group text-center">
                             <li class="list-group-item"><i class="fa fa-check"></i> Product Number : {{$package->product_number}}</li>
                             <li class="list-group-item"><i class="fa fa-check"></i> Number of Day: {{$package->day_number}}</li>
                             <li class="list-group-item"><i class="fa fa-check"></i> Type: {{$package->type}}</li>
                         </ul>
+                        
                         <div class="panel-footer">
-                            <a class="btn btn-sm btn-block btn-primary border-radius-none" href="#">BUY NOW!</a>
+                            @if($subscription)
+                                <form action="{{url('/shop-owner/subscribe')}}" method="post" onsubmit="return confirm('You want to subscribe?')">
+                                    {{csrf_field()}}
+                                    <input type="hidden" id="package" name="package" value="{{$package->id}}">
+                                    <input type="submit" class="btn btn-sm btn-primary btn-block" value="Subscribe" {{$package->id==$subscription->package_id?'disabled':''}}>
+                                </form>
+                            @else
+                                <form action="{{url('/shop-owner/subscribe')}}" method="post" onsubmit="return confirm('You want to subscribe?')">
+                                    {{csrf_field()}}
+                                    <input type="hidden" id="package" name="package" value="{{$package->id}}">
+                                    <input type="submit" class="btn btn-sm btn-primary btn-block" value="Subscribe">
+                                </form>
+
+                            @endif
                         </div>
                     </div>
                 </div>

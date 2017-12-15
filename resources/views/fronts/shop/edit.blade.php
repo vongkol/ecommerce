@@ -1,7 +1,7 @@
 @extends('layouts.shop_owner')
 @section('content')
     <div class="panel panel-default border-radius-none">
-        <div class="panel-heading bold">My Shop</div>
+        <div class="panel-heading bold">Shop</div>
         <div class="panel-body">
             @if(Session::has('sms'))
                 <div class="row">
@@ -54,8 +54,7 @@
                                 Description
                             </label>
                             <div class="col-sm-8">
-                                <textarea name="description" id="" cols="30" rows="4" class="ckeditor">{{$shop->description}}
-                                </textarea>
+                                <textarea name="description" id="" cols="30" rows="4" class="ckeditor">{{$shop->description}}</textarea>
                             </div>
                         </div>
                     </div>

@@ -172,14 +172,14 @@
                         <span class="orange bold">Manage Account</span>
                     </div>
                     <div class="panel-body">
-                        <a href="{{url('/shop-owner/profile')}}">Profile</a><br>
-                        <a href="{{url('/shop-owner/shop')}}">Shop</a><br>
-                        <a href="{{url('/shop-owner/product')}}">Product</a><br>
-                        <a href="{{url('/shop-owner/subscription')}}">
+                        <p> <a href="{{url('/shop-owner/profile')}}">Profile</a></p>
+                        <p><a href="{{url('/shop-owner/shop')}}">Shop</a></p>
+                        <p><a href="{{url('/shop-owner/product')}}">Product</a> </p>
+                        <p><a href="{{url('/shop-owner/subscription')}}"> </p>
                               Subscription
                         </a> 
                         <hr>
-                        <p><a href="{{url('/shop-owner/logout')}}">Sing Out</a></p>
+                        <p><a href="{{url('/shop-owner/logout')}}">Logout</a></p>
                     </div>
                 </div>
             </div>

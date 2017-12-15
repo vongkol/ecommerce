@@ -1,7 +1,7 @@
 @extends('layouts.shop_owner')
 @section('content')
     <div class="panel panel-default border-radius-none">
-        <div class="panel-heading bold">My Shop</div>
+        <div class="panel-heading bold">Shop</div>
         <div class="panel-body">
             @if($shop==NULL)
                 <div class="row">

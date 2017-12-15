@@ -1,7 +1,7 @@
 @extends('layouts.buyer')
 @section('content')
     <div class="panel panel-default border-radius-none">
-        <div class="panel-heading bold"><span class="text-primary">My Profile</span></div>
+        <div class="panel-heading bold"><span class="text-primary">Profile</span></div>
         <div class="panel-body">
             @if(Session::has('sms'))
                 <div class="row">

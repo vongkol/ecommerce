@@ -1,7 +1,7 @@
 @extends('layouts.shop_owner')
 @section('content')
     <div class="panel panel-default border-radius-none">
-        <div class="panel-heading bold">My Product
+        <div class="panel-heading bold">Product
             / <a href="{{url('/shop-owner/product')}}" class="text-info">Back to List</a>
         </div>
         <div class="panel-body">

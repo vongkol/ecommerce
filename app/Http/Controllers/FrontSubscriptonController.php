@@ -19,7 +19,7 @@ class FrontSubscriptonController extends Controller
         $shop_owner = $r->session()->get('shop_owner');
         if($shop_owner==NULL)
         {
-            return redirect('/employer/login');
+            return redirect('/shop-owner/login');
         }
         $shop_owner_id = session('shop_owner')->id;
         $data['packages'] = DB::table('packages')->where('active', 1)->get();
@@ -60,14 +60,14 @@ class FrontSubscriptonController extends Controller
                 # code...
             }
             
-            return redirect('/show-owner/subscription');
+            return redirect('/shop-owner/subscription');
         }
     }
     // subscribe
     public function subscribe(Request $r)
     {
         $shop_owner = $r->session()->get('shop_owner');
-        if($employer==NULL)
+        if($shop_owner==NULL)
         {
             return redirect('/shop-owner/login');
         }
@@ -98,7 +98,7 @@ class FrontSubscriptonController extends Controller
             'expired_date' => $expired_date,
             'price' => $package->price,
             'day_number' => $package->day_number,
-            'product_number' => $package->job_number,
+            'product_number' => $package->product_number,
         ];
         $i = DB::table('subscriptions')->insert($data);
         if($i)

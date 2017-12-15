@@ -1,7 +1,7 @@
 @extends('layouts.shop_owner')
 @section('content')
     <div class="panel panel-default border-radius-none">
-        <div class="panel-heading bold">My Product
+        <div class="panel-heading bold">Product
             @if($shop!=NULL)
                 / <a href="{{url('/shop-owner/product/create')}}">Create New Product</a>
             @endif
