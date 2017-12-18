@@ -10,7 +10,7 @@
     <link href="{{asset('front/css/bootstrap.min.css')}}" rel="stylesheet">
     <link href="{{asset('front/css/font-awesome.min.css')}}" rel="stylesheet">
     <link href="{{asset('front/css/style.css')}}" rel="stylesheet">
-    <link href='https://fonts.googleapis.com/css?family=Titillium+Web' rel='stylesheet' type='text/css'>
+    <link href="{{asset('front/font.css')}}" rel='stylesheet' type='text/css'>
 </head>
 <body class="cnt-homepage">
     <nav class="navbar navbar-inverse navbar-inversem navbar-fixed-top" role="navigation">
