@@ -29,7 +29,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="#"><i class="fa fa-home"></i> Home</a>
+                        <a href="{{url('/')}}"><i class="fa fa-home"></i> Home</a>
                     </li>
                     <li>
                         <a href="{{url('/page/about')}}"><i class="fa fa-info-circle"></i> About Us</a>

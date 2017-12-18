@@ -1,41 +1,41 @@
 @extends('layouts.front')
 @section('content')
-<!-- <div class="header-margin-top"></div> -->
     <div class="padding-slider"></div>
-    <div id="myCarousel" class="carousel slide" data-ride="carousel">
-        <!-- Indicators -->
-        <ol class="carousel-indicators">
-        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-        <li data-target="#myCarousel" data-slide-to="1"></li>
-        </ol>
-        <div class="thumbnail border-radius-none padding-none container-fluid">
-                <div class="carousel-inner" role="listbox">
-                    <div class="item active">
-                      <img src="{{asset('front/images/slider1.png')}}" class="img-responsive" alt="slide show">
-                    </div>
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+            </ol><br>
+            <div class="border-radius-none padding-none container">
+                <div class="col-md-12">
+                    <div class="carousel-inner s-border" role="listbox">
+                        <div class="item active">
+                            <img src="{{asset('front/images/slider1.png')}}" class="img-responsive" alt="slide show">
+                        </div>
 
-                    <div class="item">
-                      <img src="{{asset('front/images/slider2.png')}}" class="img-responsive" alt="slide show">
+                        <div class="item">
+                            <img src="{{asset('front/images/slider2.png')}}" class="img-responsive" alt="slide show">
+                        </div>
                     </div>
-              </div>
-            </div>
-        </div>
-        <div class="col-md-12 group-menu">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-3 col-xs-3 custom-padding-col">
-                        <button class="btn btn-detault btn-all-cat btn-group-menu w-100"><i class="fa fa-tags fa-2x"></i><br>All Catogory</button>
-                    </div>
-                    <div class="col-md-3 col-xs-3 custom-padding-col">
-                        <button class="btn btn-detault btn-cus btn-group-menu w-100"><i class="fa fa-users fa-2x"></i><br>Customer </button>
-                    </div>
-                    <div class="col-md-3 col-xs-3 custom-padding-col">
-                        <button class="btn btn-detault btn-trade btn-group-menu w-100"><i class="fa fa-exchange fa-2x"></i><br>Trade assurant</button>
-                    </div>
-                    <div class="col-md-3 col-xs-3 custom-padding-col">
-                        <button class="btn btn-detault btn-eli btn-group-menu w-100"><i class="fa fa-laptop fa-2x"></i><br>Smart Electronics</button>
-                    </div>
-                </div><br>
+                </div>
+            </div><br>
+            <div class="col-md-12 group-menu">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-3 col-xs-3 custom-padding-col">
+                            <button class="btn btn-detault btn-all-cat btn-group-menu w-100"><i class="fa fa-tags fa-2x"></i><br>All Catogory</button>
+                        </div>
+                        <div class="col-md-3 col-xs-3 custom-padding-col">
+                            <button class="btn btn-detault btn-cus btn-group-menu w-100"><i class="fa fa-users fa-2x"></i><br>Customer </button>
+                        </div>
+                        <div class="col-md-3 col-xs-3 custom-padding-col">
+                            <button class="btn btn-detault btn-trade btn-group-menu w-100"><i class="fa fa-exchange fa-2x"></i><br>Trade assurant</button>
+                        </div>
+                        <div class="col-md-3 col-xs-3 custom-padding-col">
+                            <button class="btn btn-detault btn-eli btn-group-menu w-100"><i class="fa fa-laptop fa-2x"></i><br>Smart Electronics</button>
+                        </div>
+                    </div><br>
+                </div>
             </div>
         </div>
         <div class="container">
@@ -104,7 +104,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="col-md-3 col-sm-6">
                     <div class="thumbnail thumbnailm border-radius-none padding-none">
                         <img src="{{asset('front/images/westeros_m.jpg')}}" alt="">
@@ -125,8 +124,8 @@
                     </div>
                 </div>
             </div>
-            <!-- /.row -->
-                    <!-- Page Features -->
+                <!-- /.row -->
+                        <!-- Page Features -->
             <div class="row">
                 <div class="col-md-3 col-sm-6">
                     <div class="thumbnail thumbnailm border-radius-none padding-none">

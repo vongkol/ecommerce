@@ -29,28 +29,13 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="#">Phone</a>
+                        <a href="{{url('/')}}"><i class="fa fa-home"></i> Home</a>
                     </li>
                     <li>
-                        <a href="#">Clothes</a>
+                        <a href="{{url('/page/about')}}"><i class="fa fa-info-circle"></i> About Us</a>
                     </li>
                     <li>
-                        <a href="#">Watches</a>
-                    </li>
-                    <li>
-                        <a href="#">Jewellry</a>
-                    </li>
-                    <li>
-                        <a href="#">Book</a>
-                    </li>
-                    <li>
-                        <a href="#">Laptop</a>
-                    </li>
-                    <li>
-                    <a href="#">About Us</a>
-                    </li>
-                    <li>
-                        <a href="#">Contact Us</a>
+                        <a href="{{url('/page/contact')}}"><i class="fa fa-phone-square"></i> Contact Us</a>
                     </li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">

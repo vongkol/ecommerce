@@ -29,28 +29,13 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="#">Phone</a>
+                        <a href="{{url('/')}}"><i class="fa fa-home"></i> Home</a>
                     </li>
                     <li>
-                        <a href="#">Clothes</a>
+                        <a href="{{url('/page/about')}}"><i class="fa fa-info-circle"></i> About Us</a>
                     </li>
                     <li>
-                        <a href="#">Watches</a>
-                    </li>
-                    <li>
-                        <a href="#">Jewellry</a>
-                    </li>
-                    <li>
-                        <a href="#">Book</a>
-                    </li>
-                    <li>
-                        <a href="#">Laptop</a>
-                    </li>
-                    <li>
-                    <a href="#">About Us</a>
-                    </li>
-                    <li>
-                        <a href="#">Contact Us</a>
+                        <a href="{{url('/page/contact')}}"><i class="fa fa-phone-square"></i> Contact Us</a>
                     </li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
@@ -168,53 +153,10 @@
         @yield('content')
     </section>
     </div>
-    <footer id="footer">
-    <div class="well well-custom border-radius-none background-black">
-        <div class="row"> 
-            <div class="col-md-3">
-                <h4 class="bold">Contact Us</h4><hr>
-                <p><i class="fa fa-map-marker"></i> &nbsp; &nbsp; &nbsp; Street 271 ,Solar 2004, Phnom Penh,  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Cambodia</p>
-                <p><i class="fa fa-users"></i> &nbsp; &nbsp; &nbsp;<span class="cool-green bold">122,23</span> Seller </p>
-                <p><i class="fa fa-phone"></i>  &nbsp; &nbsp; &nbsp;096 2555 209 / 015 885 689</p>
-                <p><i class="fa fa-envelope-o"></i> &nbsp; &nbsp; &nbsp;Sorvichey@gmail.com</p>
-                <p>
-                    <i class="fa fa-facebook btn btn-default btn-default-custom border-radius-none"></i>
-                    <i class="fa fa-twitter btn btn-default btn-default-custom border-radius-none"></i> 
-                    <i class="fa fa-linkedin btn btn-default btn-default-custom border-radius-none"></i>
-                </p>
-            </div>  
-            <div class="col-md-3">
-                <h4 class="bold">Our Community</h4><hr>
-                <p>How to Join us</p>
-                <p>Buying and Selling</p>
-                <p>Emerald Forum</p>
-                <p>Emerald Blog</p>
-                <p>Free Goods</p>
-                <p>Job Oportunities</p>
-            </div>
-            <div class="col-md-3">
-                <h4 class="bold">Member Links</h4><hr>
-                <p>How to Join us</p>
-                <p>Buying and Selling</p>
-                <p>Emerald Forum</p>
-                <p>Emerald Blog</p>
-                <p>Free Goods</p>
-                <p>Job Oportunities</p>
-            </div>
-            <div class="col-md-3">
-                <h4 class="bold">Help and FAQs</h4><hr>
-                <p>How to Join us</p>
-                <p>Buying and Selling</p>
-                <p>Emerald Forum</p>
-                <p>Emerald Blog</p>
-                <p>Free Goods</p>
-                <p>Job Oportunities</p>
-            </div>
-        </div>
-    </div>
-</div>
-</footer>
-<!-- /.container -->
+    <hr>
+    <center>
+        Power By @ Master Mall
+    </center>
 
 <!-- jQuery -->
 <script src="{{asset('front/js/jquery.js')}}"></script>

@@ -207,6 +207,9 @@ a, p, h1, h2, h3, h4, h5, h6 {
     padding-left: 10px;
     padding-right: 10px;
 }
+.s-border {
+    border: 1px solid #ddd;
+}
 /* Responsive Styles for various devices */
 @media (min-width: 1600px) {
 
