@@ -248,6 +248,8 @@ Route::get('/subscription/detail/{id}', "SubscriptionController@detail");
 Route::post('/subscription/save', "SubscriptionController@save");
 Route::post('/subscription/update', "SubscriptionController@update");
 Route::post('/subscription/approve', "SubscriptionController@approve");
-
+// front page
+Route::get('/page/about', "FrontPageController@about");
+Route::get('/page/contact', "FrontPageController@contact");
 // test
 Route::get('/test', "TestController@index");

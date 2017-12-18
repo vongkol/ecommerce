@@ -15,6 +15,7 @@
 }
 body {
     background: #f4f4f4;
+    font-family: "SF Pro Text","Myriad Set Pro","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
 }
 body ,
 input[type="text"], 
@@ -30,6 +31,7 @@ input[type="password"],
     border-top-left-radius: 0;
     border-top-right-radius: 0;
     background: #405e9e;
+    font-family: "SF Pro Text","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
 }
 .dropdown-menu-custom>li>a {
     color: #fff;
