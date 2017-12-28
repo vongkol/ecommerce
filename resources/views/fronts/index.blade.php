@@ -46,19 +46,19 @@
                 @foreach($products as $pro)
                 <section class="col-md-3 col-sm-6">
                     <aside class="thumbnail thumbnailm padding-none">
-                        <div class="vdoo-product">
-                            <img src="{{asset('front/images/'.$pro->file_name)}}" alt="product" width="100%">
-                        </div>
-                        <div class="caption captionm">
-                            <a href="{{url('/product/detail')}}" class="text-decoration-none">
+                        <a href="{{url('/product/detail')}}" class="text-decoration-none">
+                            <aside class="vdoo-product">
+                                <img src="{{asset('front/images/'.$pro->file_name)}}" alt="product" width="100%">
+                            </aside>
+                            <aside class="caption captionm">
                                 <h5 class="bold">{{$pro->name}}</h5>
                                 <p class="gray">
                                     {{$pro->short_description}}
                                 </p>
                                 <aside class="bold vdoo-price">US $ {{ $pro->price}} </aside>
                                 <aside class="line-through">US $  {{$pro->max_price}}</aside>
-                            </a>
-                        </div>
+                            </aside>
+                         </a>
                     </aside>
                 </section>
                 @endforeach

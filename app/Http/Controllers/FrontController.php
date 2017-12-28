@@ -11,7 +11,7 @@ class FrontController extends Controller
     public function index()
     {
         $data['products'] = DB::table('products')
-        ->rightjoin('photos', 'photos.product_id', 'products.id')
+        ->leftjoin('photos', 'photos.product_id', 'products.id')
         ->select('products.*','photos.*')
         ->where('products.active',1)
         ->orderBy('photos.id', 'desc')
