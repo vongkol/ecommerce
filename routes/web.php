@@ -253,3 +253,10 @@ Route::get('/page/about', "FrontPageController@about");
 Route::get('/page/contact', "FrontPageController@contact");
 // test
 Route::get('/test', "TestController@index");
+// product admin
+Route::get('/admin/product', "ProductController@index");
+Route::get('/admin/product/create', "ProductController@create");
+Route::get('/admin/product/edit/{id}', "ProductController@edit");
+Route::get('/admin/product/delete/{id}', "ProductController@delete");
+Route::post('/admin/product/save', "ProductController@save");
+Route::post('/admin/product/update', "ProductController@update");

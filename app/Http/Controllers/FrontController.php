@@ -16,7 +16,7 @@ class FrontController extends Controller
         ->where('products.active',1)
         ->orderBy('photos.id', 'desc')
         ->paginate(8);
-
+       
         return view('fronts.index', $data);
     }
     public function detail()

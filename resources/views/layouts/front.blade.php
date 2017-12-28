@@ -153,10 +153,12 @@
             <div class="input-group">
                 <div class="input-group-btn input-group-btn-m search-panel">
                     <select class="form-control form-search-m" id="cat_s_list">
-                        <option>All Categories</option>
-                        <option>All Categories & with smart phone</option>
-                        <option>Book and Food</option>
-                        <option>Beauty Care</option>
+                        <?php
+                            $categories = DB::table('categories')->where('active',1)->get();
+                        ?>
+                        @foreach($categories as $cat)
+                            <option value="{{$cat->id}}">{{$cat->name}}</option>
+                        @endforeach
                     </select>
                 </div>       
                 <input type="text" class="form-control search-m" name="search" placeholder="I'm mastermalls for...">
