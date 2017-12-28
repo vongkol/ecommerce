@@ -87,13 +87,11 @@ ul.dropdown-menu-custom li .item:after{
     margin: 0;
     background-color: #fff;
 }
-.thumbnailm .caption {
-    padding: 9px;
-    color: #333;
+.thumbnailm {
     box-shadow: 0 0 1px 1px hsla(0,0%,7%,.1), 0 3px 1px 0 hsla(0,0%,7%,.1);
 }
-.thumbnailm .caption:hover,
-.thumbnailm .caption:focus
+.thumbnailm:hover,
+.thumbnailm:focus
  {
     box-shadow: 0 2px 8px 2px hsla(0,0%,7%,.15);
 }
@@ -102,29 +100,12 @@ ul.dropdown-menu-custom li .item:after{
     color: #9d9d9d;
     font-size: 15px;
 }
-
-.btn-trade,
-.pagination-custom>li>a, .pagination-custom>li>span,
-.btn-all-cat,
-.btn-eli,
-.btn-cus 
- {
-    color: #fff;
-}
-.btn-cus {
-    background:  #E91E63;
-}
-.btn-all-cat {
-    background: #06b99b;
-}
-.btn-trade {
-    background: #FFEB3B;
-}
-.btn-eli {
-    background: #9C27B0;
-} 
 .btn-group-menu {
-    height: 55px;
+    height: 60px;
+    box-shadow :0 0 1px 1px hsla(0,0%,7%,.1), 0 3px 1px 0 hsla(0,0%,7%,.1);
+}
+.btn.active.focus, .btn.active:focus, .btn.focus, .btn:active.focus, .btn:active:focus, .btn:focus {
+    outline: 0;
 }
 .group-menu {
     border-bottom: 1px solid #eee;
