@@ -10,7 +10,14 @@ class FrontController extends Controller
     // index
     public function index()
     {
-        return view('fronts.index');
+        $data['products'] = DB::table('products')
+        ->join('photos', 'photos.product_id', 'products.id')
+        ->select('products.*','photos.*')
+        ->where('products.active',1)
+        ->orderBy('photos.id', 'desc')
+        ->paginate(8);
+
+        return view('fronts.index', $data);
     }
     public function detail()
     {
