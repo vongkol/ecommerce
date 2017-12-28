@@ -23,16 +23,16 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-sm-3 col-xs-3 custom-padding-col">
-                            <button class="btn btn-detault btn-all-cat btn-group-menu w-100"><i class="fa fa-tags fa-2x"></i><br>All Catogory</button>
+                            <button class="btn btn-detault btn-group-menu w-100"><i class="fa fa-tags fa-2x"></i><br>All Catogory</button>
                         </div>
                         <div class="col-md-3 col-xs-3 custom-padding-col">
-                            <button class="btn btn-detault btn-cus btn-group-menu w-100"><i class="fa fa-users fa-2x"></i><br>Customer </button>
+                            <button class="btn btn-detault btn-group-menu w-100"><i class="fa fa-users fa-2x"></i><br>Customer </button>
                         </div>
                         <div class="col-md-3 col-xs-3 custom-padding-col">
-                            <button class="btn btn-detault btn-trade btn-group-menu w-100"><i class="fa fa-exchange fa-2x"></i><br>Trade assurant</button>
+                            <button class="btn btn-detault btn-group-menu w-100"><i class="fa fa-exchange fa-2x"></i><br>Trade assurant</button>
                         </div>
                         <div class="col-md-3 col-xs-3 custom-padding-col">
-                            <button class="btn btn-detault btn-eli btn-group-menu w-100"><i class="fa fa-laptop fa-2x"></i><br>Smart Electronics</button>
+                            <button class="btn btn-detault btn-group-menu w-100"><i class="fa fa-laptop fa-2x"></i><br>Smart Electronics</button>
                         </div>
                     </div><br>
                 </div>
