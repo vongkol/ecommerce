@@ -45,6 +45,8 @@ Route::post('/shop-owner/forgot/recovery', 'ShopOwnerForgetPasswordController@re
 Route::post('/shop-owner/save-password', "ShopOwnerForgetPasswordController@save_password");
 Route::get('/service/reset/{id}', "ShopOwnerForgetPasswordController@new_password");
 Route::post('/service/update', "ShopOwnerForgetPasswordController@update_password");
+Route::get('/shop-owner/resetpwd', 'ShopOwnerResetPassword@index');
+Route::post('/shop-owner/resetpwd/update', 'ShopOwnerResetPassword@update');
 
 Route::get('/home', 'HomeController@index')->name('home');
 // detail page
@@ -260,3 +262,4 @@ Route::get('/admin/product/edit/{id}', "ProductController@edit");
 Route::get('/admin/product/delete/{id}', "ProductController@delete");
 Route::post('/admin/product/save', "ProductController@save");
 Route::post('/admin/product/update', "ProductController@update");
+Route::get('/admin/product/detail/{id}', "ProductController@pro_detail");

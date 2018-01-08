@@ -15,6 +15,13 @@
 
     <title>Job Website Admin</title>
 
+    <!-- Chosen  -->
+    <link rel="stylesheet" href="{{asset('chosen/docsupport/style.css')}}">
+    <link rel="stylesheet" href="{{asset('chosen/docsupport/prism.css')}}">
+    <link rel="stylesheet" href="{{asset('chosen/chosen.css')}}">
+
+     <meta http-equiv="Content-Security-Policy" content="default-src &apos;self&apos;; script-src &apos;self&apos; https://ajax.googleapis.com; style-src &apos;self&apos;; img-src &apos;self&apos; data:">
+
     <!-- Icons -->
     <link href="{{asset('css/font-awesome.css')}}" rel="stylesheet">
     <link href="{{asset('css/simple-line-icons.css')}}" rel="stylesheet">
@@ -162,6 +169,12 @@
 <!-- Plugins and scripts required by all views -->
     <script src="{{ asset('js/app.js') }}"></script>
     <script src="{{ asset('js/app1.js') }}"></script>
+
+    <!-- Chosen -->
+    <script src="https://ajax.googleapis.com/ajax/libs/prototype/1.7.0.0/prototype.js" type="text/javascript"></script>
+    <script src="{{asset('chosen/chosen.proto.js')}}" type="text/javascript"></script>
+    <script src="{{asset('chosen/docsupport/prism.js')}}" type="text/javascript" charset="utf-8"></script>
+    <script src="{{asset('chosen/docsupport/init.proto.js')}}" type="text/javascript" charset="utf-8"></script>
     @yield('js')
 </body>
 </html>

@@ -101,7 +101,7 @@ class ShopOwnerController extends Controller
                 } 
                 // save user to session
                 $r->session()->put('shop_owner', $user);
-                return redirect('/shop-owner/profile');
+                return redirect('/shop-owner/shop');
             }
             else{
                 $r->session()->flash('sms1', "Invalid username or password. Try again!");

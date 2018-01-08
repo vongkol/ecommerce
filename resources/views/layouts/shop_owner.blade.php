@@ -11,6 +11,13 @@
     <link href="{{asset('front/css/font-awesome.min.css')}}" rel="stylesheet">
     <link href="{{asset('front/css/style.css')}}" rel="stylesheet">
     <link href="{{asset('front/font.css')}}" rel='stylesheet' type='text/css'>
+
+    <style type="text/css">
+        /*Active Manage Account*/
+        .active { 
+            background-color: #e6ffff;
+        }
+    </style>
 </head>
 <body class="cnt-homepage">
     <nav class="navbar navbar-inverse navbar-inversem navbar-fixed-top" role="navigation">
@@ -157,14 +164,15 @@
                         <span class="orange bold">Manage Account</span>
                     </div>
                     <div class="panel-body">
-                        <p> <a href="{{url('/shop-owner/profile')}}">Profile</a></p>
-                        <p><a href="{{url('/shop-owner/shop')}}">Shop</a></p>
-                        <p><a href="{{url('/shop-owner/product')}}">Product</a> </p>
-                        <p><a href="{{url('/shop-owner/subscription')}}"> </p>
+                        <p class="{{(Request::segment(2)=="shop")?"active":""}}"><a  href="{{url('/shop-owner/shop')}}">Shop</a></p>
+                        <p class="{{(Request::segment(2)=="subscription")?"active":""}}"><a href="{{url('/shop-owner/subscription')}}">
                               Subscription
-                        </a> 
+                        </a></p>
+                        <p class="{{(Request::segment(2)=="product")?"active":""}}"><a href="{{url('/shop-owner/product')}}">Product</a> </p>
+                        <p class="{{(Request::segment(2)=="profile")?"active":""}}"> <a href="{{url('/shop-owner/profile')}}">Profile</a></p>
+                        <p class="{{(Request::segment(2)=="resetpwd")?"active":""}}"> <a href="{{url('/shop-owner/resetpwd')}}">Reset password</a></p>
                         <hr>
-                        <p><a href="{{url('/shop-owner/logout')}}">Logout</a></p>
+                        <p class="{{(Request::segment(2)=="logout")?"active":""}}"> <a href="{{url('/shop-owner/profile')}}"><a href="{{url('/shop-owner/logout')}}">Logout</a></p>
                     </div>
                 </div>
             </div>
