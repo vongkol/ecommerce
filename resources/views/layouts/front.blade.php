@@ -11,11 +11,6 @@
     <link href="{{asset('front/css/font-awesome.min.css')}}" rel="stylesheet">
     <link href="{{asset('front/css/style.css')}}" rel="stylesheet">
     <link href="{{asset('front/font.css')}}" rel='stylesheet' type='text/css'>
-      <link rel="stylesheet" href="{{asset('chosen/docsupport/style.css')}}">
-  <link rel="stylesheet" href="{{asset('chosen/docsupport/prism.css')}}">
-  <link rel="stylesheet" href="{{asset('chosen/chosen.css')}}">
-
-  <meta http-equiv="Content-Security-Policy" content="default-src &apos;self&apos;; script-src &apos;self&apos; https://ajax.googleapis.com; style-src &apos;self&apos;; img-src &apos;self&apos; data:">
 </head>
 <body class="cnt-homepage">
     <nav class="navbar navbar-inverse navbar-inversem navbar-fixed-top" role="navigation">

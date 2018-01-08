@@ -27,7 +27,7 @@ class ShopOwnerResetPassword extends Controller
           $count_owner = DB::table('shop_owners')->where('id',"=", $r->id)
               
               ->count();
-          if($count_owner>0)
+          if($count_owner<0)
           {
               $r->session()->flash('sms1', "Your old password is not match!");
               return redirect('/shop-owner/resetpwd');
