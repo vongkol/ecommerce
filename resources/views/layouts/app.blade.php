@@ -79,7 +79,7 @@
             <nav class="sidebar-nav">
                 <ul class="nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="fa fa-tachometer text-primary"></i> {{$lb_dashboard}} </a>
+                        <a class="nav-link" href="{{url('/admin/dashboard')}}"><i class="fa fa-tachometer text-primary"></i> {{$lb_dashboard}} </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{url('/admin/product')}}"><i class="fa fa-product-hunt"></i> Product </a>

@@ -12,7 +12,9 @@
 */
 
 Route::get('/admin',"HomeController@index");
+Route::get('/admin/dashboard',"HomeController@index");
 Route::get('/',"FrontController@index");
+
 
 Auth::routes();
 
