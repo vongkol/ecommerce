@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="16f32499-270a-40a4-b83f-4b15a265e8b9" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="16f32499-270a-40a4-b83f-4b15a265e8b9" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,8 +17,8 @@
       <file leaf-file-name="edit_profile.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/fronts/shop_owner/edit_profile.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="254">
-              <caret line="61" column="26" lean-forward="true" selection-start-line="61" selection-start-column="26" selection-end-line="61" selection-end-column="26" />
+            <state relative-caret-position="577">
+              <caret line="80" column="30" lean-forward="true" selection-start-line="80" selection-start-column="30" selection-end-line="80" selection-end-column="30" />
               <folding>
                 <marker date="1512198899437" expanded="true" signature="9:29" ph="..." />
                 <marker date="1512198899437" expanded="true" signature="40:49" ph="..." />
@@ -230,7 +228,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/document" />
+    <property name="last_opened_file_path" value="$USER_HOME$/photogallery" />
     <property name="nodejs_interpreter_path" value="node" />
   </component>
   <component name="RunDashboard">
@@ -266,12 +264,12 @@
       <workItem from="1508160759545" duration="1334000" />
       <workItem from="1508166522410" duration="16000" />
       <workItem from="1515225360357" duration="3185000" />
-      <workItem from="1515251991503" duration="1662000" />
+      <workItem from="1515251991503" duration="2544000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10201000" />
+    <option name="totallyTimeSpent" value="11083000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="0" width="1922" height="1055" extended-state="6" />
@@ -661,8 +659,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/fronts/shop_owner/edit_profile.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="254">
-          <caret line="61" column="26" lean-forward="true" selection-start-line="61" selection-start-column="26" selection-end-line="61" selection-end-column="26" />
+        <state relative-caret-position="577">
+          <caret line="80" column="30" lean-forward="true" selection-start-line="80" selection-start-column="30" selection-end-line="80" selection-end-column="30" />
           <folding>
             <marker date="1512198899437" expanded="true" signature="9:29" ph="..." />
             <marker date="1512198899437" expanded="true" signature="40:49" ph="..." />
