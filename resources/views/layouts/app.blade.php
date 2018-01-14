@@ -15,6 +15,11 @@
 
     <title>Job Website Admin</title>
 
+     <!-- Chosen  -->
+    <!-- <link rel="stylesheet" href="{{asset('chosen/docsupport/style.css')}}"> -->
+    <link rel="stylesheet" href="{{asset('chosen/docsupport/prism.css')}}">
+    <link rel="stylesheet" href="{{asset('chosen/chosen.css')}}">
+
     <!-- Icons -->
     <link href="{{asset('css/font-awesome.css')}}" rel="stylesheet">
     <link href="{{asset('css/simple-line-icons.css')}}" rel="stylesheet">
@@ -74,7 +79,7 @@
             <nav class="sidebar-nav">
                 <ul class="nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="fa fa-tachometer text-primary"></i> {{$lb_dashboard}} </a>
+                        <a class="nav-link" href="{{url('/admin/dashboard')}}"><i class="fa fa-tachometer text-primary"></i> {{$lb_dashboard}} </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{url('/admin/product')}}"><i class="fa fa-product-hunt"></i> Product </a>
@@ -162,6 +167,13 @@
 <!-- Plugins and scripts required by all views -->
     <script src="{{ asset('js/app.js') }}"></script>
     <script src="{{ asset('js/app1.js') }}"></script>
+
+    
+    <!-- Chosen -->
+    <script src="https://ajax.googleapis.com/ajax/libs/prototype/1.7.0.0/prototype.js" type="text/javascript"></script>
+    <script src="{{asset('chosen/chosen.proto.js')}}" type="text/javascript"></script>
+    <script src="{{asset('chosen/docsupport/prism.js')}}" type="text/javascript" charset="utf-8"></script>
+    <script src="{{asset('chosen/docsupport/init.proto.js')}}" type="text/javascript" charset="utf-8"></script>
     @yield('js')
 </body>
 </html>

@@ -76,7 +76,7 @@
                         <div class="form-group row">
                             <label class="col-sm-4">Username <span class="text-danger">*</span></label>
                             <div class="col-sm-8">
-                                <input type="text" class="form-control border-radius-none" id="username" required name="username" value="{{$shop_owner->username}}">
+                                <input type="text" class="form-control border-radius-none" id="username" required name="username" value="{{$shop_owner->username}}" readonly>
                             </div>
                         </div>
                         <div class="form-group row">

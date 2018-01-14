@@ -1,5 +1,10 @@
+
+
+ 
 @extends('layouts.app')
+
 @section('content')
+
 <div class="row">
     <div class="col-lg-12">
         <div class="card">
@@ -46,10 +51,12 @@
                                 <div class="form-group row">
                                     <label for="category" class="control-label col-sm-4">Category <span class="text-danger">*</span></label>
                                     <div class="col-sm-8">
-                                        <select name="category" id="category" class="form-control">
-                                        @foreach($categories as $c)
+                                        <select name="category" id="category" class="form-control chosen-select" data-placeholder="Chose a category" tabindex="2">
+                                            <option value=""></option>
+                                            @foreach($categories as $c)
                                             <option value="{{$c->id}}">{{$c->name}}</option>
-                                        @endforeach
+                                            @endforeach
+                                   
                                         </select>
                                     </div>
                                 </div>
@@ -58,10 +65,10 @@
                         <div class="row">
                                 <div class="col-sm-6">
                                     <div class="form-group row">
-                                        <label for="quantity" class="control-label col-sm-4">Quantity</label>
+                                        <label for="quantity" class="control-label col-sm-4">Model</label>
                                         <div class="col-sm-8">
-                                            <input type="number" step="1" min="0" class="form-control" id="quantity" name="quantity" 
-                                             value="0">
+                                            <input type="text" class="form-control" id="model" name="model" 
+                                             value="">
                                         </div>
                                     </div>
     
@@ -70,11 +77,12 @@
                                     <div class="form-group row">
                                         <label for="shop" class="control-label col-sm-4">Shop <span class="text-danger">*</span></label>
                                         <div class="col-sm-8">
-                                           <select name="shop" id="shop" class="form-control">
-                                               @foreach($shops as $s)
+                                            <select name="shop" id="shop" class="form-control chosen-select" data-placeholder="Chose a shop" tabindex="2">
+                                                <option value=""></option>
+                                                @foreach($shops as $s)
                                                 <option value="{{$s->id}}">{{$s->name}}</option>
-                                               @endforeach
-                                           </select>
+                                                @endforeach
+                                            </select>
                                         </div>
                                     </div>
                                 </div>
@@ -82,9 +90,9 @@
                         <div class="row">
                                 <div class="col-sm-6">
                                     <div class="form-group row">
-                                        <label for="min_price" class="control-label col-sm-4">Min Price</label>
+                                        <label for="quantity" class="control-label col-sm-4">Quantity</label>
                                         <div class="col-sm-8">
-                                            <input type="number" step="0.1" min="0" class="form-control" id="min_price" name="min_price" 
+                                            <input type="number" step="0.01" min="0" class="form-control" id="quantity" name="quantity" 
                                              value="0">
                                         </div>
                                     </div>
@@ -102,9 +110,9 @@
                         <div class="row">
                                 <div class="col-sm-6">
                                     <div class="form-group row">
-                                        <label for="price" class="control-label col-sm-4">Price</label>
+                                        <label for="min_price" class="control-label col-sm-4">Min Price</label>
                                         <div class="col-sm-8">
-                                            <input type="number" step="0.1" min="0" class="form-control" id="price" name="price" 
+                                            <input type="number" step="0.01" min="0" class="form-control" id="min_price" name="min_price" 
                                              value="0">
                                         </div>
                                     </div>
@@ -114,7 +122,7 @@
                                     <div class="form-group row">
                                         <label for="short_description" class="control-label col-sm-4">Short Description</label>
                                         <div class="col-sm-8">
-                                           <input type="text" class="form-control" id="short_description" value="{{old('short_description')}}">
+                                           <input type="text" class="form-control" name="short_description" id="short_description" value="{{old('short_description')}}">
                                         </div>
                                     </div>
                                 </div>
@@ -122,25 +130,57 @@
                         <div class="row">
                                 <div class="col-sm-6">
                                     <div class="form-group row">
+                                        <label for="price" class="control-label col-sm-4">Price</label>
+                                        <div class="col-sm-8">
+                                            <input type="number" step="0.01" min="0" class="form-control" id="price" name="price" 
+                                             value="0">
+                                        </div>
+                                    </div>
+    
+                                </div>
+                                <div class="col-sm-6">
+                                     
+                                </div>
+                        </div>
+                        <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="form-group row">
                                         <label for="max_price" class="control-label col-sm-4">Max Price</label>
                                         <div class="col-sm-8">
-                                            <input type="number" step="0.1" min="0" class="form-control" id="max_price" name="max_price" 
+                                            <input type="number" step="0.01" min="0" class="form-control" id="max_price" name="max_price" 
                                              value="0">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
-                                    <div class="form-group row">
+                                   <div class="form-group row">
                                         <label for="category" class="control-label col-sm-4">Description</label>
                                         <div class="col-sm-8">
                                            <textarea name="description" id="description" cols="30" rows="3" class="form-control"></textarea>
                                         </div>
                                     </div>
                                 </div>
+
+                        </div>
+
+                        <div class="row">
+                                <div class="col-sm-6">
+                                    
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group"> 
+                                        <div class="col-sm-offset-2 col-sm-10">
+                                            <button type="submit" name="btn_save" class="btn btn-primary">Save</button>
+                                            <button type="reset" class="btn btn-danger">Clear</button>
+                                        </div>
+                                    </div>
+                                </div>
+
                         </div>
                     </form>
             </div>
         </div>
     </div>
 </div>
+
 @endsection
