@@ -34,7 +34,7 @@ class BuyerForgetPasswordController extends Controller
             return view("fronts.buyers.login");
         }
         else{
-            $r->session()->flash("sms1", "Your email does not exist in our Mastermalls!");
+            $r->session()->flash("sms1", "Your email does not exist in our Phsa24!");
             return redirect('/buyer/forget-password')->withInput();
         }
     }

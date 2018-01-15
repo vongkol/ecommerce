@@ -1,0 +1,285 @@
+	/* Vertical CSS3 Mega Menu - Responsive */
+	.main-navigation-container-responsive{
+		display:none;
+		}
+@media only screen and (max-width: 1048px){
+	#content{
+		width:100%;
+		}
+	.main-navigation-container{
+		display:none;
+		}
+	/* ========== MAIN DIV THAT HOLDS THE ENTIRE NAVIGATION ========== */
+	.main-navigation-container-responsive{
+		display:block;
+		width:66%;
+		margin:60px auto;
+		font-family:Tahoma, Geneva, sans-serif;
+		}
+	.main-navigation-responsive{
+		display:none;
+		border:1px solid #DDD;
+		overflow:hidden;
+		z-index:100;
+		} 
+	/* ========== TOGGLE MENU ========== */	
+	.main-navigation-container-responsive .toggle-menu{
+		width:50px;
+		height:42px;
+		margin-bottom:8px;
+		display:block;		 
+		cursor:pointer;
+		background:transparent url(../images/icon-list.png) no-repeat center;
+		border:1px solid #DDD;
+		-webkit-border-radius:3px;
+		-moz-border-radius:3px;
+		border-radius:3px;
+		-webkit-transition:background 140ms linear;
+		-moz-transition:background 140ms linear;
+		-ms-transition:background 140ms linear;
+		-o-transition:background 140ms linear;
+		transition:background 140ms linear;
+		}
+	.main-navigation-container-responsive .toggle-menu-clicked{
+		background-color:#756BAD;
+		}		
+	/* ========== TITLE ========== */
+	.main-navigation-title{
+		padding:17px 0;
+		font-size:16px;
+		border-bottom:1px solid #DDD;
+		}	
+	/* ========== MAIN LINKS ========== */
+	.main-navigation-responsive ul, .main-navigation-responsive ol{
+		margin:0;
+		padding:0;
+		list-style:none;
+		}
+	.main-navigation-responsive > ul > li{
+		width:100%;
+		position:relative;
+		float:left;
+		}
+	.main-navigation-responsive > ul > li > a{
+		display:block;
+		padding:14px 0 14px 14px;
+		font-size:14px;
+		color:#888;
+		text-decoration:none;
+		border-top:1px solid #FFF;
+		border-bottom:1px solid #DDD;
+		}
+	.main-navigation-responsive > ul > li:last-child a{
+		border-bottom:none;
+		}
+	/* ========== RIGHT ARROW ========== */
+	.main-navigation-responsive > ul > li > a > i, .main-navigation-responsive .dropdown i{
+		position:absolute;
+		top:14px;
+		right:14px;
+		font-size:17px;
+		color:#BBB;
+		}
+	.rotate-arrow{
+		top:17px !important;
+		-webkit-transform:rotate(90deg);
+		-moz-transform:rotate(90deg);
+		-ms-transform:rotate(90deg);
+		-o-transform:rotate(90deg);
+		transform:rotate(90deg);
+		}
+	/* ========== LINK IS ACTIVE ========== */
+	.main-navigation-responsive ul li.active-nav-link > a{
+		color:#666;
+		background:#F5F5F5;
+		}
+	/* ========== DROPDOWN/MEGA MENU ========== */
+	.main-navigation-responsive .dropdown ul, .main-navigation-responsive .mega-menu-content{
+		background:#FFF;
+	 	border-bottom:1px solid #DDD;
+		}
+	/* ========== DROPDOWN MENU ========== */	
+	.main-navigation-responsive .dropdown{
+		display:none;
+		}
+	.main-navigation-responsive .dropdown li{
+		position:relative;
+		}
+	.main-navigation-responsive .dropdown a{
+		display:block;
+		padding:14px 0 14px 30px;
+		font-size:14px;
+		color:#888;
+		text-decoration:none;
+		border-bottom:1px solid #F2F2F2;
+		}
+	.main-navigation-responsive .dropdown li:last-child a{
+		border-bottom:none;
+		}
+	.main-navigation-responsive .dropdown li.active-nav-link > a{
+		background:#F9F9F9;
+		}
+	.main-navigation-responsive .dropdown ul{
+		border-bottom:1px solid #F4F4F4;
+		}
+	.main-navigation-responsive .dropdown .dropdown a{
+		padding-left:46px;
+		}
+	/* ========== MEGA MENU ========== */	
+	.main-navigation-responsive .mega-menu{
+		display:none;
+		}	
+	.main-navigation-responsive .mega-menu-content{
+		padding:20px 10px 4px 10px;
+		overflow:hidden;
+		}
+	/* ========== DIFFERENT SIZES OF MEGA MENU ========== */
+	.main-navigation-responsive .mm-size-1,
+	.main-navigation-responsive .mm-size-2,
+	.main-navigation-responsive .mm-size-3,
+	.main-navigation-responsive .mm-size-4,
+	.main-navigation-responsive .mm-size-5,
+	.main-navigation-responsive .mm-size-6{ 
+		width:100%;
+		}	
+	/* ========== LISTS IN MEGA MENU ========== */	
+	.mega-menu-content .list li{
+		padding:0;
+		}	
+	.mega-menu-content .list a, 
+	.mega-menu-content .list-headline i{
+		display:block;
+		padding:4px 0 4px 12px;
+		}
+	.mega-menu-content .list .list-headline{
+		margin:0;
+		padding:0;
+		}
+	.mega-menu-content .list .list-headline a, 
+	.mega-menu-content .list-headline i{
+		padding-bottom:5px;
+		}
+	/* ========== VIDEO ========== */	
+	.mega-menu-content .mm-video iframe{
+		height:320px;
+		}
+	/* ========== CONTACT FORM ========== */	
+	.mega-menu-content #mm-contact-form input, .mega-menu-content #mm-contact-form textarea{
+		width:90%;
+		}		
+	.mega-menu-content .mm-map-location iframe{
+		display:none;
+		}	
+	/* ========== SOCIAL ICONS ========== */
+	.main-navigation-social-icons{
+		display:none;
+		margin-top:11px;
+		float:none;
+		text-align:center;
+		}
+	.main-navigation-social-icons li{
+		display:inline-block;
+		float:none;
+		}
+	.main-navigation-social-icons li:nth-child(4n){
+		margin-right:4px;
+		}	
+	}
+@media only screen and (max-width: 768px){
+	/* ========== MEGA MENU GRID ========== */
+	.mega-menu-content .mm-span-1,  
+	.mega-menu-content .mm-span-2,
+	.mega-menu-content .mm-span-3,              
+	.mega-menu-content .mm-span-4, 
+	.mega-menu-content .mm-span-5,  
+	.mega-menu-content .mm-span-6, 
+	.mega-menu-content .mm-span-7, 
+	.mega-menu-content .mm-span-8, 
+	.mega-menu-content .mm-span-9,
+	.mega-menu-content .mm-span-10,
+	.mega-menu-content .mm-span-11, 
+	.mega-menu-content .mm-span-12,
+	.mega-menu-content .mm-one-fifth,   
+	.mega-menu-content .mm-one-seventh, 
+	.mega-menu-content .mm-one-ninth{
+		width:100%; 
+	 	}
+	.mega-menu-content .mm-offset-1,  
+	.mega-menu-content .mm-offset-2, 
+	.mega-menu-content .mm-offset-3, 
+	.mega-menu-content .mm-offset-4,  
+	.mega-menu-content .mm-offset-5,  
+	.mega-menu-content .mm-offset-6, 
+	.mega-menu-content .mm-offset-7, 
+	.mega-menu-content .mm-offset-8, 
+	.mega-menu-content .mm-offset-9, 
+	.mega-menu-content .mm-offset-10, 
+	.mega-menu-content .mm-offset-11{ 
+		margin-left:0; 
+		}
+	 /* ========== LISTS IN MEGA MENU ========== */
+	.mega-menu-content .list{
+		text-align:center;
+		}	
+	.mega-menu-content .list a{
+		font-size:14px;
+		padding:9px 0 11px 0;
+		border-bottom:1px solid #756BAD;
+		}
+	.mega-menu-content .list li:last-child a{
+		border-bottom:none;
+		}
+	.mega-menu-content .list-headline h4,
+	.mega-menu-content .list-headline h4 a{
+		font-size:16px;
+		}	
+	.mega-menu-content .list .list-headline a, 
+	.mega-menu-content .list-headline i{
+		padding:9px 0 11px 0;
+		border-bottom:none;
+		}
+	/* ========== PORTFOLIO ========== */
+	.mega-menu-content .portfolio-item-img{
+		margin-bottom:6px;
+		}
+	.mega-menu-content .portfolio-item-img img{
+		height:220px;
+		}
+	.mega-menu-content .portfolio-item-name a{
+		font-size:14px;
+		}	
+	/* ========== VIDEO ========== */	
+	.mega-menu-content .mm-video iframe{
+		height:230px;
+		}		
+	}
+@media only screen and (max-width: 480px){
+	/* ========== MAIN DIV ========== */
+	.main-navigation-container-responsive{
+		width:86%;
+		}
+	/* ========== Images ========== */
+	.mega-menu-content .image-left, .mega-menu-content .image-right{
+		width:100%;
+		height:auto;
+		margin-bottom:10px;
+		}
+	/* ========== PORTFOLIO ========== */	
+	.mega-menu-content .portfolio-item-img img{
+		height:180px;
+		}
+	/* ========== VIDEO ========== */	
+	.mega-menu-content .mm-video iframe{
+		height:190px;
+		}		
+	}
+@media only screen and (max-width: 320px){
+	/* ========== PORTFOLIO ========== */
+	.mega-menu-content .portfolio-item-img img{
+		height:125px;
+		}
+	/* ========== VIDEO ========== */	
+	.mega-menu-content .mm-video iframe{
+		height:150px;
+		}
+	}

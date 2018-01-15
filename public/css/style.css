@@ -1562,7 +1562,7 @@ pre {
   width: 100%;
   padding: 0.4rem 0.5rem;
   font-size: 0.875rem;
-  line-height: 1.25;
+  line-height: 1;
   color: #607d8b;
   background-color: #fff;
   background-image: none;
@@ -7288,7 +7288,7 @@ base-chart.chart {
 
 .dropdown-item {
   position: relative;
-  padding: 10px 20px;
+  padding: 3px 20px
   border-bottom: 1px solid #cfd8dc; }
   .dropdown-item:last-child {
     border-bottom: 0; }
@@ -7305,7 +7305,7 @@ base-chart.chart {
     margin-top: 2px; }
 
 .dropdown-header {
-  padding: 8px 20px;
+  padding: 2px;
   background: #eceff1;
   color: #585050;
   border-bottom: 1px solid #cfd8dc; }
@@ -7715,7 +7715,7 @@ base-chart.chart {
           list-style: none; }
       .sidebar .nav .nav-item .nav-link, .sidebar .nav .nav-item .navbar .dropdown-toggle, .navbar .sidebar .nav .nav-item .dropdown-toggle {
         display: block;
-        padding: 0.75rem 1rem;
+        padding: 5px;
         color: #fff;
         text-decoration: none;
         background: transparent; }
@@ -7744,7 +7744,7 @@ base-chart.chart {
           margin-top: 2px; }
         .sidebar .nav .nav-item .nav-link.nav-dropdown-toggle::before, .sidebar .nav .nav-item .navbar .nav-dropdown-toggle.dropdown-toggle::before, .navbar .sidebar .nav .nav-item .nav-dropdown-toggle.dropdown-toggle::before {
           position: absolute;
-          top: 0.96875rem;
+          top: 10px;
           right: 1rem;
           display: block;
           width: 0.875rem;
