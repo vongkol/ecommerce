@@ -6,7 +6,7 @@
         <meta name="description" content="Phsa24 is the best ecommerce in Cambodia">
         <meta name="keywords" content="Phsa24, Cambodia buy and Sell, The Best Online Shop in Cambodia, Online Shop, Ecommerce, Online Sell">
         <meta name="author" content="Sor Vichey">
-        <title>Shop Homepage - Start Bootstrap Template</title>
+        <title>Phsa 24</title>
         <link href="{{asset('front/bootstrap/bootstrap.min.css')}}" rel="stylesheet">
         <link href="{{asset('front/css/animation.css')}}" rel="stylesheet">
         <link href="{{asset('front/css/shop-homepage.css')}}" rel="stylesheet">
@@ -42,13 +42,15 @@
         <div class="container fixed-top fixed-top-header">     
             <div class="col-lg-12">
                 <div class="row">
-                    <div class="col-lg-9 col-sm-9 col-xs-9">
+                    <div class="col-md-9">
+                    <div class="col-lg-12 col-sm-12 col-xs-12">
                         <div class="input-group">
                             <input type="text" class="form-control" placeholder="What you looking for...">
                             <span class="input-group-btn">
                                 <button class="btn btn-default" type="button"><img src="{{asset('front/img/54481.png')}}"></button>
                             </span>
                         </div>
+                    </div>
                     </div>
                     <div class="col-lg-1 col-sm-1 col-xs-1">
                         <div class="pro-item text-center">
@@ -70,14 +72,13 @@
                 </div>
             </div>
         </div>
-        
+    
     <div class="container">
         <section>
             @yield('content')
         </section>
     </div>
-</footer>
 <script src="{{asset('front/js/jquery.min.js')}}"></script>
-<script src="{{asset('front/bootstrap/bootstrap.min.js')}}"></script>
+<script src="{{asset('front/bootstrap/bootstrap.bundle.min.js')}}"></script>
 </body>
 </html>
