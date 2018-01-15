@@ -27,6 +27,4 @@
             </div>
         </div>
     </form>
-    <hr>
-    <p class="text-center small">Copyright Notice © <img src="{{asset('front/img/logo.png')}}" width="40"> Cambodia Limited and licensees. All rights reserved.</p>
 @endsection

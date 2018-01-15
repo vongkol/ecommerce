@@ -44,7 +44,8 @@
             @yield('content')
         </section>
     </div>
-</footer>
+    <hr>
+    <p class="text-center small">Copyright Notice © <img src="{{asset('front/img/logo.png')}}" width="40"> Cambodia Limited and licensees. All rights reserved.</p>
 <script src="{{asset('front/js/jquery.min.js')}}"></script>
 <script src="{{asset('front/bootstrap/bootstrap.min.js')}}"></script>
 </body>

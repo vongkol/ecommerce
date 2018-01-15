@@ -36,8 +36,6 @@
         </div>
     </center>
 </from>
-<hr>
-    <p class="text-center small">Copyright Notice © <img src="{{asset('front/img/logo.png')}}" width="40"> Cambodia Limited and licensees. All rights reserved.</p>
 <script charset="utf-8" type="text/javascript">
     function check(event)
     {

@@ -1,7 +1,6 @@
 @extends('layouts.secure')
 @section('content')
 <link rel="stylesheet" href="{{asset('front/css/login.css')}}">
-<link rel="stylesheet" type="text/css" href="{{asset('front/css/login.css')}}">
     <form action="{{url('/buyer/forgot/recovery')}}" accept-charset="UTF-8" method="post">
         {{csrf_field()}}
         <div class="col-md-12">
@@ -25,6 +24,4 @@
             </div>
         </div>
     </form>
-    <hr>
-    <p class="text-center small">Copyright Notice © <img src="{{asset('front/img/logo.png')}}" width="40"> Cambodia Limited and licensees. All rights reserved.</p>
 @endsection
