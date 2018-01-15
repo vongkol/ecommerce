@@ -1,23 +1,20 @@
 
-
- 
 @extends('layouts.app')
-
 @section('content')
-
-<div class="row">
-    <div class="col-lg-12">
-        <div class="card">
-            <div class="card-header text-bold">
-                <i class="fa fa-align-justify"></i> Product Detial&nbsp;&nbsp;
-                <a href="{{url('/admin/product')}}" class="btn btn-link btn-sm">
-                    Back
-                </a>
-            </div>
-            <div class="card-block">
-                @if(Session::has('sms'))
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-header text-bold">
+                    <i class="fa fa-align-justify"></i>  Product Detail&nbsp;&nbsp;
+                    <a href="{{url('/admin/product')}}" class="btn btn-link btn-sm">
+                        <i class="fa fa-arrow-left"></i> Back
+                    </a>
+                    <a href="#" class="text-danger" onclick="showEdit(event)"><i class="fa fa-pencil"></i> Edit</a>
+                </div>
+                <div class="card-block">
+                    @if(Session::has('sms'))
                         <div class="alert alert-success" role="alert">
-                            <button type="button" class="close" data-dismiss="alert" aria-p="Close">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
                             <div>
@@ -27,7 +24,7 @@
                     @endif
                     @if(Session::has('sms1'))
                         <div class="alert alert-danger" role="alert">
-                            <button type="button" class="close" data-dismiss="alert" aria-p="Close">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
                             <div>
@@ -35,136 +32,149 @@
                             </div>
                         </div>
                     @endif
-                   
-                     @foreach($pro_detail as $p)
+                    <form action="{{url('/admin/product/update')}}" class="form-horizontal" method="post" onsubmit="return confirm('You want to save change?')">
+                        {{csrf_field()}}
                         <div class="row">
                             <div class="col-sm-6">
                                 <div class="form-group row">
-                                    <p for="name" class="control-p col-sm-4">Product Name:</p>
+                                    <label for="name" class="control-label col-sm-4">Product Name <span class="text-danger">*</span></label>
                                     <div class="col-sm-8">
-                                        <p class="to_span_align">{{$p->pro_name}}</p>
+                                        <input type="text" class="form-control" id="name" name="name" required value="{{$product->name}}" disabled="disabled">
+                                        <input type="hidden" name="id" value="{{$product->id}}">
                                     </div>
                                 </div>
-
+                                <div class="form-group row">
+                                    <label for="quantity" class="control-label col-sm-4">Model</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="model" name="model"
+                                               value="{{$product->model}}" disabled="disabled">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="quantity" class="control-label col-sm-4">Quantity</label>
+                                    <div class="col-sm-8">
+                                        <input type="number" step="0.01" min="0" class="form-control" id="quantity" name="quantity"
+                                               value="{{$product->quantity}}" disabled="disabled">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="min_price" class="control-label col-sm-4">Min Price</label>
+                                    <div class="col-sm-8">
+                                        <input type="number" step="0.01" min="0" class="form-control" id="min_price" name="min_price"
+                                               value="{{$product->min_price}}" disabled>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="price" class="control-label col-sm-4">Price</label>
+                                    <div class="col-sm-8">
+                                        <input type="number" step="0.01" min="0" class="form-control" id="price" name="price"
+                                               value="{{$product->price}}" disabled>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="max_price" class="control-label col-sm-4">Max Price</label>
+                                    <div class="col-sm-8">
+                                        <input type="number" step="0.01" min="0" class="form-control" id="max_price"
+                                               name="max_price" disabled
+                                               value="{{$product->max_price}}">
+                                        <br>
+                                        <p id="box" class="hide">
+                                            <button type="submit" name="btn_save" class="btn btn-primary">Save</button>
+                                            <button type="button" onclick="cancelEdit()" class="btn btn-danger">Cancel</button>
+                                        </p>
+                                    </div>
+                                </div>
                             </div>
                             <div class="col-sm-6">
                                 <div class="form-group row">
-                                    <p for="category" class="control-p col-sm-4">Category:</p>
+                                    <label for="category" class="control-label col-sm-4">Category <span class="text-danger">*</span></label>
                                     <div class="col-sm-8">
-                                       <p class="to_span_align">{{$p->cat_name}}</p>
+                                        <select name="category" id="category" class="form-control chosen-select" data-placeholder="Chose a category" tabindex="2" disabled="disabled">
+                                            <option value=""></option>
+                                            @foreach($categories as $c)
+                                                <option value="{{$c->id}}" {{$product->category_id==$c->id?'selected':''}}>{{$c->name}}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="shop" class="control-label col-sm-4">Shop <span class="text-danger">*</span></label>
+                                    <div class="col-sm-8">
+                                        <select name="shop" id="shop" class="form-control chosen-select" data-placeholder="Chose a shop" tabindex="2" disabled>
+                                            <option value=""></option>
+                                            @foreach($shops as $s)
+                                                <option value="{{$s->id}}" {{$s->id==$product->shop_id?'selected':''}}>{{$s->name}}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="discount" class="control-label col-sm-4">Discount (%)</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="discount" value="0" name="discount" disabled
+                                               value="{{$product->discount}}">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="short_description" class="control-label col-sm-4">Short Description</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" name="short_description"
+                                               id="short_description" value="{{$product->short_description}}" disabled="disabled">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="category" class="control-label col-sm-4">Description</label>
+                                    <div class="col-sm-8">
+                                        <textarea name="description" id="description" cols="30" rows="3"
+                                                  class="form-control" disabled>{{$product->description}}</textarea>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="row">
-                                <div class="col-sm-6">
-                                    <div class="form-group row">
-                                        <p for="quantity" class="control-p col-sm-4">Model:</p>
-                                        <div class="col-sm-8">
-                                            <p class="to_span_align">{{$p->model}}</p>
-                                        </div>
-                                    </div>
-    
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="form-group row">
-                                        <p for="shop" class="control-p col-sm-4">Shop:</p>
-                                        <div class="col-sm-8">
-                                            <p class="to_span_align">{{$p->shop_name}}</p>
-                                        </div>
-                                    </div>
-                                </div>
-                        </div>
-                        <div class="row">
-                                <div class="col-sm-6">
-                                    <div class="form-group row">
-                                        <p for="quantity" class="control-p col-sm-4">Quantity:</p>
-                                        <div class="col-sm-8">
-                                            <p class="to_span_align">{{$p->quantity}}</p>
-                                        </div>
-                                    </div>
-    
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="form-group row">
-                                        <p for="discount" class="control-p col-sm-4">Discount (%):</p>
-                                        <div class="col-sm-8">
-                                            <p class="to_span_align">{{$p->discount}}</p>
-                                        </div>
-                                    </div>
-                                </div>
-                        </div>
-                        <div class="row">
-                                <div class="col-sm-6">
-                                    <div class="form-group row">
-                                        <p for="min_price" class="control-p col-sm-4">Min Price:</p>
-                                        <div class="col-sm-8">
-                                            <p class="to_span_align">{{$p->min_price}}</p>
-                                        </div>
-                                    </div>
-    
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="form-group row">
-                                        <p for="max_price" class="control-p col-sm-4">Max Price:</p>
-                                        <div class="col-sm-8">
-                                            <p class="to_span_align">{{$p->max_price}}</p>
-                                        </div>
-                                       
-                                    </div>
-                                </div>
-                        </div>
-                        <div class="row">
-                                <div class="col-sm-6">
-                                    <div class="form-group row">
-                                        <p for="price" class="control-p col-sm-4">Price:</p>
-                                        <div class="col-sm-8">
-                                            <p class="to_span_align">{{$p->price}}</p>
-                                        </div>
-                                    </div>
-    
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="form-group row">
-                                        <p for="short_description" class="control-p col-sm-4">Short Description:</p>
-                                        <div class="col-sm-12">
-                                            <p class="to_span_align">{{$p->short_description}}</p>
-                                        </div>
-                                        
-                                    </div>
-                                </div>
-                        </div>
-                        <div class="row">
-                                <div class="col-sm-6">
-                                    <div class="form-group row">
-                                        
-                                        <div class="col-sm-12">
-                                            <form>
-                                                <p for="short_description" class="">Upload product images:</p>
-                                        
-                                                <input type="file" name="pro_image" class="form-control btn btn-info" name="file">
-                                                <br>
-                                                <br>
-                                                <button class="btn btn-primary">Sart Upload</button>
-                                            </form>
-                                        </div>
-                                        
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="form-group row">
-                                       <p for="category" class="control-p col-sm-4">Description:</p>
-                                        <div class="col-sm-12">
-                                            <textarea class="form-control" rows="5">{{$p->description}}</textarea>
-                                        </div>
-                                    </div>
-                                </div>
 
-                        </div>
-                    @endforeach                   
+                    </form>
+                    <h3 class="text-primary">Product Photos</h3>
+                        <form action="#">
+                            <label for="">Choose photo to upload</label>
+                            <input type="file" multiple name="photo">
+                            <button class="btn btn-primary" type="submit">Upload</button>
+                        </form>
+                       <p></p>
+                    <table class="tbl">
+                        <thead>
+                        <tr>
+                            <th>&numero;</th>
+                            <th>Photo</th>
+                            <th>Title</th>
+                            <th>Is Front</th>
+                            <th>Action</th>
+                        </tr>
+                        </thead>
+                    </table>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
+@endsection
+@section('js')
+    <script src="{{asset('chosen/chosen.jquery.js')}}"></script>
+    <script>
+        $(document).ready(function () {
+            $("select").chosen();
+        });
+        function showEdit(evt) {
+            evt.preventDefault();
+            $("select").chosen("destroy");
+            $("input").removeAttr("disabled");
+            $("textarea").removeAttr("disabled");
+            $("select").removeAttr("disabled");
+            $("#box").removeClass("hide");
+            $("select").chosen();
+        }
+        function cancelEdit() {
+            location.href = "{{url('/admin/product/detail/'.$product->id)}}";
+        }
+    </script>
 @endsection
