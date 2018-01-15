@@ -81,11 +81,12 @@ class BuyerController extends Controller
     // customer login
     public function is_login(Request $r)
     {
-        $username = $r->username;
-        $pass = $r->password;
-        $user = DB::table('customers')->where('active',1)->where('username', $username)->first();
+        $email = $r->email;
+        $pass = $r->pass;
+        $user = DB::table('customers')->where('active',1)->where('email', $email)->first();
+
         if($user!=null)
-        {
+        { 
             if(password_verify($pass, $user->password))
             {
                 if($r->session()->get('customer')!=NULL)
@@ -103,12 +104,12 @@ class BuyerController extends Controller
                 return redirect('/');
             }
             else{
-                $r->session()->flash('sms1', "Invalid username or password. Try again!");
+                $r->session()->flash('sms1', "Invalid email or password. Try again!");
                 return redirect('/buyer/login')->withInput();
             }
         }
         else{
-            $r->session()->flash('sms1', "Invalid username or password!");
+            $r->session()->flash('sms1', "Invalid email or password!");
             return redirect('/buyer/login')->withInput();
         }
     }
@@ -139,17 +140,11 @@ class BuyerController extends Controller
             ->where('email', $r->email)
             ->where('active', 1)
             ->count();
-        $username = DB::table('customers')
-            ->where('username', $r->username)
-            ->where('active', 1)
-            ->count();
-        if($email === 0 and $username === 0 ) {
+        if($email === 0) {
             $data = array(
                 'first_name' => $r->first_name,
                 'last_name' => $r->last_name,
-                'phone' => $r->phone,
                 'email' => $r->email,
-                'username' => $r->username,
                 'password' => password_hash($r->password, PASSWORD_BCRYPT)
             );
             $sms = "You have registered successfully. Please Login!";
@@ -158,7 +153,7 @@ class BuyerController extends Controller
             if ($i)
             {
                 $r->session()->flash('sms', $sms);
-                return redirect('/buyer/login');
+                return redirect('/buyer/register');
             }
             else
             {
@@ -169,9 +164,6 @@ class BuyerController extends Controller
             if ($email > 0) {
                 $sms1 = "Your email already exist. Please use a different one!";
             } 
-            if ($username > 0) {
-                $sms1 = "Your username already exit. Please use a different one!";
-            }
             $r->session()->flash('sms1', $sms1);
             return redirect('/buyer/register')->withInput();
         } 

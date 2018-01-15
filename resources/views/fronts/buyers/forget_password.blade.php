@@ -1,41 +1,27 @@
 @extends('layouts.secure')
 @section('content')
 <link rel="stylesheet" href="{{asset('front/css/login.css')}}">
-<div class="pd-top"></div>
-<div class="container">
-    @if(Session::has('sms'))
-        <div class="alert alert-success" role="alert">
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-            <div>
-                {{session('sms')}}
+    <form action="{{url('/buyer/forgot/recovery')}}" accept-charset="UTF-8" method="post">
+        {{csrf_field()}}
+        <div class="col-md-12">
+            <div class="lock">
+                <img src="{{asset('front/img/forgotpassword.png')}}" alt="forgot passoword">
+            </div>
+                <center>
+                    <div class="login col-md-4 col-sm-4" align="left">
+                        <div align="right" class="login-logo"><img src="{{asset('front/img/logo.png')}}"></div>
+                        @if(Session::has('sms1'))
+                            <div class="text-danger login-error">
+                                {{session('sms1')}}
+                            </div>
+                        @endif
+                        <h5 class="text-center">Account help</h5>	
+                        Enter an your E-mail using with this Phsa42 Account <br><br>
+                        <input type="email" id="email" name="email" placeholder="E-mail" required autofocus value="{{old("email")}}"><br><br>
+                        <input type="submit" name="Submit" value="Submit">
+                    </div>
+                </center>
             </div>
         </div>
-    @endif
-    @if(Session::has('sms1'))
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="alert alert-danger border-radius-none" role="alert">
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">&times;</span></button>
-                    {{session('sms1')}}
-                </div>
-            </div>
-        </div>
-    @endif
-    <div class="login-form">
-        <form action="{{url('/buyer/forgot/recovery')}}" accept-charset="UTF-8" method="post">
-            {{csrf_field()}}
-            <h2 class="text-center">Account help</h2>	
-            Enter an your E-mail using with this Mastermalls Account <br><br>
-            <div class="form-group">
-                <input type="email" id="email" name="email" placeholder="E-mail" class="form-control" required autofocus value="{{old("email")}}">
-            </div>
-            <div class="form-group">
-                <button type="submit" class="btn btn-default btn-block">Submit</button>
-            </div>  
-        </form
-    </div>
-</div>
+    </form>
 @endsection
