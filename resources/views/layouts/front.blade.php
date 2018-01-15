@@ -40,9 +40,9 @@
             </div>
         </nav>
         <div class="container fixed-top fixed-top-header">     
-            <div class="col-lg-12">
-                <div class="row">
-                    <div class="col-lg-9 col-sm-9 col-xs-9">
+            <div class="col-lg-12 col-md-12">
+                <div class="row"> 
+                    <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
                         <div class="input-group">
                             <input type="text" class="form-control" placeholder="What you looking for...">
                             <span class="input-group-btn">

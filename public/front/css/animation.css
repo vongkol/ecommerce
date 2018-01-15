@@ -25,8 +25,7 @@ body{
 .categories-vdoo {
 	background: #f2f2f2;
     padding: 7px;
-    margin-top: 61px;
-    border-radius: 4px;
+    margin-top: 119px;
 }
 .cateogries-product {
 	font-weight: bold;
@@ -132,13 +131,13 @@ body{
 	}
 /* ========== MEGA MENU ========== */	
 .main-navigation .mega-menu{
-	width:820px;
+	width:843px;
 	top:-9px;
 	padding-top:8px;
 	padding-right:2px;
 	}	
 .main-navigation .mega-menu-content{
-	padding:5px 1px;
+	padding:5px 0;
 	overflow:hidden;
 	}
 /* ========== DROPDOWN/MEGA MENU ON MOUSE HOVER ========== */

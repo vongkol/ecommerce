@@ -8,7 +8,7 @@
                 <img src="{{asset('front/img/forgotpassword.png')}}" alt="forgot passoword">
             </div>
                 <center>
-                    <div class="login col-md-3 col-sm-3" align="left">
+                    <div class="login col-md-4 col-sm-4" align="left">
                         <div align="right" class="login-logo"><img src="{{asset('front/img/logo.png')}}"></div>
                         @if(Session::has('sms1'))
                             <div class="text-danger login-error">
