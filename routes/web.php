@@ -265,3 +265,5 @@ Route::get('/admin/product/delete/{id}', "ProductController@delete");
 Route::post('/admin/product/save', "ProductController@save");
 Route::post('/admin/product/update', "ProductController@update");
 Route::get('/admin/product/detail/{id}', "ProductController@pro_detail");
+Route::get('/admin/product/photo/delete/{id}', "ProductController@delete_photo");
+Route::post('/admin/product/photo/upload', "ProductController@upload_photo");

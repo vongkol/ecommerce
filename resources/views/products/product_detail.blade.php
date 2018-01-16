@@ -135,23 +135,22 @@
 
                     </form>
                     <h3 class="text-primary">Product Photos</h3>
-                        <form action="#">
-                            <label for="">Choose photo to upload</label>
-                            <input type="file" multiple name="photo">
+                        <form action="{{url('/admin/product/photo/upload')}}" method="post" enctype="multipart/form-data">
+                            {{csrf_field()}}
+                            <label for="">Choose photos to upload</label>
+                            <input type="file" multiple name="photo[]" required>
+                            <input type="hidden" name="product_id" value="{{$product->id}}">
                             <button class="btn btn-primary" type="submit">Upload</button>
                         </form>
                        <p></p>
-                    <table class="tbl">
-                        <thead>
-                        <tr>
-                            <th>&numero;</th>
-                            <th>Photo</th>
-                            <th>Title</th>
-                            <th>Is Front</th>
-                            <th>Action</th>
-                        </tr>
-                        </thead>
-                    </table>
+                    <div class="img-box">
+                       @foreach($photos as $p)
+                            <div class="img" style="display: inline-block;">
+                                <img src="{{asset('uploads/products/250x250/'.$p->file_name)}}" alt="Photo" id="{{$p->id}}">
+                                <a href="#" id="{{$p->id}}" onclick="removeImage(this,event)">X</a>
+                            </div>
+                       @endforeach
+                    </div>
                 </div>
             </div>
         </div>
@@ -164,6 +163,23 @@
         $(document).ready(function () {
             $("select").chosen();
         });
+        function removeImage(obj, evt) {
+            evt.preventDefault();
+           var id = $(obj).attr("id");
+            var o = confirm('You want to delete?');
+            if(o)
+            {
+                $.ajax({
+                    type: "GET",
+                    url: burl + "/admin/product/photo/delete/" + id,
+                    success: function(sms){
+                        var str = "img#"+id;
+                        $(str).remove();
+                        $(obj).remove();
+                    }
+                });
+            }
+        }
         function showEdit(evt) {
             evt.preventDefault();
             $("select").chosen("destroy");

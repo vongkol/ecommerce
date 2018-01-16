@@ -16,9 +16,9 @@
                             <th>&numero;</th>
                             <th>Product Name</th>
                             <th>Quantity</th>
-                            <th>Min Price</th>
-                            <th>Price</th>
-                            <th>Max Price</th>
+                            <th>Min Price($)</th>
+                            <th>Price($)</th>
+                            <th>Max Price($)</th>
                             <th>Category</th>
                             <th>Action</th>
                         </tr>
@@ -28,14 +28,16 @@
                         @foreach($products as $p)
                         <tr>
                             <td>{{$i++}}</td>
-                            <td>{{$p->name}}</td>
+                            <td>
+                                <a href="{{url('/admin/product/detail/'.$p->id)}}">{{$p->name}}</a>
+                            </td>
                             <td>{{$p->quantity}}</td>
                             <td>{{$p->min_price}}</td>
                             <td>{{$p->price}}</td>
                             <td>{{$p->max_price}}</td>
                             <td>{{$p->category_name}}</td>
                             <td>
-                                <a href="{{url('/admin/product/edit/'.$p->id)}}" title="Edit"><i class="fa fa-edit text-success"></i></a>&nbsp;&nbsp;
+                                <a href="{{url('/admin/product/detail/'.$p->id)}}" title="Edit"><i class="fa fa-edit text-success"></i></a>&nbsp;&nbsp;
                                 <a href="{{url('/admin/product/delete/'.$p->id)}}" onclick="return confirm('Do you want to delete?')" title="Delete"><i class="fa fa-remove text-danger"></i></a>
                             </td>
                         </tr>
