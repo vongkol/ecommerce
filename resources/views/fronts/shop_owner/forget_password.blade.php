@@ -22,8 +22,8 @@
                         @endif
                         <h5 class="text-center">Shop Owner Account help</h5>	
                         Enter an your E-mail using with this Phsa42 Account <br><br>
-                        <input type="email" id="email" name="email" placeholder="E-mail" required autofocus value="{{old("email")}}"><br><br>
-                        <input type="submit" name="Submit" value="Submit">
+                        <input type="email" id="email" name="email" placeholder="E-mail" class="w-100" required autofocus value="{{old("email")}}"><br><br>
+                        <input type="submit" name="Submit" class="w-100" value="Submit">
                         <a href="{{url('shop-owner/login')}}"><p align="right">Login</p></a>
                     </div>
                 </center>

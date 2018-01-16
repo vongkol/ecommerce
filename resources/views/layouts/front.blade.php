@@ -10,6 +10,7 @@
         <link href="{{asset('front/bootstrap/bootstrap.min.css')}}" rel="stylesheet">
         <link href="{{asset('front/css/animation.css')}}" rel="stylesheet">
         <link href="{{asset('front/css/shop-homepage.css')}}" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
     </head>
     <body>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
@@ -29,9 +30,21 @@
                         <li class="nav-item">
                             <a class="nav-link" href="#">Contact</a>
                         </li>
-                        <li class="nav-item shop-login">
-                           ​ <img src="{{asset('front/img/shop.png')}}" alt="shop icon"> <a href="{{asset('shop-owner/login')}}"> Shop owner login</a> | <a href="{{asset('shop-owner/account/register')}}">Register</a>
+                        @if(Session::has('shop_owner'))
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                                <img src="{{asset('front/img/shop.png')}}" alt="shop icon"> Hi,{{ Session::get('shop_owner')->first_name }}
+                            </a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="{{url('shop-owner/profile')}}">Profile</a>
+                                <a class="dropdown-item text-danger" href="{{url('shop-owner/logout')}}">Sing Out</a>
+                            </div>
                         </li>
+                        @else
+                            <li class="nav-item shop-login">
+                            ​ <img src="{{asset('front/img/shop.png')}}" alt="shop icon"> <a href="{{asset('shop-owner/login')}}"> Shop owner login</a> | <a href="{{asset('shop-owner/account/register')}}">Register</a>
+                            </li>
+                        @endif
                         <li class="nav-item">
                             <a class="nav-link" href="#"><img src="{{asset('front/img/kh.png')}}"></a>
                         </li>
@@ -60,13 +73,26 @@
                             </a>
                         </div>
                     </div>
+                    
                     <div class="col-lg-2 col-sm-2 col-xs-2">
-                        <div class="pro-item text-center">
-                            <img src="{{asset('front/img/login.png')}}"><a href="{{url('buyer/login')}}">Buyer Login
-                            </a> | 
-                            <a href="{{url('buyer/register')}}">Register
-                            </a>
+                        @if(Session::has('customer'))
+                        <div class="dropdown">
+                            <div class="dropdown-toggle customer" data-toggle="dropdown">
+                                <img src="{{asset('front/img/login.png')}}">  Hi, {{ Session::get('customer')->first_name }}
+                            </div>
+                            <div class="dropdown-menu dropdown-menu-right">
+                                <a class="dropdown-item" href="{{url('buyer/profile')}}">Profile</a>
+                                <a class="dropdown-item text-danger" href="{{url('buyer/logout')}}">Sing Out</a>
+                            </div>
                         </div>
+                        @else
+                            <div class="pro-item text-center">
+                                <img src="{{asset('front/img/login.png')}}"><a href="{{url('buyer/login')}}">Buyer Login
+                                </a> | 
+                                <a href="{{url('buyer/register')}}">Register
+                                </a>
+                            </div>
+                        @endif
                     </div>
                 </div>
             </div>

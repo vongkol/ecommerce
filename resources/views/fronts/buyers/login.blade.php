@@ -16,10 +16,10 @@
                             </div>
                         @endif
                         <b>Account:</b> <br>
-                        <input type="email" name="email" placeholder="E-mail address"><br><br>
+                        <input type="email" name="email" placeholder="E-mail address"​ class="w-100" required><br><br>
                         <b>Password:</b><br>
-                        <input type="password" name="pass" placeholder="Password"><br><br>
-                        <input type="submit" name="login" value="Login">
+                        <input type="password" name="pass" placeholder="Password" class="w-100" required><br><br>
+                        <input type="submit" name="login" class="w-100" value="Login">
                         <a href="{{url('/buyer/forget-password')}}">Forget password</a>
                         <a href="{{url('buyer/register')}}"><p align="right">Register</p></a>
                     </div>

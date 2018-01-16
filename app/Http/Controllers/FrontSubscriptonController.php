@@ -15,30 +15,6 @@ class FrontSubscriptonController extends Controller
             return $next($request);
         });
     }
-    public function subscription(Request $r) {
-        $shop_owner = $r->session()->get('shop_owner');
-        if($shop_owner==NULL)
-        {
-            return redirect('/shop-owner/login');
-        }
-        $shop_owner_id = session('shop_owner')->id;
-        $data['packages'] = DB::table('packages')->where('active', 1)->get();
-        $data['counter'] = DB::table('subscriptions')->where('shop_owner_id', $shop_owner_id)
-            ->where('active', 1)->count();
-        $data['subscription'] = DB::table('subscriptions')
-            ->join('packages', 'subscriptions.package_id', "packages.id")
-            ->where('subscriptions.active', 1)
-            ->where('subscriptions.shop_owner_id', $shop_owner_id)
-            ->select('subscriptions.*', 'packages.name', 'packages.type')
-            ->first();
-        $data['product_count'] = DB::table('products')
-            ->join('shops', 'products.shop_id' , '=', 'shops.id')
-            ->join('shop_owners', 'shop_owners.id', '=', 'shops.shop_owner_id')
-            ->where('shop_owner_id', $shop_owner_id)
-            ->where('products.active', 1)
-            ->count();
-        return view('fronts.shop_owner.subscription', $data);
-    }
 
     public function unsubscribe(Request $r)
     {
@@ -60,7 +36,7 @@ class FrontSubscriptonController extends Controller
                 # code...
             }
             
-            return redirect('/shop-owner/subscription');
+            return redirect('/shop-owner/profile');
         }
     }
     // subscribe
@@ -88,7 +64,7 @@ class FrontSubscriptonController extends Controller
                 # code...
             }
             
-            return redirect('/shop-owner/subscription');
+            return redirect('/shop-owner/profile');
         }
         $package = DB::table('packages')->where('id', $r->package)->first();
         $expired_date = date('Y-m-d', strtotime("+{$package->day_number} day"));
@@ -113,7 +89,7 @@ class FrontSubscriptonController extends Controller
                 # code...
             }
 
-            return redirect('/shop-owner/subscription');
+            return redirect('/shop-owner/profile');
         }
         else{
             if ($r->session()->get('lang')=='en') {
@@ -126,7 +102,7 @@ class FrontSubscriptonController extends Controller
                 # code...
             }
             
-            return redirect('/shop-owner/subscription');
+            return redirect('/shop-owner/profile');
         }
     }
 }

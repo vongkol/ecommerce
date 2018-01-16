@@ -34,7 +34,7 @@
                 <input type="password" id="cpassword" name="cpassword" placeholder="Confirm Password" class="form-control" required>
             </div>
             <div class="form-group">
-                <button type="submit" class="btn btn-default btn-block">Reset</button>
+                <button type="submit" class="btn btn-warning btn-block">Reset</button>
             </div> 
         </form>
     </div>

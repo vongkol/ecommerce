@@ -4,9 +4,6 @@
 	padding: 20px 10px;
 	margin-top: 70px;
 }
-input  {
-	width: 100%;
-}
 .lock {
 	position: absolute;
 	opacity: 0.3;
@@ -15,6 +12,7 @@ input  {
 .input-fn {
 	width: 49%;
 	float: left;
+	height: 29px;
 	margin-right: 1px;
 }
 .login-error {

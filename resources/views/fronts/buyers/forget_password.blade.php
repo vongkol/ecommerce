@@ -22,8 +22,8 @@
                         @endif
                         <h5 class="text-center">Buyer Account help</h5>	
                         Enter an your E-mail using with this Phsa42 Account <br><br>
-                        <input type="email" id="email" name="email" placeholder="E-mail" required autofocus value="{{old("email")}}"><br><br>
-                        <input type="submit" name="Submit" value="Submit">
+                        <input type="email" class="w-100" id="email" name="email" placeholder="E-mail" required autofocus value="{{old("email")}}"><br><br>
+                        <input type="submit" class="w-100" name="Submit" value="Submit">
                         <a href="{{url('buyer/login')}}"><p align="right">Login</p></a>
                     </div>
                 </center>

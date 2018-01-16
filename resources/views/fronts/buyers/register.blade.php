@@ -25,13 +25,14 @@
                 <input type="text" class="input-ln" name="last_name" placeholder="Last name" required><br><br>
             </div>
             <b>Email address:</b> <br>
-            <input type="email" name="email" placeholder="E-mail address" required><br><br>
-
+            <input type="email" name="email" placeholder="E-mail address" class="w-100" required><br><br>
+            <b>Phone Nunber:</b> <br>
+            <input type="text" name="phone" placeholder="Phone Number" class="w-100" required><br><br>
             <b>Create a password:</b><br>
-            <input type="password" name="password" id="pass" placeholder="Password" required><br><br>
+            <input type="password" name="password" id="pass" placeholder="Password" class="w-100" required><br><br>
             <b>Confirm your password::</b><br>
-            <input type="password" name="comfirm_password" id="re_pass" placeholder="Confirm password" required><br><br>
-            <input type="submit" name="register" value="Register">
+            <input type="password" name="comfirm_password" id="re_pass" placeholder="Confirm password" class="w-100" required><br><br>
+            <input type="submit" name="register" class="w-100" value="Register">
             <a href="{{url('buyer/login')}}"><p align="right">Login</p></a>
         </div>
     </center>
