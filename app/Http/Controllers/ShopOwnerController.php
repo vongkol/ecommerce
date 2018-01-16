@@ -16,7 +16,27 @@ class ShopOwnerController extends Controller
         {
             return redirect('/shop-owner/login');
         }
-        return view('fronts.shop_owner.index');
+        $data['shop'] = DB::table('shops')
+            ->where('shops.shop_owner_id', $shop_owner->id)
+            ->where('active',1)->first();
+
+        $shop_owner_id = session('shop_owner')->id;
+        $data['packages'] = DB::table('packages')->where('active', 1)->get();
+        $data['counter'] = DB::table('subscriptions')->where('shop_owner_id', $shop_owner_id)
+            ->where('active', 1)->count();
+        $data['subscription'] = DB::table('subscriptions')
+            ->join('packages', 'subscriptions.package_id', "packages.id")
+            ->where('subscriptions.active', 1)
+            ->where('subscriptions.shop_owner_id', $shop_owner_id)
+            ->select('subscriptions.*', 'packages.name', 'packages.type')
+            ->first();
+        $data['product_count'] = DB::table('products')
+            ->join('shops', 'products.shop_id' , '=', 'shops.id')
+            ->join('shop_owners', 'shop_owners.id', '=', 'shops.shop_owner_id')
+            ->where('shop_owner_id', $shop_owner_id)
+            ->where('products.active', 1)
+            ->count();
+        return view('fronts.shop_owner.index', $data);
     }
     // load edit profile form
     public function edit(Request $r)
@@ -36,16 +56,9 @@ class ShopOwnerController extends Controller
           $data = [
               'first_name' => $r->first_name,
               'last_name' => $r->last_name,
-              'gender' => $r->gender,
-              'dob' => $r->dob,
               'phone' => $r->phone,
               'email' => $r->email,
-              'username' => $r->username
           ];
-          // check if username or email already exist or not
-          $count_username = DB::table('shop_owners')->where('id',"!=", $r->id)
-              ->where('username', $r->username)
-              ->count();
           $count_email = DB::table('shop_owners')->where('id', "!=", $r->id)
               ->where('email', $r->email)
               ->count();
@@ -53,11 +66,6 @@ class ShopOwnerController extends Controller
           {
               $r->session()->flash('sms1', "The email '{$r->email}' already exist. Change a new one!");
               return redirect('/shop-owner/profile/edit');
-          }
-          if($count_username>0)
-          {
-              $r->session()->flash('sms1', "The username '{$r->username}' already exist. Change a new one!");
-              return redirect('/seeker/profile/edit');
           }
           $i = DB::table('shop_owners')->where('id', $r->id)->update($data);
           if($i)
@@ -82,9 +90,9 @@ class ShopOwnerController extends Controller
     // customer login
     public function is_login(Request $r)
     {
-        $username = $r->username;
-        $pass = $r->password;
-        $user = DB::table('shop_owners')->where('active',1)->where('username', $username)->first();
+        $email = $r->email;
+        $pass = $r->pass;
+        $user = DB::table('shop_owners')->where('active',1)->where('email', $email)->first();
         if($user!=null)
         {
             if(password_verify($pass, $user->password))
@@ -101,7 +109,7 @@ class ShopOwnerController extends Controller
                 } 
                 // save user to session
                 $r->session()->put('shop_owner', $user);
-                return redirect('/shop-owner/shop');
+                return redirect('/shop-owner/profile');
             }
             else{
                 $r->session()->flash('sms1', "Invalid username or password. Try again!");
@@ -140,19 +148,12 @@ class ShopOwnerController extends Controller
             ->where('email', $r->email)
             ->where('active', 1)
             ->count();
-        $username = DB::table('shop_owners')
-            ->where('username', $r->username)
-            ->where('active', 1)
-            ->count();
-        if($email === 0 and $username === 0 ) {
+        if($email === 0) {
             $data = array(
                 'first_name' => $r->first_name,
                 'last_name' => $r->last_name,
                 'phone' => $r->phone,
                 'email' => $r->email,
-                'gender' => $r->gender,
-                'dob' => $r->dob,
-                'username' => $r->username,
                 'password' => password_hash($r->password, PASSWORD_BCRYPT)
             );
             $sms = "You have registered successfully. Please Login!";
@@ -161,7 +162,7 @@ class ShopOwnerController extends Controller
             if ($i)
             {       
                 $r->session()->flash('sms', $sms);
-                return redirect('/shop-owner/login');
+                return redirect('/shop-owner/account/register');
             }
             else
             {
@@ -172,9 +173,6 @@ class ShopOwnerController extends Controller
             if ($email > 0) {
                 $sms1 = "Your email already exist. Please use a different one!";
             } 
-            if ($username > 0) {
-                $sms1 = "Your username already exit. Please use a different one!";
-            }
             $r->session()->flash('sms1', $sms1);
             return redirect('/shop-owner/account/register')->withInput();
         } 

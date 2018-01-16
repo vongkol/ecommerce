@@ -4,20 +4,15 @@
 	padding: 20px 10px;
 	margin-top: 70px;
 }
-input  {
-	width: 100%;
-}
-.login-logo {
-	opacity: 0.3;
-}
 .lock {
 	position: absolute;
-	opacity: 0.2;
+	opacity: 0.3;
 }
 .input-ln,
 .input-fn {
 	width: 49%;
 	float: left;
+	height: 29px;
 	margin-right: 1px;
 }
 .login-error {

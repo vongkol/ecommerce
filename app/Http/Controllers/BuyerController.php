@@ -37,12 +37,7 @@ class BuyerController extends Controller
             'last_name' => $r->last_name,
             'phone' => $r->phone,
             'email' => $r->email,
-            'username' => $r->username
         ];
-        // check if username or email already exist or not
-        $count_username = DB::table('customers')->where('id',"!=", $r->id)
-            ->where('username', $r->username)
-            ->count();
         $count_email = DB::table('customers')->where('id', "!=", $r->id)
             ->where('email', $r->email)
             ->count();
@@ -50,11 +45,6 @@ class BuyerController extends Controller
         {
             $r->session()->flash('sms1', "The email '{$r->email}' already exist. Change a new one!");
             return redirect('/buyer/profile/edit');
-        }
-        if($count_username>0)
-        {
-            $r->session()->flash('sms1', "The username '{$r->username}' already exist. Change a new one!");
-            return redirect('/buyers/profile/edit');
         }
 
         $i = DB::table('customers')->where('id', $r->id)->update($data);
@@ -145,6 +135,7 @@ class BuyerController extends Controller
                 'first_name' => $r->first_name,
                 'last_name' => $r->last_name,
                 'email' => $r->email,
+                'phone' => $r->phone,
                 'password' => password_hash($r->password, PASSWORD_BCRYPT)
             );
             $sms = "You have registered successfully. Please Login!";

@@ -31,10 +31,10 @@ class ShopOwnerForgetPasswordController extends Controller
             if($i) {
                 $r->session()->flash("sms", "Please check your email :)");
             }
-            return view("fronts.shop_owner.login");
+            return view("fronts.shop_owner.forget_password");
         }
         else{
-            $r->session()->flash("sms1", "Your email does not exist in our Mastermalls!");
+            $r->session()->flash("sms1", "Your email does not exist in our Phsa24!");
             return redirect('/shop-owner/forget-password')->withInput();
         }
     }

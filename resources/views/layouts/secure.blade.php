@@ -29,6 +29,21 @@
                         <li class="nav-item">
                             <a class="nav-link" href="#">Contact</a>
                         </li>
+                        @if(Session::has('shop_owner'))
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                                <img src="{{asset('front/img/shop.png')}}" alt="shop icon"> Hi,{{ Session::get('shop_owner')->first_name }}
+                            </a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="{{url('shop-owner/profile')}}">Profile</a>
+                                <a class="dropdown-item text-danger" href="{{url('shop-owner/logout')}}">Sing Out</a>
+                            </div>
+                        </li>
+                        @else
+                            <li class="nav-item shop-login">
+                            ​ <img src="{{asset('front/img/shop.png')}}" alt="shop icon"> <a href="{{asset('shop-owner/login')}}"> Shop owner login</a> | <a href="{{asset('shop-owner/account/register')}}">Register</a>
+                            </li>
+                        @endif
                         <li class="nav-item">
                             <a class="nav-link" href="#"><img src="{{asset('front/img/kh.png')}}"></a>
                         </li>

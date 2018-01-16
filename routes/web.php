@@ -203,7 +203,7 @@ Route::post('/shop-owner/update', "ManageShopOwnerController@update");
 Route::get('/shop-owner/shop', "FrontShopController@index");
 Route::get('/shop-owner/shop/create', "FrontShopController@create");
 Route::post('/shop-owner/shop/save', "FrontShopController@save");
-Route::get('/shop-owner/shop/edit', "FrontShopController@edit");
+Route::get('/shop-owner/shop/edit/{id}', "FrontShopController@edit");
 Route::post('/shop-owner/shop/update', "FrontShopController@update");
 //Front Product
 Route::get('/shop-owner/product', "FrontProductController@index");

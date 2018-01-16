@@ -5,21 +5,21 @@
         {{csrf_field()}}
         <div class="col-md-12">
             <div class="lock">
-                <img src="{{asset('front/img/lock.png')}}" alt="secure image">
+                <img src="{{asset('front/img/buyer_login.jpg')}}" alt="secure image">
             </div>
                 <center>
                     <div class="login col-md-4 col-sm-4" align="left">
-                        <div align="right" class="login-logo"><img src="{{asset('front/img/logo.png')}}"></div>
+                        <div align="right"><img src="{{asset('front/img/login.png')}}"></div>
                         @if(Session::has('sms1'))
                             <div class="text-danger login-error">
                                 {{session('sms1')}}
                             </div>
                         @endif
                         <b>Account:</b> <br>
-                        <input type="email" name="email" placeholder="E-mail address"><br><br>
+                        <input type="email" name="email" placeholder="E-mail address"​ class="w-100" required><br><br>
                         <b>Password:</b><br>
-                        <input type="password" name="pass" placeholder="Password"><br><br>
-                        <input type="submit" name="login" value="Login">
+                        <input type="password" name="pass" placeholder="Password" class="w-100" required><br><br>
+                        <input type="submit" name="login" class="w-100" value="Login">
                         <a href="{{url('/buyer/forget-password')}}">Forget password</a>
                         <a href="{{url('buyer/register')}}"><p align="right">Register</p></a>
                     </div>

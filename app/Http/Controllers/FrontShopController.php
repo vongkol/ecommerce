@@ -8,20 +8,20 @@ use Auth;
 use Session;
 class FrontShopController extends Controller
 {
-    public function index(Request $r)
-    {
-        // check if shop owner login
-        $shop_owner = $r->session()->get('shop_owner');
-        if($shop_owner==NULL)
-        {
-             return redirect('/shop-owner/login');
-        }
-        $data['shop'] = DB::table('shops')
-            ->where('shops.shop_owner_id', $shop_owner->id)
-            ->where('active',1)->first();
+    // public function index(Request $r)
+    // {
+    //     // check if shop owner login
+    //     $shop_owner = $r->session()->get('shop_owner');
+    //     if($shop_owner==NULL)
+    //     {
+    //          return redirect('/shop-owner/login');
+    //     }
+    //     $data['shop'] = DB::table('shops')
+    //         ->where('shops.shop_owner_id', $shop_owner->id)
+    //         ->where('active',1)->first();
 
-        return view('fronts.shop.index', $data);
-    }
+    //     return view('fronts.shop.index', $data);
+    // }
     // load create form
     public function create(Request $r)
     {
@@ -60,13 +60,13 @@ class FrontShopController extends Controller
             $file->move($destinationPath, $file_name);
             $data['logo'] = $file_name;
         }
-        $sms = "The new company has been created successfully.";
+        $sms = "The new shop has been created successfully.";
         $sms1 = "Fail to create the new company, please check again!";
         $i = DB::table('shops')->insert($data);
         if ($i)
         {
             $r->session()->flash('sms', $sms);
-            return redirect('/shop-owner/shop');
+            return redirect('/shop-owner/profile');
         }
         else
         {
@@ -75,15 +75,9 @@ class FrontShopController extends Controller
         }
     }
 
-    public function edit(Request $r)
+    public function edit($id)
     {
-        // check if shop owner login
-        $shop_owner = $r->session()->get('shop_owner');
-        if($shop_owner==NULL)
-        {
-             return redirect('/shop-owner/login');
-        }
-        $data['shop'] = DB::table('shops')->where('shop_owner_id', $shop_owner->id)->first();
+        $data['shop'] = DB::table('shops')->where('id', $id)->first();
         return view('fronts.shop.edit', $data);
     }
 
@@ -118,12 +112,12 @@ class FrontShopController extends Controller
         if ($i)
         {
             $r->session()->flash('sms', $sms);
-            return redirect('/shop-owner/shop');
+            return redirect('/shop-owner/profile');
         }
         else
         {
             $r->session()->flash('sms1', $sms1);
-            return redirect('/shop-owner/shop/edit');
+            return redirect('/shop-owner/shop/edit/'.$r->id);
         }
     }
 }

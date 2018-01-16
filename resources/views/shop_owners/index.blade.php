@@ -8,7 +8,6 @@
                     <a href="{{url('/shop-owner/create')}}" class="btn btn-link btn-sm">New</a>
                 </div>
                 <div class="card-block">
-
                     <table class="tbl">
                         <thead>
                             <tr>
