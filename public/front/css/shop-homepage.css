@@ -46,7 +46,7 @@ body {
 }
 .bg-dark {
     background-color: #fff!important;
-    border-bottom: 1px solid #faf2f2;
+    border-bottom: 1px solid #ced4da;
     z-index: 9999;
 }
 .card {
@@ -66,9 +66,16 @@ box-shadow: 0 0 0 5px #D7D7DB;
     border-color: #64B5F6;
     background: #1E88E5;
 }
-@media (min-width: 992px) {
+#footer {
+    border-top: 1px solid #ced4da;
+    padding: 20px 10px;
+}
+.shop-login {
+    padding-top: 8px;
+}
+/* @media (min-width: 992px) {
   
 }
 @media (max-width: 360px) {
   
-}
+} */

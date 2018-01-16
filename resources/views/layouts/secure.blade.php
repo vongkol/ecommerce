@@ -29,6 +29,9 @@
                         <li class="nav-item">
                             <a class="nav-link" href="#">Contact</a>
                         </li>
+                        <li class="nav-item shop-login">
+                           ​ <img src="{{asset('front/img/shop.png')}}" alt="shop icon"> <a href="{{asset('shop-owner/login')}}"> Shop owner login</a> | <a href="{{asset('shop-owner/account/register')}}">Register</a>
+                        </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#"><img src="{{asset('front/img/kh.png')}}"></a>
                         </li>

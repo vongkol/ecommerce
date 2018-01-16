@@ -5,11 +5,11 @@
         {{csrf_field()}}
         <div class="col-md-12">
             <div class="lock">
-                <img src="{{asset('front/img/lock.png')}}" alt="secure image">
+                <img src="{{asset('front/img/buyer_login.jpg')}}" alt="secure image">
             </div>
                 <center>
                     <div class="login col-md-4 col-sm-4" align="left">
-                        <div align="right" class="login-logo"><img src="{{asset('front/img/logo.png')}}"></div>
+                        <div align="right"><img src="{{asset('front/img/login.png')}}"></div>
                         @if(Session::has('sms1'))
                             <div class="text-danger login-error">
                                 {{session('sms1')}}

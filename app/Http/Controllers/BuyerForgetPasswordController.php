@@ -31,7 +31,7 @@ class BuyerForgetPasswordController extends Controller
             if($i) {
                 $r->session()->flash("sms", "Please check your email :)");
             }
-            return view("fronts.buyers.login");
+            return view("fronts.buyers.forget_password");
         }
         else{
             $r->session()->flash("sms1", "Your email does not exist in our Phsa24!");

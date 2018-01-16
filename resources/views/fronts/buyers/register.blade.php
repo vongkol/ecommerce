@@ -4,11 +4,11 @@
 <form action="{{url('/buyer/save')}}" accept-charset="UTF-8" method="post" onsubmit="check(event)">
 {{csrf_field()}}   
     <div class="lock">
-        <img src="{{asset('front/img/signup.png')}}">
+        <img src="{{asset('front/img/buyer_register.jpg')}}">
     </div>
     <center>
         <div class="login col-md-4 col-sm-4" align="left">
-            <div align="right" class="login-logo"><img src="{{asset('front/img/logo.png')}}"></div>
+            <div align="right"><img src="{{asset('front/img/login.png')}}"></div>
             @if(Session::has('sms'))
                 <div class="text-success register-success">
                     {{session('sms')}}

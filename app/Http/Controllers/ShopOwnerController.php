@@ -82,9 +82,9 @@ class ShopOwnerController extends Controller
     // customer login
     public function is_login(Request $r)
     {
-        $username = $r->username;
-        $pass = $r->password;
-        $user = DB::table('shop_owners')->where('active',1)->where('username', $username)->first();
+        $email = $r->email;
+        $pass = $r->pass;
+        $user = DB::table('shop_owners')->where('active',1)->where('email', $email)->first();
         if($user!=null)
         {
             if(password_verify($pass, $user->password))
@@ -140,19 +140,12 @@ class ShopOwnerController extends Controller
             ->where('email', $r->email)
             ->where('active', 1)
             ->count();
-        $username = DB::table('shop_owners')
-            ->where('username', $r->username)
-            ->where('active', 1)
-            ->count();
-        if($email === 0 and $username === 0 ) {
+        if($email === 0) {
             $data = array(
                 'first_name' => $r->first_name,
                 'last_name' => $r->last_name,
                 'phone' => $r->phone,
                 'email' => $r->email,
-                'gender' => $r->gender,
-                'dob' => $r->dob,
-                'username' => $r->username,
                 'password' => password_hash($r->password, PASSWORD_BCRYPT)
             );
             $sms = "You have registered successfully. Please Login!";
@@ -161,7 +154,7 @@ class ShopOwnerController extends Controller
             if ($i)
             {       
                 $r->session()->flash('sms', $sms);
-                return redirect('/shop-owner/login');
+                return redirect('/shop-owner/account/register');
             }
             else
             {
@@ -172,9 +165,6 @@ class ShopOwnerController extends Controller
             if ($email > 0) {
                 $sms1 = "Your email already exist. Please use a different one!";
             } 
-            if ($username > 0) {
-                $sms1 = "Your username already exit. Please use a different one!";
-            }
             $r->session()->flash('sms1', $sms1);
             return redirect('/shop-owner/account/register')->withInput();
         } 

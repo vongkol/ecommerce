@@ -29,6 +29,9 @@
                         <li class="nav-item">
                             <a class="nav-link" href="#">Contact</a>
                         </li>
+                        <li class="nav-item shop-login">
+                           ​ <img src="{{asset('front/img/shop.png')}}" alt="shop icon"> <a href="{{asset('shop-owner/login')}}"> Shop owner login</a> | <a href="{{asset('shop-owner/account/register')}}">Register</a>
+                        </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#"><img src="{{asset('front/img/kh.png')}}"></a>
                         </li>
@@ -59,11 +62,9 @@
                     </div>
                     <div class="col-lg-2 col-sm-2 col-xs-2">
                         <div class="pro-item text-center">
-                            <a href="{{url('buyer/login')}}">
-                                <span class="item-number"><img src="{{asset('front/img/login.png')}}">Login</span>
+                            <img src="{{asset('front/img/login.png')}}"><a href="{{url('buyer/login')}}">Buyer Login
                             </a> | 
-                            <a href="{{url('buyer/register')}}">
-                                <span class="item-number">Register</span>
+                            <a href="{{url('buyer/register')}}">Register
                             </a>
                         </div>
                     </div>
@@ -75,6 +76,31 @@
             @yield('content')
         </section>
     </div>
+    <footer id="footer" align="center">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <h6>Stay Connected</h6>
+                    <img src="{{asset('front/img/fb.png')}}" width="25" alt="social">
+                    <img src="{{asset('front/img/in.png')}}" width="25" alt="social">
+                </div>
+                <div class="col-md-3">
+                    <h6>Help</h6>
+                    <aside><a href="#">Customer Service</a></aside>
+                    <aside><a href="#">Delivery Options</a></aside>
+                </div>
+                <div class="col-md-3">
+                    <h6>How to Buy</h6>
+                    <aside><a href="#">Delivery Options</a></aside>
+                    <aside><a href="#">New User Guide</a></aside>
+                </div>
+                <div class="col-md-3">
+                    <h6>Partner Promotion</h6>
+                    <img src="{{asset('front/img/shop.png')}}" alt="shop icon">​<a href="{{asset('shop-owner/login')}}"> Shop owner login</a> | <a href="{{asset('shop-owner/account/register')}}">Register</a>
+                </div>
+            </div>
+        </div>
+    </footer>
 <script src="{{asset('front/js/jquery.min.js')}}"></script>
 <script src="{{asset('front/bootstrap/bootstrap.bundle.min.js')}}"></script>
 </body>

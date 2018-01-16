@@ -1,52 +1,30 @@
 @extends('layouts.secure')
 @section('content')
-<link rel="stylesheet" href="{{asset('front/css/login.css')}}">
-<style>
-    .login-form form {
-        color: #405e9e;
-        background: #fff;
-    }
-    .ps {
-        color: #405e9e;
-    }
-</style>
-<div class="pd-top"></div>
-<div class="container">
-    @if(Session::has('sms'))
-        <div class="alert alert-success" role="alert">
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-            <div>
-                {{session('sms')}}
+<link rel="stylesheet" type="text/css" href="{{asset('front/css/login.css')}}">
+    <form action="{{url('/shop-owner/is-login')}}" accept-charset="UTF-8" method="post">
+        {{csrf_field()}}
+        <div class="col-md-12">
+            <div class="lock">
+                <img src="{{asset('front/img/shop_owner_login.jpg')}}" alt="secure image">
+            </div>
+                <center>
+                    <div class="login col-md-4 col-sm-4" align="left">
+                        <div align="right"><img src="{{asset('front/img/shop.png')}}"></div>
+                        @if(Session::has('sms1'))
+                            <div class="text-danger login-error">
+                                {{session('sms1')}}
+                            </div>
+                        @endif
+                        <b>Account:</b> <br>
+                        <input type="email" name="email" placeholder="E-mail address"><br><br>
+                        <b>Password:</b><br>
+                        <input type="password" name="pass" placeholder="Password"><br><br>
+                        <input type="submit" name="login" value="Login">
+                        <a href="{{url('/shop-owner/forget-password')}}">Forget password</a>
+                        <a href="{{url('shop-owner/account/register')}}"><p align="right">Register</p></a>
+                    </div>
+                </center>
             </div>
         </div>
-    @endif
-    @if(Session::has('sms1'))
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="alert alert-danger border-radius-none" role="alert">
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">&times;</span></button>
-                    {{session('sms1')}}
-                </div>
-            </div>
-        </div>
-    @endif
-    <div class="login-form">
-        <form action="{{url('/shop-owner/is-login')}}" accept-charset="UTF-8" method="post">
-            {{csrf_field()}}
-            <h2 class="text-center">Mastermalls</h2>	
-            <div class="form-group">
-                <input type="text" class="form-control" name="username" placeholder="Username" required>
-                <input type="password" class="form-control" name="password" placeholder="Password" required>
-            </div>
-            <div class="form-group">
-                <button type="submit" class="btn btn-default btn-block">Login</button>
-            </div>
-            <p class="text-center"><a href="{{url('shop-owner/forget-password')}}"><span class="ps">Forgot Password?</span></a></p>     
-        </form>
-        <p class="text-center small">Not Registered? <a href="{{url('shop-owner/account/register')}}">Create an Account</a></p>
-    </div>
-</div>
+    </form>
 @endsection
