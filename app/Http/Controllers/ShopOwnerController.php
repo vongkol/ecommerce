@@ -90,9 +90,11 @@ class ShopOwnerController extends Controller
     // customer login
     public function is_login(Request $r)
     {
-        $email = $r->email;
+        $username = $r->username;
         $pass = $r->pass;
-        $user = DB::table('shop_owners')->where('active',1)->where('email', $email)->first();
+        $user = DB::table('shop_owners')->where('active',1)->where('username', $username)->first();
+        var_dump($user);
+        
         if($user!=null)
         {
             if(password_verify($pass, $user->password))

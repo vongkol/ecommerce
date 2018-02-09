@@ -16,7 +16,7 @@
                             </div>
                         @endif
                         <b>Account:</b> <br>
-                        <input type="email" name="email" placeholder="E-mail address" class="w-100" required><br><br>
+                        <input type="text" name="username" placeholder="Username" value="{{old('username')}}" class="w-100" required><br><br>
                         <b>Password:</b><br>
                         <input type="password" name="pass" placeholder="Password" class="w-100" required><br><br>
                         <input type="submit" name="login" class="w-100" value="Login">
