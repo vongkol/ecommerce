@@ -37,7 +37,7 @@
             </div>
         </div>
         <div class="col-md-6">
-            <p>&npsb;</p>
+    
             <div class="product-name">
                 <h5>
                   {{$product->name}} (<span class="text-danger">Code={{$product->id}}</span>)

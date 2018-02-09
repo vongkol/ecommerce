@@ -9,127 +9,30 @@
                         <a class="small see-all-cat float-right" href="#">See All >></a>
                     </div> 
             <ul>
-                <li><a href="#"><img src="{{asset('front/img/images.png')}}">Woman Fashion <i class="fa fa-angle-right"></i></a>
+                @foreach($categories as $cat)
+                <?php
+                    $subs = DB::table('categories')->where('active',1)->where('parent_id', $cat->id)->get();
+                ?>
+                <li><a href="#"><img src="{{asset('uploads/icons/'.$cat->icon)}}" width="20"> {{$cat->name}} <i class="fa fa-angle-right"></i></a>
+                    @if(count($subs)>0)
                     <div class="mega-menu">
-                        <div class="mega-menu-content">
-                            <div class="mm-row">
-                                <div class="mm-one-fifth">
-                                    <div class="mm-cell">
-                                        <ol class="list">
-                                            <li class="list-headline"><h4><i>Praesent</i></h4></li>
-                                            <li><a href="#">Viverra</a></li>
-                                            <li><a href="#">Odio Porta</a></li>
-                                            <li><a href="#">Ornare</a></li>
-                                            <li><a href="#">Malesuada</a></li>
-                                        </ol>
+                            <div class="mega-menu-content">
+                                <div class="row">
+                                   @foreach($subs as $s)
+                                    <div class="col-sm-2">
+                                        <a href="#">{{$s->name}}</a>
                                     </div>
+                                   @endforeach
+                                 
                                 </div>
-                                <div class="mm-one-fifth">
-                                    <div class="mm-cell">
-                                        <ol class="list">
-                                            <li class="list-headline"><h4><a href="#">Donec</a></h4></li>
-                                            <li><a href="#">Aliquam</a></li>
-                                            <li><a href="#">Sollicitudin</a></li>
-                                            <li><a href="#">Imperdiet</a></li>
-                                            <li><a href="#">Maximus</a></li>
-                                            <li><a href="#">Vitae Justo</a></li>
-                                        </ol>
-                                    </div>
-                                </div>
-                                <div class="mm-one-fifth">
-                                    <div class="mm-cell">
-                                        <ol class="list">
-                                            <li class="list-headline"><h4><i>Quisque</i></h4></li>
-                                            <li><a href="#">Vehicula</a></li>
-                                            <li><a href="#">Viverra</a></li>
-                                            <li><a href="#">Arcu</a></li>
-                                            <li><a href="#">Egestas</a></li>
-                                        </ol>
-                                    </div>
-                                </div>
-                                <div class="mm-one-fifth">
-                                    <div class="mm-cell">
-                                        <ol class="list">
-                                            <li class="list-headline"><h4><a href="#">Phasellus</a></h4></li>
-                                            <li><a href="#">Dictum</a></li>
-                                            <li><a href="#">Ultricies</a></li>
-                                            <li><a href="#">In Lacinia</a></li>
-                                        </ol>
-                                    </div>
-                                </div>
-                                <div class="mm-one-fifth">
-                                    <div class="mm-cell">
-                                        <ol class="list">
-                                            <li class="list-headline"><h4><i>Mauris</i></h4></li>
-                                            <li><a href="#">Acinia</a></li>
-                                            <li><a href="#">Maecenas</a></li>
-                                            <li><a href="#">Libero</a></li>
-                                            <li><a href="#">Morbi</a></li>
-                                        </ol>
-                                    </div>
-                                </div>
+                               
                             </div>
-                            <div class="mm-row">
-                                <div class="mm-one-fifth">
-                                    <div class="mm-cell">
-                                        <ol class="list">
-                                            <li class="list-headline"><h4><a href="#">Suscipit</a></h4></li>
-                                            <li><a href="#">Pellentesque</a></li>
-                                            <li><a href="#">Rhoncus</a></li>
-                                            <li><a href="#">Velit Non</a></li>
-                                            <li><a href="#">Facilisis</a></li>
-                                            <li><a href="#">Tristique</a></li>
-                                        </ol>
-                                    </div>
-                                </div>
-                                <div class="mm-one-fifth">
-                                    <div class="mm-cell">
-                                        <ol class="list">
-                                            <li class="list-headline"><h4><i>Aenean</i></h4></li>
-                                            <li><a href="#">Gravida</a></li>
-                                            <li><a href="#">Blandit</a></li>
-                                            <li><a href="#">Elementum</a></li>
-                                            <li><a href="#">Pulvinar Arcu</a></li>
-                                        </ol>
-                                    
-                                    </div>
-                                </div>
-                                <div class="mm-one-fifth">
-                                    <div class="mm-cell">
-                                        <ol class="list">
-                                            <li class="list-headline"><h4><a href="#">Placerat</a></h4></li>
-                                            <li><a href="#">Hendrerit</a></li>
-                                            <li><a href="#">Bibendum Sagas</a></li>
-                                            <li><a href="#">Quis Enim</a></li>
-                                            <li><a href="#">Lobortis</a></li>
-                                            <li><a href="#">Mauris</a></li>
-                                        </ol>
-                                    </div>
-                                </div>
-                                <div class="mm-one-fifth">
-                                    <div class="mm-cell">
-                                        <ol class="list">
-                                            <li class="list-headline"><h4><i>Posuere</i></h4></li>
-                                            <li><a href="#">Ullamcorper</a></li>
-                                            <li><a href="#">Ligula</a></li>
-                                            <li><a href="#">Viverra</a></li>
-                                            <li><a href="#">Consecter</a></li>
-                                        </ol>
-                                    </div>
-                                </div>
-                                <div class="mm-one-fifth">
-                                    <div class="mm-cell">
-                                        <ol class="list">
-                                            <li class="list-headline"><h4><a href="#">Interdum</a></h4></li>
-                                            <li><a href="#">Tincidunt</a></li>
-                                            <li><a href="#">Maecenas</a></li>
-                                            <li><a href="#">Consequat</a></li>
-                                        </ol>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                     </div>
+                    @endif
+                </li>
+                @endforeach
+                <li><a href="#"><img src="{{asset('front/img/images.png')}}">Woman Fashion <i class="fa fa-angle-right"></i></a>
+                   
                 </li>
             </div>
         </div>
@@ -202,4 +105,24 @@
         </div>
     @endforeach
 </article>
+<article class="row">
+        <section class="col-lg-12">
+            <h6 class="text-primary">Discount Products</h6><hr>
+        </section>
+        @foreach($discounts as $pro)
+        <div class="col-lg-2 col-md-3 mb-4 pd-pro">
+                <div class="card h-100">
+                    <a href="{{url('product/detail/'.$pro->id)}}"><img class="card-img-top" src="{{asset('uploads/products/250x250/'.$pro->file_name)}}" alt=""></a>
+                    <div class="card-body">
+                        <a href="{{url('product/detail/'.$pro->id)}}">
+                            <h5>{{$pro->name}}</h5>
+                        </a>
+                        <p class="card-text text-left">{{$pro->short_description}}</p>
+                        <p>{{$pro->discount}}%</p>
+                        <h6><del>$ {{$pro->price}}</del> ${{$pro->price*(1-$pro->discount/100)}}</h6>
+                    </div>
+                </div>
+            </div>
+        @endforeach
+    </article>
 @endsection
