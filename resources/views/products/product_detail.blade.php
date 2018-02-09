@@ -145,28 +145,11 @@
                        <p></p>
                     <div class="img-box">
                        @foreach($photos as $p)
-                            <div class="img" style="display: inline-block;">
-                                <img src="{{asset('uploads/products/250x250/'.$p->file_name)}}" alt="Photo" id="{{$p->id}}" height="100%">
-                                <a href="#" id="{{$p->id}}" onclick="removeImage(this,event)" class="remove">Delete</a>
-                            </div>
+                        <div class="img" style="display: inline-block;">
+                            <img src="{{asset('uploads/products/250x250/'.$p->file_name)}}" alt="Photo" id="{{$p->id}}" height="100%">
+                            <div class="remove"><a href="#" id="{{$p->id}}" onclick="removeImage(this,event)" class="delete">Delete</a></div>
+                        </div>
                        @endforeach
-                       <style>
-                           .img {
-                               padding: 5px;
-                               border: 1px solid #ccc;
-                               height: 140px;
-                               margin: 5px;
-                           }
-                           .remove {
-                               position: absolute;
-                               background: rgb(250, 60, 76);
-                               color: #fff;
-                               font-size: 12px;
-                               padding: 2px 9px;
-                               margin-top: -22px;
-                               z-index: 1999999;
-                           }
-                       </style>
                     </div>
                 </div>
             </div>

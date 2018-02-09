@@ -3,10 +3,11 @@
     <div class="row">
         <div class="col-md-3 pd-cat-right">
             <div class="main-navigation-container">
-            <nav class="main-navigation">
-                <div class="categories-vdoo"><span class="cateogries-product">Categories</span> 
-                <a class="small see-all-cat" href="#">See All >></a>
-            </div> 
+                <nav class="main-navigation">
+                    <div class="categories-vdoo">
+                        <span class="cateogries-product">Categories</span> 
+                        <a class="small see-all-cat float-right" href="#">See All >></a>
+                    </div> 
             <ul>
                 <li><a href="#"><img src="{{asset('front/img/images.png')}}">Woman Fashion <i class="fa fa-angle-right"></i></a>
                     <div class="mega-menu">

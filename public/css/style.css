@@ -11,7 +11,30 @@ html {
   line-height: 1.15;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%; }
-
+  .img {
+    padding: 5px;
+    border: 1px solid #ccc;
+    height: 140px;
+    margin: 5px;
+}
+.remove {
+    position: absolute;
+    background: rgb(250, 60, 76);
+    font-size: 12px;
+    padding: 2px 9px;
+    margin-top: -22px;
+    z-index: 1999999;
+}
+.remove:hover {
+    background: #B71C1C;
+}
+.delete {
+    color: #fff;
+}
+.delete:hover {
+    color: #fff;
+    text-decoration: none;
+}
 body {
   margin: 0; }
 
