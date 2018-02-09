@@ -163,7 +163,27 @@
 </div>
 <article class="row">
     <section class="col-lg-12">
-        <h6 class="text-primary">Latest Product</h6><hr>
+        <h6 class="text-primary">Featured Products</h6><hr>
+    </section>
+    @foreach($products as $pro)
+    <div class="col-lg-2 col-md-3 mb-4 pd-pro">
+        <div class="card h-100">
+            <a href="{{url('product/detail')}}"><img class="card-img-top" src="{{asset('uploads/products/250x250/'.$pro->file_name)}}" alt=""></a>
+            <div class="card-body">
+                <a href="{{url('product/detail')}}">
+                    <h5>{{$pro->name}}</h5>
+                </a>
+                <p class="card-text text-left">{{$pro->short_description}}</p>
+                
+                <h6>$ {{$pro->price}}</h6>
+            </div>
+        </div>
+    </div>
+    @endforeach
+</article>
+<article class="row">
+    <section class="col-lg-12">
+        <h6 class="text-primary">Latest Products</h6><hr>
     </section>
     @foreach($products as $pro)
     <div class="col-lg-2 col-md-3 mb-4 pd-pro">

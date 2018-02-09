@@ -82,6 +82,9 @@
                         <a class="nav-link" href="{{url('/admin/product')}}"><i class="fa fa-product-hunt"></i> Product </a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="{{url('/admin/feature/product')}}"><i class="fa fa-product-hunt"></i> Featured Product </a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="{{url('/customer')}}"><i class="fa fa-users"></i> Customer </a>
                     </li>
                     <li class="nav-item">

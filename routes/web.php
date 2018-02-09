@@ -267,3 +267,6 @@ Route::post('/admin/product/update', "ProductController@update");
 Route::get('/admin/product/detail/{id}', "ProductController@pro_detail");
 Route::get('/admin/product/photo/delete/{id}', "ProductController@delete_photo");
 Route::post('/admin/product/photo/upload', "ProductController@upload_photo");
+// featured product admin
+Route::get('/admin/feature/product', "FeaturedProductController@index");
+Route::get('/admin/feature/product/delete/{id}', "FeaturedProductController@delete");
