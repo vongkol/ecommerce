@@ -13,6 +13,9 @@
 	color: #0473ba;
 	font-weight: bold;
 }
+.mt-20 {
+  margin-top: 80px;
+}
 .piece {
 	font-size: 12px;
 	font-weight: normal;
@@ -294,7 +297,7 @@
 }
 
 .product-name {
-	padding-top: 80px;
+	padding-top: 60px;
 }
 
 .contact-info {

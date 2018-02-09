@@ -25,7 +25,7 @@ body{
 .categories-vdoo {
 	background: #f2f2f2;
     padding: 7px;
-    margin-top: 119px;
+    margin-top: 136px;
 }
 .cateogries-product {
 	font-weight: bold;
@@ -34,7 +34,6 @@ body{
 }
 .see-all-cat {
 	color: #999;
-	font-size: 11px;
 }
 .main-navigation ul, .main-navigation ol{
 	margin:0;
@@ -75,7 +74,7 @@ body{
 /* ========== MAIN LINKS ON MOUSE HOVER ========== */
 .main-navigation .active-nav-link > a, .main-navigation > ul > li:hover > a{
 	color:#707070;
-	background:#F5F5F5;
+	background:#E0E0E0;
 	}
 /* ========== RIGHT ARROW ON MOUSE HOVER ========== */
 .main-navigation .active-nav-link > a i, .main-navigation li:hover > a i{

@@ -54,8 +54,8 @@
                 </div>
             </div>
         </nav>
-        <div class="container fixed-top fixed-top-header">     
-            <div class="col-lg-12 col-md-12">
+        <div class="container-fluit vdoo-search fixed-top fixed-top-header">    
+            <div class="container">
                 <div class="row"> 
                     <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
                         <div class="input-group">
@@ -96,6 +96,8 @@
                 </div>
             </div>
         </div>
+    </div>
+    </div>
     <div class="container">
         <section>
             @yield('content')
