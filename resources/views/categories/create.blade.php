@@ -29,10 +29,10 @@
                         </div>
                     @endif
 
-                    <form action="{{url('/category/save')}}" class="form-horizontal" method="post">
+                    <form action="{{url('/category/save')}}" class="form-horizontal" method="post" enctype="multipart/form-data">
                         {{csrf_field()}}
                         <div class="form-group row">
-                            <label for="name" class="control-label col-lg-1 col-sm-2">Name</label>
+                            <label for="name" class="control-label col-lg-1 col-sm-2">Name <span class="text-danger">*</span></label>
                             <div class="col-lg-6 col-sm-8">
                                 <input type="text" required autofocus name="name" id="name" class="form-control">
                             </div>
@@ -40,11 +40,18 @@
                         <div class="form-group row">
                             <label for="parent" class="control-label col-lg-1 col-sm-2">Parent</label>
                             <div class="col-lg-6 col-sm-8">           
-                                <select class="form-control" name="parent" id="parent"  id="exampleSelect1">
+                                <select class="form-control" name="parent" id="parent"  id="parent">
+                                    <option value="0"> </option>
                                     @<?php foreach ($categories as $cat): ?>
                                         <option value="{{$cat->id}}">{{ $cat->name }}</option>
                                     <?php endforeach ?>                    
                                 </select>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="icon" class="control-label col-lg-1 col-sm-2">Icon Image</label>
+                            <div class="col-lg-6 col-sm-8">           
+                                <input type="file" class="form-control" id="icon" name="icon">
                             </div>
                         </div>
                         <div class="form-group row">
