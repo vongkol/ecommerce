@@ -43,7 +43,8 @@ class ProductController extends Controller
                 'short_description' => $r->short_description,
                 'category_id' => $r->category,
                 'min_price' => $r->min_price,
-                'max_price' => $r->max_price
+                'max_price' => $r->max_price,
+                'is_featured' => $r->is_featured
             );
 
             // if ($r->has('btn_save')) {
@@ -83,7 +84,8 @@ class ProductController extends Controller
             'price' => $r->price,
             'max_price' => $r->max_price,
             'short_description' => $r->short_description,
-            'description' => $r->description
+            'description' => $r->description,
+            'is_featured' => $r->is_featured
         );
         $i = DB::table('products')->where('id', $r->id)->update($data);
 

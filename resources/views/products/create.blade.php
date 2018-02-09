@@ -1,6 +1,4 @@
 
-
- 
 @extends('layouts.app')
 
 @section('content')
@@ -139,7 +137,15 @@
     
                                 </div>
                                 <div class="col-sm-6">
-                                     
+                                    <div class="form-group row">
+                                        <label for="is_featured" class="control-label col-sm-4">Is Featured</label>
+                                        <div class="col-sm-8">
+                                            <select name="is_featured" id="is_featured" class="form-control">
+                                                <option value="0">No</option>
+                                                <option value="1">Yes</option>
+                                            </select>
+                                        </div>
+                                    </div>
                                 </div>
                         </div>
                         <div class="row">

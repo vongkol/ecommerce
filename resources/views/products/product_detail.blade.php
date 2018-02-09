@@ -124,6 +124,15 @@
                                     </div>
                                 </div>
                                 <div class="form-group row">
+                                    <label for="is_featured" class="control-label col-sm-4">Is Featured</label>
+                                    <div class="col-sm-8">
+                                        <select name="is_featured" id="is_featured" class="form-control" disabled>
+                                            <option value="0" {{$product->is_featured==0?'selected':''}}>No</option>
+                                            <option value="1" {{$product->is_featured==1?'selected':''}}>Yes</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
                                     <label for="category" class="control-label col-sm-4">Description</label>
                                     <div class="col-sm-8">
                                         <textarea name="description" id="description" cols="30" rows="3"
