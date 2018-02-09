@@ -14,19 +14,27 @@ body {
     padding: 5px;
 }
 .pro {
-    max-height: 120px;
+    padding: 2px;
 }
-.price {
-    font-size: 15px;
+.old-price {
+    font-size: 14px;
+}
+.card-text {
+    color: #607D8B;
+}
+.price, .r-price {
+    font-size: 18px;
     font-weight: 800;
+}
+.red {
+    color:  rgb(250, 60, 76);
 }
 .dis {
     position: absolute;
-    top: 4px;
-    left: 4px;
+    top: 2px;
+    left: 2px;
     color: #fff;
     padding: 0 5px;
-    border-radius: 4px;
     background: rgb(250, 60, 76);
 }
 .card {

@@ -115,14 +115,15 @@
             @foreach($products as $pro)
             <div class="col-lg-2 col-md-3 mb-4 pd-pro">
                     <div class="card h-100">
-                        <a href="{{url('product/detail/'.$pro->id)}}"><img class="card-img-top" src="{{asset('uploads/products/250x250/'.$pro->file_name)}}" alt=""></a>
+                        <div class="pro">
+                            <a href="{{url('product/detail/'.$pro->id)}}"><img class="card-img-top" src="{{asset('uploads/products/250x250/'.$pro->file_name)}}" alt=""></a>
+                        </div>
                         <div class="card-body">
                             <a href="{{url('product/detail/'.$pro->id)}}">
-                                <h5>{{$pro->name}}</h5>
+                                <b>{{$pro->name}}</b>
                             </a>
-                            <p class="card-text text-left">{{$pro->short_description}}</p>
-                            
-                            <h6>$ {{$pro->price}}</h6>
+                            <p class="card-text">{{$pro->short_description}}</p>
+                            <aside class="r-price"> US $ {{$pro->price}}</aside>
                         </div>
                     </div>
                 </div>

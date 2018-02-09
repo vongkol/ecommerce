@@ -70,15 +70,14 @@
     <div class="col-lg-2 col-md-3 mb-4 pd-pro">
         <div class="card h-100">
             <div class="pro">
-                <a href="{{url('product/detail/'.$pro->id)}}"><img src="{{asset('uploads/products/250x250/'.$pro->file_name)}}" alt="feature product" height="100%"></a>
+                <a href="{{url('product/detail/'.$pro->id)}}"><img src="{{asset('uploads/products/250x250/'.$pro->file_name)}}" alt="feature product" width="100%"></a>
             </div>
-            <div class="card-body text-center">
+            <div class="card-body">
                 <a href="{{url('product/detail/'.$pro->id)}}">
-                    <h5>{{$pro->name}}</h5>
+                    <b>{{$pro->name}}</b>
                 </a>
-                <p class="card-text text-left">{{$pro->short_description}}</p>
-                
-                <h6>$ {{$pro->price}}</h6>
+                <p class="card-text">{{$pro->short_description}}</p>
+                <aside class="price">US $ {{$pro->price}}</aside>
             </div>
         </div>
     </div>
@@ -91,15 +90,15 @@
     @foreach($products as $pro)
     <div class="col-lg-2 col-md-3 mb-4 pd-pro">
             <div class="card h-100">
-                <div class="pro text-center">
-                    <a href="{{url('product/detail/'.$pro->id)}}"><img src="{{asset('uploads/products/250x250/'.$pro->file_name)}}" alt="latest product" height="100%"></a>
+                <div class="pro">
+                    <a href="{{url('product/detail/'.$pro->id)}}"><img src="{{asset('uploads/products/250x250/'.$pro->file_name)}}" alt="latest product" width="100%"></a>
                 </div>
                 <div class="card-body">
                     <a href="{{url('product/detail/'.$pro->id)}}">
-                        <h5>{{$pro->name}}</h5>
+                        <b>{{$pro->name}}</b>
                     </a>
-                    <p class="card-text text-left">{{$pro->short_description}}</p>
-                    <aside>$ {{$pro->price}}</aside>
+                    <p class="card-text">{{$pro->short_description}}</p>
+                    <aside class="price">US $ {{$pro->price}}</aside>
                 </div>
             </div>
         </div>
@@ -112,16 +111,15 @@
         @foreach($discounts as $pro)
         <div class="col-lg-2 col-md-3 mb-4 pd-pro">
                 <div class="card h-100">
-                    <div class="pro text-center">
-                        <a href="{{url('product/detail/'.$pro->id)}}"><img src="{{asset('uploads/products/250x250/'.$pro->file_name)}}" alt="discount product" height="100%"></a>
+                    <div class="pro">
+                        <a href="{{url('product/detail/'.$pro->id)}}"><img src="{{asset('uploads/products/250x250/'.$pro->file_name)}}" alt="discount product" width="100%"></a>
                     </div>
                     <div class="card-body">
                         <a href="{{url('product/detail/'.$pro->id)}}">
                             <b>{{$pro->name}}</b>
                         </a>
-                        <p class="card-text text-left">{{$pro->short_description}}</p>
-                        <aside class="price">US $ {{$pro->price*(1-$pro->discount/100)}}</aside>
-                        <aside><del style="color: #555;">$ {{$pro->price}}</del></aside>
+                        <p class="card-text">{{$pro->short_description}}</p>
+                        <aside class="price">US $ {{$pro->price*(1-$pro->discount/100)}} /  <del class="old-price red"> $ {{$pro->price}}</del></aside>
                         <div class="dis">{{$pro->discount}}%</div>
                     </div>
                 </div>
