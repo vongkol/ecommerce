@@ -1,6 +1,5 @@
-@extends('layouts.front')
+@extends('layouts.shop_owner')
 @section('content')
-<div class="group-buyer">
     <span class="text-primary"><img src="{{asset('front/img/login.png')}}"> <b>Edit Profile</b></span>
     <hr>
     @if(Session::has('sms'))
@@ -65,5 +64,4 @@
             </div>
         </div>
     </form>
-</div>
 @endsection

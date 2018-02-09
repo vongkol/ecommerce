@@ -8,7 +8,6 @@ use Session;
 use Auth;
 class ShopOwnerController extends Controller
 {
-
     public function index(Request $r) {
         // check if shop owner login
         $shop_owner = $r->session()->get('shop_owner');
@@ -16,27 +15,7 @@ class ShopOwnerController extends Controller
         {
             return redirect('/shop-owner/login');
         }
-        $data['shop'] = DB::table('shops')
-            ->where('shops.shop_owner_id', $shop_owner->id)
-            ->where('active',1)->first();
-
-        $shop_owner_id = session('shop_owner')->id;
-        $data['packages'] = DB::table('packages')->where('active', 1)->get();
-        $data['counter'] = DB::table('subscriptions')->where('shop_owner_id', $shop_owner_id)
-            ->where('active', 1)->count();
-        $data['subscription'] = DB::table('subscriptions')
-            ->join('packages', 'subscriptions.package_id', "packages.id")
-            ->where('subscriptions.active', 1)
-            ->where('subscriptions.shop_owner_id', $shop_owner_id)
-            ->select('subscriptions.*', 'packages.name', 'packages.type')
-            ->first();
-        $data['product_count'] = DB::table('products')
-            ->join('shops', 'products.shop_id' , '=', 'shops.id')
-            ->join('shop_owners', 'shop_owners.id', '=', 'shops.shop_owner_id')
-            ->where('shop_owner_id', $shop_owner_id)
-            ->where('products.active', 1)
-            ->count();
-        return view('fronts.shop_owner.index', $data);
+        return view('fronts.shop_owner.index');
     }
     // load edit profile form
     public function edit(Request $r)

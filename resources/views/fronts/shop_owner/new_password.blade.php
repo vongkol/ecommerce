@@ -25,7 +25,7 @@
         </div>
     @endif
     <div class="login-form">
-        <form action="{{url('/service/update')}}" accept-charset="UTF-8" method="post" onsubmit="check(event)">
+        <form action="{{url('/shop-owner/save-password')}}" accept-charset="UTF-8" method="post" onsubmit="check(event)">
             {{csrf_field()}}
             <h4 class="text-center"><img src="{{asset('front/img/shop.png')}}"> Shop Owner Reset Your Password</h4>	
             <div class="form-group">

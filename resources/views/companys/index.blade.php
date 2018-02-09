@@ -33,7 +33,7 @@
                                 <td>{{$com->phone}}</td>
                                 <td>{{$com->email}}</td>
                                 <td><img src="{{asset('upload/company/'.$com->logo)}}" width="70"></td>
-                                <td>{{$com->payment}}</td>
+                                <td>{!!$com->payment!!}</td>
                                 <td>
                                     <a href="{{url('/company/edit/'.$com->id)}}" title="Edit"><i class="fa fa-edit text-success"></i></a>&nbsp;&nbsp;
                                     <a href="{{url('/company/delete/'.$com->id)}}" onclick="return confirm('Do you want to delete?')" title="Delete"><i class="fa fa-remove text-danger"></i></a>

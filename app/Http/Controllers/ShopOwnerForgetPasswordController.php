@@ -43,7 +43,7 @@ class ShopOwnerForgetPasswordController extends Controller
     public function save_password(Request $r)
     {
         $shop_owner = $r->session()->get('shop_owner');
-        if($seeker==NULL)
+        if($shop_owner==NULL)
         {
             return redirect('/shop-owner/login');
         }
@@ -51,20 +51,20 @@ class ShopOwnerForgetPasswordController extends Controller
         $data = [
             'password' => password_hash($r->password, PASSWORD_BCRYPT)
         ];
-        if($r->password!=$r->confirm_password)
+        if($r->password!=$r->cpassword)
         {
             $r->session()->flash('sms1', "Your new password and confirm password is not match!");
-            return redirect('/shop-owner/reset-password');
+            return redirect('/shop-owner/profile');
         }
         $i = DB::table('shop_owners')->where('id', $shop_owner_id)->update($data);
         if($i)
         {
             $r->session()->flash('sms', "Your new password has been saved successfully!");
-            return redirect('/shop-owner/reset-password');
+            return redirect('/shop-owner/profile');
         }
         else{
              $r->session()->flash('sms1', "Cannot reset your password!");
-            return redirect('/shop-owner/reset-password');
+            return redirect('/shop-owner/profile');
         }
     }
     // load new password form for job seeker

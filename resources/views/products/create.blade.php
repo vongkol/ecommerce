@@ -1,8 +1,5 @@
-
 @extends('layouts.app')
-
 @section('content')
-
 <div class="row">
     <div class="col-lg-12">
         <div class="card">
@@ -61,29 +58,28 @@
                             </div>
                         </div>
                         <div class="row">
-                                <div class="col-sm-6">
-                                    <div class="form-group row">
-                                        <label for="quantity" class="control-label col-sm-4">Model</label>
-                                        <div class="col-sm-8">
-                                            <input type="text" class="form-control" id="model" name="model" 
-                                             value="">
-                                        </div>
-                                    </div>
-    
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="form-group row">
-                                        <label for="shop" class="control-label col-sm-4">Shop <span class="text-danger">*</span></label>
-                                        <div class="col-sm-8">
-                                            <select name="shop" id="shop" class="form-control chosen-select" data-placeholder="Chose a shop" tabindex="2">
-                                                <option value=""></option>
-                                                @foreach($shops as $s)
-                                                <option value="{{$s->id}}">{{$s->name}}</option>
-                                                @endforeach
-                                            </select>
-                                        </div>
+                            <div class="col-sm-6">
+                                <div class="form-group row">
+                                    <label for="quantity" class="control-label col-sm-4">Model</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="model" name="model" 
+                                            value="">
                                     </div>
                                 </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group row">
+                                    <label for="shop" class="control-label col-sm-4">Shop <span class="text-danger">*</span></label>
+                                    <div class="col-sm-8">
+                                        <select name="shop" id="shop" class="form-control chosen-select" data-placeholder="Chose a shop" tabindex="2">
+                                            <option value=""></option>
+                                            @foreach($shops as $s)
+                                            <option value="{{$s->id}}">{{$s->name}}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div class="row">
                                 <div class="col-sm-6">
@@ -188,5 +184,4 @@
         </div>
     </div>
 </div>
-
 @endsection

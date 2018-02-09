@@ -12,12 +12,8 @@
                     >
                         {{csrf_field()}}
                         <div class="form-group row">
-                            <label for="title" class="control-label col-lg-6 col-sm-6">
-                                <img src="{{asset('company/'.$company->logo)}}" alt="logo" width="120"> 
-                            </label>
-                            <label for="description" class="control-label col-lg-6 col-sm-6">
-                                <p class="text-primary">Description</p>
-                                <p>{!!$company->description!!}</p>
+                            <label for="title" class="control-label col-lg-12 col-sm-12 text-center">
+                                <img src="{{asset('upload/company/'.$company->logo)}}" alt="logo" width="120"> 
                             </label>
                         </div><hr>
                         <div class="form-group row">
@@ -47,9 +43,15 @@
                             </label>
                             <label for="title" class="control-label col-lg-6 col-sm-6">
                                 <p class="text-primary">Payment</p>
-                                {{$company->payment}}
+                                {!!$company->payment!!}
                             </label>
                         </div> 
+                        <div class="row">
+                            <label for="description" class="control-label col-lg-12 col-sm-12">
+                                <p class="text-primary">Description</p>
+                                <p>{!!$company->description!!}</p>
+                            </label>
+                        </div>
                     </form>
                 </div>
             </div>

@@ -1,194 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <title>Mastermalls</title>
-    <link href="{{asset('front/css/bootstrap.min.css')}}" rel="stylesheet">
-    <link href="{{asset('front/css/font-awesome.min.css')}}" rel="stylesheet">
-    <link href="{{asset('front/css/style.css')}}" rel="stylesheet">
-    <link href="{{asset('front/font.css')}}" rel='stylesheet' type='text/css'>
-
-    <style type="text/css">
-        /*Active Manage Account*/
-        .active { 
-            background-color: #e6ffff;
-        }
-    </style>
-</head>
-<body class="cnt-homepage">
-    <nav class="navbar navbar-inverse navbar-inversem navbar-fixed-top" role="navigation">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="Phsa24 is the best ecommerce in Cambodia">
+        <meta name="keywords" content="Phsa24, Cambodia buy and Sell, The Best Online Shop in Cambodia, Online Shop, Ecommerce, Online Sell">
+        <meta name="author" content="Sor Vichey">
+        <title>Phsa 24</title>
+        <link href="{{asset('front/bootstrap/bootstrap.min.css')}}" rel="stylesheet">
+        <link href="{{asset('front/css/animation.css')}}" rel="stylesheet">
+        <link href="{{asset('front/css/shop-homepage.css')}}" rel="stylesheet">
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="{{url('/')}}"><img src="{{asset('front/img/logo.png')}}" width="100"></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
                 </button>
-                <a class="navbar-brand" href="{{url('/')}}">
-                    <img src="{{asset('front/images/logo.png')}}" width="52">
-                </a>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{url('/')}}">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Contact</a>
+                        </li>
+                        @if(Session::has('shop_owner'))
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                                <img src="{{asset('front/img/shop.png')}}" alt="shop icon"> Hi,{{ Session::get('shop_owner')->first_name }}
+                            </a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="{{url('shop-owner/profile')}}">Profile</a>
+                                <a class="dropdown-item" href="{{url('shop-owner/shop')}}">Shop</a>
+                                <a class="dropdown-item" href="{{url('shop-owner/subscription')}}">Subscription</a>
+                                <a class="dropdown-item text-danger" href="{{url('shop-owner/logout')}}">Sing Out</a>
+                            </div>
+                        </li>
+                        @else
+                            <li class="nav-item shop-login">
+                            ​ <img src="{{asset('front/img/shop.png')}}" alt="shop icon"> <a href="{{asset('shop-owner/login')}}"> Shop owner login</a> | <a href="{{asset('shop-owner/account/register')}}">Register</a>
+                            </li>
+                        @endif
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><img src="{{asset('front/img/kh.png')}}"></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><img src="{{asset('front/img/en.png')}}"></a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li>
-                        <a href="{{url('/')}}"><i class="fa fa-home"></i> Home</a>
+        </nav>
+        <div class="container-fluit vdoo-search fixed-top fixed-top-header">    
+            <div class="container">
+                <div class="row"> 
+                    <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="What you looking for...">
+                            <span class="input-group-btn">
+                                <button class="btn btn-default" type="button"><img src="{{asset('front/img/54481.png')}}"></button>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="col-lg-1 col-sm-1 col-xs-1">
+                        <div class="pro-item text-center">
+                            <a href="#">
+                                <img src="{{asset('front/img/item.png')}}" width="25"><span class="item-number"> 0</span>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-2 col-sm-2 col-xs-2">
+                        @if(Session::has('customer'))
+                        <div class="dropdown">
+                            <div class="dropdown-toggle customer" data-toggle="dropdown">
+                                <img src="{{asset('front/img/login.png')}}">  Hi, {{ Session::get('customer')->first_name }}
+                            </div>
+                            <div class="dropdown-menu dropdown-menu-right">
+                                <a class="dropdown-item" href="{{url('buyer/profile')}}">Profile</a>
+                                <a class="dropdown-item text-danger" href="{{url('buyer/logout')}}">Sing Out</a>
+                            </div>
+                        </div>
+                        @else
+                            <div class="pro-item text-center">
+                                <img src="{{asset('front/img/login.png')}}"><a href="{{url('buyer/login')}}">Buyer Login
+                                </a> | 
+                                <a href="{{url('buyer/register')}}">Register
+                                </a>
+                            </div>
+                        @endif
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="group-buyer">
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{url('shop-owner/profile')}}"><img src="{{asset('front/img/login.png')}}" width="15"> Profile</a>
                     </li>
-                    <li>
-                        <a href="{{url('/page/about')}}"><i class="fa fa-info-circle"></i> About Us</a>
+                    <li class="nav-item">
+                        <a class="nav-link"  href="{{url('shop-owner/shop')}}"><img src="{{asset('front/img/shop.png')}}" width="15"> Shop</a>
                     </li>
-                    <li>
-                        <a href="{{url('/page/contact')}}"><i class="fa fa-phone-square"></i> Contact Us</a>
+                    <li class="nav-item">
+                        <a class="nav-link"  href="{{url('shop-owner/subscription')}}"><img src="{{asset('front/img/subscription.png')}}" width="18"> Subscription</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link"><img src="{{asset('front/img/subscription.png')}}" width="18"> product</a>
                     </li>
                 </ul>
-                <ul class="nav navbar-nav navbar-right">
-                @if(Session::has('customer'))
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> <span class="glyphicon glyphicon-user"></span> Hi, {{session('customer')->first_name}}<span class="caret"></span></a>
-                    <ul class="dropdown-menu dropdown-menu-custom" role="menu">
-                        <li>
-                            <a href="{{url('/buyer/profile')}}">
-                                <span class="item">
-                                    <span class="item-left">
-                                        My Profile
-                                    </span>
-                                </span>
-                            </a> 
-                        </li>
-                        <li>
-                            <a href="{{url('/buyer/logout')}}">
-                                <span class="item">
-                                    <span class="item-left">
-                                        Logout
-                                    </span>
-                                </span>
-                            </a> 
-                        </li>
-                    </ul>
-                @else
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> <span class="glyphicon glyphicon-user"></span> Buyer<span class="caret"></span></a>
-                        <ul class="dropdown-menu dropdown-menu-custom" role="menu">
-                            <li>
-                                <a href="{{url('/buyer/login')}}">
-                                    <span class="item">
-                                        <span class="item-left">
-                                            Login
-                                        </span>
-                                    </span>
-                                </a> 
-                            </li>
-                            <li>  
-                                <a href="{{url('/buyer/register')}}">
-                                    <span class="item">
-                                        <span class="item-left">
-                                            Register
-                                        </span>
-                                    </span>
-                                </a> 
-                            </li>
-                        </ul>
-                @endif
-                @if(Session::has('shop_owner'))
-                    <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> <i class="fa fa-shopping-bag"></i> Hi, {{session('shop_owner')->first_name}}<span class="caret"></span></a>
-                    <ul class="dropdown-menu dropdown-menu-custom" role="menu">
-                        <li>
-                            <a href="{{url('/shop-owner/profile')}}">
-                                <span class="item">
-                                    <span class="item-left">
-                                        My Profile
-                                    </span>
-                                </span>
-                            </a> 
-                            <a href="{{url('/shop-owner/shop')}}">
-                                <span class="item">
-                                    <span class="item-left">
-                                        My Shop
-                                    </span>
-                                </span>
-                            </a> 
-                            <a href="{{url('/shop-owner/product')}}">
-                                <span class="item">
-                                    <span class="item-left">
-                                        My Product
-                                    </span>
-                                </span>
-                            </a>
-                            <a href="{{url('/shop-owner/logout')}}">
-                                <span class="item">
-                                    <span class="item-left">
-                                        Logout
-                                    </span>
-                                </span>
-                            </a> 
-                        </li>
-                    </ul>
+            </div>
+        </div>
+    <br>
+    <div class="container">
+        @yield('content')
+    </div><br>
+    <footer id="footer" align="center">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <h6>Stay Connected</h6>
+                    <img src="{{asset('front/img/fb.png')}}" width="25" alt="social">
+                    <img src="{{asset('front/img/in.png')}}" width="25" alt="social">
+                </div>
+                <div class="col-md-3">
+                    <h6>Help</h6>
+                    <aside><a href="#">Customer Service</a></aside>
+                    <aside><a href="#">Delivery Options</a></aside>
+                </div>
+                <div class="col-md-3">
+                    <h6>How to Buy</h6>
+                    <aside><a href="#">Delivery Options</a></aside>
+                    <aside><a href="#">New User Guide</a></aside>
+                </div>
+                <div class="col-md-3">
+                    <h6>Partner Promotion</h6>
+                    @if(Session::has('shop_owner'))
+                    <img src="{{asset('front/img/shop.png')}}" alt="shop icon">​ <a href="{{url('shop-owner/profile')}}">Hi, {{session('shop_owner')->first_name}}</a>
                     @else
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> <span class="fa fa-shopping-bag"></span> Shop Owner<span class="caret"></span></a>
-                        <ul class="dropdown-menu dropdown-menu-custom" role="menu">
-                            <li>
-                                <a href="{{url('/shop-owner/login')}}">
-                                    <span class="item">
-                                        <span class="item-left">
-                                            Login
-                                        </span>
-                                    </span>
-                                </a> 
-                            </li>
-                            <li>  
-                                <a href="{{url('/shop-owner/account/register')}}">
-                                    <span class="item">
-                                        <span class="item-left">
-                                            Register
-                                        </span>
-                                    </span>
-                                </a> 
-                            </li>
-                        </ul>
+                        <img src="{{asset('front/img/shop.png')}}" alt="shop icon">​<a href="{{asset('shop-owner/login')}}"> Shop owner login</a> | <a href="{{asset('shop-owner/account/register')}}">Register</a>
+                    </div>
                     @endif
                 </div>
-        </div>
-    </nav>
-    <div class="container-fluit">
-    <div class="pd-top"></div>
-        <div class="container">
-            <div class="col-md-3 col-sm-3">
-                <div class="panel panel-default border-radius-none">
-                    <div class="panel-heading">
-                        <span class="orange bold">Manage Account</span>
-                    </div>
-                    <div class="panel-body">
-                        <p class="{{(Request::segment(2)=="shop")?"active":""}}"><a  href="{{url('/shop-owner/shop')}}">Shop</a></p>
-                        <p class="{{(Request::segment(2)=="subscription")?"active":""}}"><a href="{{url('/shop-owner/subscription')}}">
-                              Subscription
-                        </a></p>
-                        <p class="{{(Request::segment(2)=="product")?"active":""}}"><a href="{{url('/shop-owner/product')}}">Product</a> </p>
-                        <p class="{{(Request::segment(2)=="profile")?"active":""}}"> <a href="{{url('/shop-owner/profile')}}">Profile</a></p>
-                        <p class="{{(Request::segment(2)=="resetpwd")?"active":""}}"> <a href="{{url('/shop-owner/resetpwd')}}">Reset password</a></p>
-                        <hr>
-                        <p class="{{(Request::segment(2)=="logout")?"active":""}}"> <a href="{{url('/shop-owner/profile')}}"><a href="{{url('/shop-owner/logout')}}">Logout</a></p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-9 col-sm-9">
-                @yield('content')
+                  
             </div>
         </div>
-    </div>
-
-<!-- jQuery -->
-<script src="{{asset('front/js/jquery.js')}}"></script>
-<!-- Bootstrap Core JavaScript -->
-<script src="{{asset('front/js/bootstrap.min.js')}}"></script>
-<script src="{{asset('front/js/owl.carousel.min.js')}}"></script>
-<script src="{{asset('front/js/echo.min.js')}}"></script>
-<script src="{{asset('front/js/jquery.rateit.min.js')}}"></script>
-<script src="{{asset('front/js/scripts.js')}}"></script>
+    </footer>
+<script src="{{asset('front/js/jquery.min.js')}}"></script>
+<script src="{{asset('front/bootstrap/bootstrap.bundle.min.js')}}"></script>
 </body>
 </html>

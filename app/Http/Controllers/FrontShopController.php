@@ -8,20 +8,20 @@ use Auth;
 use Session;
 class FrontShopController extends Controller
 {
-    // public function index(Request $r)
-    // {
-    //     // check if shop owner login
-    //     $shop_owner = $r->session()->get('shop_owner');
-    //     if($shop_owner==NULL)
-    //     {
-    //          return redirect('/shop-owner/login');
-    //     }
-    //     $data['shop'] = DB::table('shops')
-    //         ->where('shops.shop_owner_id', $shop_owner->id)
-    //         ->where('active',1)->first();
+    public function index(Request $r)
+    {
+        // check if shop owner login
+        $shop_owner = $r->session()->get('shop_owner');
+        if($shop_owner==NULL)
+        {
+             return redirect('/shop-owner/login');
+        }
+        $data['shop'] = DB::table('shops')
+            ->where('shops.shop_owner_id', $shop_owner->id)
+            ->where('active',1)->first();
 
-    //     return view('fronts.shop.index', $data);
-    // }
+        return view('fronts.shop.index', $data);
+    }
     // load create form
     public function create(Request $r)
     {
@@ -66,7 +66,7 @@ class FrontShopController extends Controller
         if ($i)
         {
             $r->session()->flash('sms', $sms);
-            return redirect('/shop-owner/profile');
+            return redirect('/shop-owner/shop');
         }
         else
         {
@@ -112,7 +112,7 @@ class FrontShopController extends Controller
         if ($i)
         {
             $r->session()->flash('sms', $sms);
-            return redirect('/shop-owner/profile');
+            return redirect('shop-owner/shop');
         }
         else
         {
