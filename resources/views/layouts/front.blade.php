@@ -10,7 +10,6 @@
         <link href="{{asset('front/bootstrap/bootstrap.min.css')}}" rel="stylesheet">
         <link href="{{asset('front/css/animation.css')}}" rel="stylesheet">
         <link href="{{asset('front/css/shop-homepage.css')}}" rel="stylesheet">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
     </head>
     <body>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
@@ -122,8 +121,14 @@
                 </div>
                 <div class="col-md-3">
                     <h6>Partner Promotion</h6>
-                    <img src="{{asset('front/img/shop.png')}}" alt="shop icon">​<a href="{{asset('shop-owner/login')}}"> Shop owner login</a> | <a href="{{asset('shop-owner/account/register')}}">Register</a>
+                    @if(Session::has('shop_owner'))
+                    <img src="{{asset('front/img/shop.png')}}" alt="shop icon">​ <a href="{{url('shop-owner/profile')}}">Hi, {{session('shop_owner')->first_name}}</a>
+                    @else
+                        <img src="{{asset('front/img/shop.png')}}" alt="shop icon">​<a href="{{asset('shop-owner/login')}}"> Shop owner login</a> | <a href="{{asset('shop-owner/account/register')}}">Register</a>
+                    </div>
+                    @endif
                 </div>
+                  
             </div>
         </div>
     </footer>
