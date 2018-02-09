@@ -12,10 +12,34 @@ body {
 }
 .card-body {
     padding: 5px;
-    text-align: center;
+}
+.pro {
+    max-height: 120px;
+}
+.price {
+    font-size: 15px;
+    font-weight: 800;
+}
+.dis {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    color: #fff;
+    padding: 0 5px;
+    border-radius: 4px;
+    background: rgb(250, 60, 76);
 }
 .card {
     box-shadow: 0 1px 4px 0 rgba(12, 12, 13, 0.2);
+}
+.pd-0 {
+    padding-left: 0;
+}
+.vdoo-category {
+    padding: 5px 0;
+}
+.pd {
+    padding-left: 25px;
 }
 .item-number {
 	color: #666;
