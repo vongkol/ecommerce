@@ -165,12 +165,12 @@
     <section class="col-lg-12">
         <h6 class="text-primary">Featured Products</h6><hr>
     </section>
-    @foreach($products as $pro)
+    @foreach($features as $pro)
     <div class="col-lg-2 col-md-3 mb-4 pd-pro">
         <div class="card h-100">
-            <a href="{{url('product/detail')}}"><img class="card-img-top" src="{{asset('uploads/products/250x250/'.$pro->file_name)}}" alt=""></a>
+            <a href="{{url('product/detail/'.$pro->id)}}"><img class="card-img-top" src="{{asset('uploads/products/250x250/'.$pro->file_name)}}" alt=""></a>
             <div class="card-body">
-                <a href="{{url('product/detail')}}">
+                <a href="{{url('product/detail/'.$pro->id)}}">
                     <h5>{{$pro->name}}</h5>
                 </a>
                 <p class="card-text text-left">{{$pro->short_description}}</p>
@@ -187,14 +187,18 @@
     </section>
     @foreach($products as $pro)
     <div class="col-lg-2 col-md-3 mb-4 pd-pro">
-        <div class="card h-100">
-            <a href="{{url('product/detail')}}"><img class="card-img-top" src="{{asset('front/img/8.jpg')}}" alt=""></a>
-            <div class="card-body">
-                <p class="card-text text-left">Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-                <h6>$24.99</h6>
+            <div class="card h-100">
+                <a href="{{url('product/detail/'.$pro->id)}}"><img class="card-img-top" src="{{asset('uploads/products/250x250/'.$pro->file_name)}}" alt=""></a>
+                <div class="card-body">
+                    <a href="{{url('product/detail/'.$pro->id)}}">
+                        <h5>{{$pro->name}}</h5>
+                    </a>
+                    <p class="card-text text-left">{{$pro->short_description}}</p>
+                    
+                    <h6>$ {{$pro->price}}</h6>
+                </div>
             </div>
         </div>
-    </div>
     @endforeach
 </article>
 @endsection

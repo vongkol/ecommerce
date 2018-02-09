@@ -9,52 +9,75 @@
                 <div id='carousel-custom' class='carousel slide' data-ride='carousel'>
                     <div class='carousel-outer'>
                         <div class='carousel-inner '>
-                            <div class='item active'>
-                                <img src="{{asset('front/img/1.jpg')}}" alt='product image' data-zoom-image="{{asset('front/img/1.jpg')}}"​ width="100%" />
-                            </div>
-                            <div class='item'>
-                                <img src="{{asset('front/img/2.jpg')}}" alt='product image' data-zoom-image="{{asset('front/img/2.jpg')}}" width="100%"/>
-                            </div>
+                            <?php $i=1;?>
+                            @foreach($photos as $p)
+                                @if($i==1)
+                                    <div class='item active'>
+                                        <img src="{{asset('uploads/products/540x540/'.$p->file_name)}}" alt='product image' data-zoom-image="{{asset('front/img/1.jpg')}}"​ width="100%" />
+                                    </div>
+                                @else
+                                    <div class='item'>
+                                        <img src="{{asset('uploads/products/540x540/'.$p->file_name)}}" alt='product image' data-zoom-image="{{asset('front/img/1.jpg')}}"​ width="100%" />
+                                    </div>
+                                @endif
+                                @php($i++)
+                            @endforeach
                         </div>
                         <a class='left carousel-control' href='#carousel-custom' data-slide='prev'><</a>
                         <a class='right carousel-control' href='#carousel-custom' data-slide='next'>></a>
                     </div>
                     <ol class='carousel-indicators mCustomScrollbar meartlab'>
+                        @foreach($photos as $p)
                         <li data-target='#carousel-custom' data-slide-to='0' class='active'>
-                            <img src="{{asset('front/img/1.jpg')}}" alt='small product' />
+                            <img src="{{asset('uploads/products/41x41/'.$p->file_name)}}" alt='small product' />
                         </li>
-                        <li data-target='#carousel-custom' data-slide-to='1'>
-                            <img src="{{asset('front/img/2.jpg')}}" alt='small product' />
-                        </li>
+                        @endforeach
                     </ol>
                 </div>
             </div>
         </div>
         <div class="col-md-6">
+            <p>&npsb;</p>
             <div class="product-name">
                 <h5>
-                SMAEL impermeable Reloj Deportivo Blanco S Choque Relojes Hombre relogio masculino 2017 del ejército militar Reloj de Los Hombres 1509 Reloj Digital LED
+                  {{$product->name}} (<span class="text-danger">Code={{$product->id}}</span>)
                 </h5><hr>
+                <p>
+                    {{$product->short_description}}
+                </p>
                 <div class="row pro-vdoo">
-                    <div class="col-md-2">Price: </div><span class="line-through">US $269.99 / piece </span>
+                    <div class="col-md-2">Price: </div><span class="line-through">$ {{$product->price}} </span>
                 </div>
                 <div class="row pro-vdoo">
-                    <div class="col-md-2">Discount Price: </div><span class="price">US $199.99 <span class="piece">/ piece </span></span> 
+                    <?php 
+                        $p = $product->price *(1-$product->discount/100);
+                    ?>
+                    <div class="col-md-2">Discount Price: </div><span class="price">{{$product->discount}}% = ${{$p}}</span> 
                 </div>
                 <div class="row pro-vdoo">
-                    <div class="col-md-2">Condication: </div><b>New</b></span> 
+                    <div class="col-md-2">Category: </div><b>{{$product->category_name}}</b></span> 
                 </div>
                 <div class="row pro-vdoo">
-                    <div class="col-md-2">Color: </div> <span class="piece">White | Black | Gray | Blue</span> 
+                    <div class="col-md-2">Model: </div> <span class="piece">{{$product->model}}</span> 
                 </div><hr>
                 <div class="pro-vdoo">
                     <div class="col-md-12 contact-info">
-                        <h6 class="text-info pro-vdoo">Contact Information</h6>
-                        <p>Phone number: 096 2555 209 / 015 88 56 89</p>
-                        <p>Email: sorvichey@gmail.com</p>
-                        <p>Facebook: sor vichey</p>
+                        <h6 class="text-info pro-vdoo">Payment Mothod</h6>
+
+                        <p>{{@$shop->payment}}</p>
+                      
                     </div>
                 </div>
+                <div class="pro-vdoo">
+                        <div class="col-md-12 contact-info">
+                            <h6 class="text-info pro-vdoo">Contact Information</h6>
+                            <p>Shop Name: {{$shop->name}}</p>
+                            <p>Address: {{$shop->address}}</p>
+                            <p>Contact Person: {{$shop->contact_person}}</p>
+                            <p>Email: {{$shop->email}}</p>
+                            <p>Phone Number: {{$shop->phone}}</p>
+                        </div>
+                    </div>
             </div>
             
         </div>
@@ -68,15 +91,9 @@
                     </li>
                 </ul>
             </div><br>
-            <ul>
-                <li>This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</li>
-            </ul>   <ul>
-                <li>This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</li>
-            </ul> <ul>
-                <li>This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</li>
-            </ul> <ul>
-                <li>This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</li>
-            </ul>   
+           <p>
+               {!!$product->description!!}
+           </p>
             <br>
         </div>
     </div>
@@ -90,15 +107,28 @@
         </ul>
     </div><br>
     <div class="row">
-        <div class="col-lg-2 col-md-3 mb-4 pd-pro">
-            <div class="card h-100">
-                <a href="#"><img class="card-img-top" src="{{asset('front/img/3.jpg')}}" alt="product image"></a>
-                <div class="card-body">
-                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                    <h6>$24.99</h6>
-                </div>
+        @if(count($products)<=0)
+            <div class="col-sm-12">
+                <h6>No Product found!</h6>
             </div>
-        </div>
+        @else
+            @foreach($products as $pro)
+            <div class="col-lg-2 col-md-3 mb-4 pd-pro">
+                    <div class="card h-100">
+                        <a href="{{url('product/detail/'.$pro->id)}}"><img class="card-img-top" src="{{asset('uploads/products/250x250/'.$pro->file_name)}}" alt=""></a>
+                        <div class="card-body">
+                            <a href="{{url('product/detail/'.$pro->id)}}">
+                                <h5>{{$pro->name}}</h5>
+                            </a>
+                            <p class="card-text text-left">{{$pro->short_description}}</p>
+                            
+                            <h6>$ {{$pro->price}}</h6>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+        @endif
+            
     </div>
 </div>
 <script src="{{asset('front/js/jquery-git.min.js')}}"></script>   

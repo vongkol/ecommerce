@@ -52,7 +52,7 @@ Route::post('/shop-owner/resetpwd/update', 'ShopOwnerResetPassword@update');
 
 Route::get('/home', 'HomeController@index')->name('home');
 // detail page
-Route::get('/product/detail', 'FrontController@detail');
+Route::get('/product/detail/{id}', 'FrontController@detail');
 // user route
 Route::get('/user', "UserController@index");
 Route::get('/user/profile', "UserController@load_profile");
@@ -87,73 +87,8 @@ Route::get('/role/edit/{id}', "RoleController@edit");
 Route::post('/role/update', "RoleController@update");
 Route::get('/role/permission/{id}', "PermissionController@index");
 Route::post('/rolepermission/save', "PermissionController@save");
-// branch
-Route::get('/branch', "BranchController@index");
-Route::get('/branch/create', "BranchController@create");
-Route::post('/branch/save', "BranchController@save");
-Route::get('/branch/delete/{id}', "BranchController@delete");
-Route::get('/branch/edit/{id}', "BranchController@edit");
-Route::post('/branch/update', "BranchController@update");
-// class or level of study
-Route::get('/class', "ClassController@index");
-Route::get('/class/create', "ClassController@create");
-Route::get('/class/edit/{id}', "ClassController@edit");
-Route::post('/class/save', "ClassController@save");
-Route::get('/class/delete/{id}', "ClassController@delete");
-Route::post('/class/update', "ClassController@update");
-// school year
-Route::get('/school-year', "SchoolYearController@index");
-Route::get('/school-year/create', "SchoolYearController@create");
-Route::get('/school-year/edit/{id}', "SchoolYearController@edit");
-Route::get('/school-year/delete/{id}', "SchoolYearController@delete");
-Route::post("/school-year/save", "SchoolYearController@save");
-Route::post('/school-year/update', "SchoolYearController@update");
-// room
-Route::get('/room', "RoomController@index");
-Route::get('/room/create', "RoomController@create");
-Route::get('/room/edit/{id}', "RoomController@edit");
-Route::get('/room/delete/{id}', "RoomController@delete");
-Route::post('/room/save', "RoomController@save");
-Route::post('/room/update', "RoomController@update");
-// subject
-Route::get('/subject', "SubjectController@index");
-Route::get('/subject/create', "SubjectController@create");
-Route::get('/subject/edit/{id}', "SubjectController@edit");
-Route::get('/subject/delete/{id}', "SubjectController@delete");
-Route::post('/subject/save', "SubjectController@save");
-Route::post('/subject/update', "SubjectController@update");
-// students
-Route::get('/student', "StudentController@index");
-Route::get('/student/create', "StudentController@create");
-Route::post("/student/save" ,"StudentController@save");
-Route::get('/student/detail/{id}', "StudentController@detail");
-// provinces
-Route::get('/province', "ProvinceController@index");
-Route::get('/province/create', "ProvinceController@create");
-Route::get('/province/delete/{id}', "ProvinceController@delete");
-Route::get('/province/edit/{id}', "ProvinceController@edit");
-Route::post('/province/save', "ProvinceController@save");
-Route::post('/province/update', "ProvinceController@update");
-// district
-Route::resource('/district', "DistrictController");
-Route::get('/district/delete/{id}', "DistrictController@destroy");
-Route::get('/district/edit/{id}', "DistrictController@edit");
-Route::post('/district/up', "DistrictController@update");
-Route::get('/district/get/{id}', "DistrictController@getDistrict");
-// commune 
-Route::get('/commune', "CommuneController@index");
-Route::get('/commune/create', "CommuneController@create");
-Route::get('/commune/edit/{id}', "CommuneController@edit");
-Route::get('/commune/delete/{id}', "CommuneController@delete");
-Route::post('/commune/save', "CommuneController@save");
-Route::post('/commune/update', "CommuneController@update");
-// village
-Route::get('/village', "VillageController@index");
-Route::get('/village/create', "VillageController@create");
-Route::get('/village/edit/{id}', "VillageController@edit");
-Route::get('/village/delete/{id}', "VillageController@delete");
-Route::post('/village/save', "VillageController@save");
-Route::post('/village/update', "VillageController@update");
+
+
 // catogory
 Route::get('/category', "CategoryController@index");
 Route::get('/category/create', "CategoryController@create");
