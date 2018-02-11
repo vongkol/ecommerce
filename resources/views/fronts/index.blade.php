@@ -34,22 +34,22 @@
             </div>
         </div>
         <div class="col-lg-9 pd-0">
+            <?php $i = 1; 
+                $slides = DB::table('slides')->where('active', 1)->get();
+                $j = 0;
+            ?>
             <div id="carouselExampleIndicators" class="carousel slide my-4" data-ride="carousel">
                 <ol class="carousel-indicators">
-                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                @foreach($slides as $s)
+                    <li data-target="#carouselExampleIndicators" data-slide-to="{{$j++}}" class="@if($i == $s->id) active @endif"></li>
+                @endforeach
                 </ol>
             <div class="carousel-inner" role="listbox">
-                <div class="carousel-item active">
-                    <img class="d-block img-fluid" src="{{asset('front/img/post-4.png')}}" alt="slide" width="100%">
-                </div>
-                <div class="carousel-item">
-                    <img class="d-block img-fluid" src="{{asset('front/img/post-4.jpg')}}" alt="slide" width="100%">
-                </div>
-                <div class="carousel-item">
-                    <img class="d-block img-fluid" src="{{asset('front/img/post-4.png')}}" alt="slide"  width="100%">
-                </div>
+                @foreach($slides as $s)
+                    <div class="carousel-item  @if($i == $s->id)  active       @endif">
+                        <img class="d-block img-fluid" src="{{asset('img/'.$s->photo)}}" alt="slide" width="100%">
+                    </div>
+               @endforeach
             </div>
             <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>

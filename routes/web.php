@@ -31,7 +31,13 @@ Route::get('/buyer/forget-password', 'BuyerForgetPasswordController@index');
 Route::post('/buyer/forgot/recovery', 'BuyerForgetPasswordController@reset_password');
 Route::get('/buyer/service/reset/{id}', "BuyerForgetPasswordController@new_password");
 Route::post('/buyer/service/update', "BuyerForgetPasswordController@update_password");
-
+// Slide 
+Route::get('/slide', "SlideController@index");
+Route::get('/slide/create', "SlideController@create");
+Route::post('/slide/save', "SlideController@save");
+Route::get('/slide/edit/{id}', "SlideController@edit");
+Route::post('/slide/update', "SlideController@update");
+// Route::get('/slide/delete/{id}', "SlideController@delete");
 // shop owner
 Route::get('/shop-owner/profile', 'ShopOwnerController@index');
 Route::get('/shop-owner/profile/edit', 'ShopOwnerController@edit');

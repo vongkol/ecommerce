@@ -99,6 +99,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{url('/package')}}"><i class="fa fa-cubes"></i>Package</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{url('/slide')}}"><i class="fa fa-picture-o"></i>Slides</a>
+                    </li>
                     <li class="nav-item nav-dropdown">
                         <a href="#" class="nav-link nav-dropdown-toggle">
                             <i class="fa fa-dollar text-danger"></i> Subscription</a>
