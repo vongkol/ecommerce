@@ -6,6 +6,10 @@
 
 body {
     font-size: 13px;
+    color: #607D8B;
+}
+p {
+    color: #607D8B;
 }
 .group-buyer {
     margin-top: 135px;

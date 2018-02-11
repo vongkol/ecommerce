@@ -27,17 +27,32 @@
                         <a class='right carousel-control' href='#carousel-custom' data-slide='next'>></a>
                     </div>
                     <ol class='carousel-indicators mCustomScrollbar meartlab'>
+                        <?php $s = 0;?>
                         @foreach($photos as $p)
-                        <li data-target='#carousel-custom' data-slide-to='0' class='active'>
-                            <img src="{{asset('uploads/products/41x41/'.$p->file_name)}}" alt='small product' />
+                        <li data-target='#carousel-custom'  data-slide-to="{{$s++}}" class='active'>
+                            <img src="{{asset('uploads/products/41x41/'.$p->file_name)}}" alt='small product'/>
                         </li>
                         @endforeach
                     </ol>
+                    <div class="row">
+                        <div class="col-md-12"><br>
+                            <div class="card-header">
+                                <ul class="nav nav-tabs card-header-tabs">
+                                    <li class="nav-item">
+                                    <a class="nav-link active" href="#"><h6 class="text-warning">Product Details</h6></a>
+                                    </li>
+                                </ul>
+                            </div><br>
+                        <p>
+                            {!!$product->description!!}
+                        </p>
+                            <br>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
         <div class="col-md-6">
-    
             <div class="product-name">
                 <h5>
                   {{$product->name}} (<span class="text-danger">Code={{$product->id}}</span>)
@@ -79,25 +94,9 @@
                         </div>
                     </div>
             </div>
-            
         </div>
     </div>
-    <div class="row">
-        <div class="col-md-12"><br>
-            <div class="card-header">
-                <ul class="nav nav-tabs card-header-tabs">
-                    <li class="nav-item">
-                    <a class="nav-link active" href="#"><h6 class="text-warning">Product Details</h6></a>
-                    </li>
-                </ul>
-            </div><br>
-           <p>
-               {!!$product->description!!}
-           </p>
-            <br>
-        </div>
-    </div>
-</div>  
+   
     <div class="container">
     <div class="card-header">
         <ul class="nav card-header-tabs">
@@ -129,7 +128,6 @@
                 </div>
             @endforeach
         @endif
-            
     </div>
 </div>
 <script src="{{asset('front/js/jquery-git.min.js')}}"></script>   
