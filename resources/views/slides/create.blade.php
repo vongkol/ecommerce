@@ -45,6 +45,14 @@
                             </div>
                         </div>
                         <div class="form-group row">
+                            <label for="order" class="control-label col-lg-1 col-sm-2">
+                            	Order
+                            </label>
+                            <div class="col-lg-6 col-sm-8">
+                                <input type="number" name="order" id="order" value="0" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group row">
                             <label for="photo" class="control-label col-lg-1 col-sm-2">Image <span class="text-danger">*</span></label>
                             <div class="col-lg-6 col-sm-8">
                                 <input type="file" name="photo" required id="photo" accept="image/*" onchange="loadFile(event)">

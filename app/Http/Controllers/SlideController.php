@@ -47,6 +47,7 @@ class SlideController extends Controller
         }
         $data = array(
             'name' => $r->name,
+            'order' => $r->order,
             'photo' => $file_name,
         );
         $sms = "The new branch has been created successfully.";
@@ -64,11 +65,11 @@ class SlideController extends Controller
         }
     }
     // delete
-    // public function delete($id)
-    // {
-    //     DB::table('slides')->where('id', $id)->update(['active'=>0]);
-    //     return redirect('/slide');
-    // }
+    public function delete($id)
+    {
+        DB::table('slides')->where('id', $id)->update(['active'=>0]);
+        return redirect('/slide');
+    }
     public function edit($id)
     {
         // if(!Right::check('Logo', 'u'))
@@ -84,6 +85,7 @@ class SlideController extends Controller
     {
         $data = array(
             'name' => $r->name,
+            'order' => $r->order
         );
         if ($r->photo) {
             $file = $r->file('photo');
