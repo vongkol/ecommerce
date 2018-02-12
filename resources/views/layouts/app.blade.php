@@ -138,7 +138,11 @@
                                     <i class="fa fa-th"></i>Package Type
                                 </a>
                             </li>
-
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{url('/logo')}}">
+                                    <i class="fa fa-bullseye"></i>Logo
+                                </a>
+                            </li>
                         </ul>
                     </li>
                 </ul>

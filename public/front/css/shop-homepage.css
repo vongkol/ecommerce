@@ -37,6 +37,7 @@ p {
     position: absolute;
     top: 2px;
     left: 2px;
+    font-weight: 700;
     color: #fff;
     padding: 0 5px;
     background: rgb(250, 60, 76);

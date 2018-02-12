@@ -14,7 +14,8 @@
     <body>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
             <div class="container">
-                <a class="navbar-brand" href="{{url('/')}}"><img src="{{asset('front/img/logo.png')}}" width="100"></a>
+                <?php $logo = DB::table('logos')->first(); ?>
+                <a class="navbar-brand" href="{{url('/')}}"><img src="{{asset('front/img/'.$logo->photo)}}" height="40"></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -36,6 +37,8 @@
                             </a>
                             <div class="dropdown-menu">
                                 <a class="dropdown-item" href="{{url('shop-owner/profile')}}">Profile</a>
+                                <a class="dropdown-item" href="{{url('shop-owner/shop')}}">Shop</a>
+                                <a class="dropdown-item" href="{{url('shop-owner/subscription')}}">Subscription</a>
                                 <a class="dropdown-item text-danger" href="{{url('shop-owner/logout')}}">Sing Out</a>
                             </div>
                         </li>

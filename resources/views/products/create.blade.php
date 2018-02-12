@@ -114,26 +114,6 @@
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-group row">
-                                        <label for="short_description" class="control-label col-sm-4">Short Description</label>
-                                        <div class="col-sm-8">
-                                           <input type="text" class="form-control" name="short_description" id="short_description" value="{{old('short_description')}}">
-                                        </div>
-                                    </div>
-                                </div>
-                        </div>
-                        <div class="row">
-                                <div class="col-sm-6">
-                                    <div class="form-group row">
-                                        <label for="price" class="control-label col-sm-4">Price</label>
-                                        <div class="col-sm-8">
-                                            <input type="number" step="0.01" min="0" class="form-control" id="price" name="price" 
-                                             value="0">
-                                        </div>
-                                    </div>
-    
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="form-group row">
                                         <label for="is_featured" class="control-label col-sm-4">Is Featured</label>
                                         <div class="col-sm-8">
                                             <select name="is_featured" id="is_featured" class="form-control">
@@ -147,24 +127,41 @@
                         <div class="row">
                                 <div class="col-sm-6">
                                     <div class="form-group row">
-                                        <label for="max_price" class="control-label col-sm-4">Max Price</label>
+                                        <label for="price" class="control-label col-sm-4">Price</label>
                                         <div class="col-sm-8">
-                                            <input type="number" step="0.01" min="0" class="form-control" id="max_price" name="max_price" 
+                                            <input type="number" step="0.01" min="0" class="form-control" id="price" name="price" 
                                              value="0">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
-                                   <div class="form-group row">
-                                        <label for="category" class="control-label col-sm-4">Description</label>
-                                        <div class="col-sm-8">
-                                           <textarea name="description" id="description" cols="30" rows="3" class="form-control"></textarea>
-                                        </div>
+                                <div class="form-group row">
+                                    <label for="short_description" class="control-label col-sm-4">Short Description</label>
+                                    <div class="col-sm-8">
+                                        <textarea name="short_description" id="short_description" class="form-control"></textarea>
                                     </div>
                                 </div>
-
+                            </div>
                         </div>
-
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group row">
+                                    <label for="max_price" class="control-label col-sm-4">Max Price</label>
+                                    <div class="col-sm-8">
+                                        <input type="number" step="0.01" min="0" class="form-control" id="max_price" name="max_price" 
+                                            value="0">
+                                    </div>
+                                </div>
+                            </div>
+                          
+                        </div>
+                        <div class="form-group row">
+                            <label for="desciption" class="control-label col-sm-4">Description</label>
+                            <div class="col-sm-12">
+                                <textarea name="description" id="description" 
+                                            class="form-control ckeditor"></textarea>
+                            </div>
+                        </div>
                         <div class="row">
                                 <div class="col-sm-6">
                                     
@@ -184,4 +181,8 @@
         </div>
     </div>
 </div>
+@endsection
+@section('js')
+    <script src="{{asset('ckeditor/ckeditor.js')}}"></script>
+    <script src="{{asset('chosen/chosen.jquery.js')}}"></script>
 @endsection
