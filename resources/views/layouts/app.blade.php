@@ -160,7 +160,7 @@
     </div>
 
     <footer class="app-footer">
-        Copy &copy; {{date('Y')}} by <a href="#">Master Malls</a>
+        Copy &copy; {{date('Y')}} by <a href="#">Phsa 24</a>
         <span class="float-right">Powered by <a href="http://vdoo.biz" target="_blank">Vdoo</a>
         </span>
     </footer>

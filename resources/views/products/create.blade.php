@@ -185,4 +185,9 @@
 @section('js')
     <script src="{{asset('ckeditor/ckeditor.js')}}"></script>
     <script src="{{asset('chosen/chosen.jquery.js')}}"></script>
+    <script>
+        $(document).ready(function () {
+            $("select").chosen();
+        });
+    </script>
 @endsection
