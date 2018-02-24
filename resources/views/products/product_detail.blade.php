@@ -112,17 +112,11 @@
                                 <div class="form-group row">
                                     <label for="discount" class="control-label col-sm-4">Discount (%)</label>
                                     <div class="col-sm-8">
-                                        <input type="text" class="form-control" id="discount" value="0" name="discount" disabled
+                                        <input type="text" class="form-control" id="discount" name="discount" disabled
                                                value="{{$product->discount}}">
                                     </div>
                                 </div>
-                                <div class="form-group row">
-                                    <label for="short_description" class="control-label col-sm-4">Short Description</label>
-                                    <div class="col-sm-8">
-                                        <input type="text" class="form-control" name="short_description"
-                                               id="short_description" value="{{$product->short_description}}" disabled="disabled">
-                                    </div>
-                                </div>
+                                
                                 <div class="form-group row">
                                     <label for="is_featured" class="control-label col-sm-4">Is Featured</label>
                                     <div class="col-sm-8">
@@ -133,12 +127,19 @@
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label for="category" class="control-label col-sm-4">Description</label>
+                                    <label for="short_description" class="control-label col-sm-4">Short Description</label>
                                     <div class="col-sm-8">
-                                        <textarea name="description" id="description" cols="30" rows="3"
-                                                  class="form-control" disabled>{{$product->description}}</textarea>
+                                    <textarea name="short_description" id="short_description" class="form-control" cols="30" rows="3" disabled
+                                    >{!!$product->short_description!!}</textarea>
                                     </div>
                                 </div>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="category" class="control-label col-sm-4">Description</label>
+                            <div class="col-sm-12">
+                                <textarea name="description" id="description" cols="30" rows="3"
+                                            class="form-control ckeditor">{{$product->description}}</textarea>
                             </div>
                         </div>
 
@@ -167,6 +168,7 @@
 
 @endsection
 @section('js')
+    <script src="{{asset('ckeditor/ckeditor.js')}}"></script>
     <script src="{{asset('chosen/chosen.jquery.js')}}"></script>
     <script>
         $(document).ready(function () {

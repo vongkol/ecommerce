@@ -26,6 +26,8 @@
             </div>
             <b>Email address:</b> <br>
             <input type="email" name="email" placeholder="E-mail address" class="w-100" required><br><br>
+            <b>Username:</b> <br>
+            <input type="text" name="username" placeholder="Username" class="w-100" required><br><br>
             <b>Phone Nunber:</b> <br>
             <input type="text" name="phone" placeholder="Phone Number" class="w-100" required><br><br>
             <b>Create a password:</b><br>

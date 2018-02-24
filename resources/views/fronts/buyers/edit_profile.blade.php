@@ -42,6 +42,12 @@
                         <input type="text" class="w-100" name="last_name" required value="{{$buyer->last_name}}">
                     </div>
                 </div>
+                <div class="form-group row">
+                    <label class="col-sm-4">Username<span class="text-danger">*</span></label>
+                    <div class="col-sm-8">
+                        <input type="text" class="w-100" required name="username" value="{{$buyer->username}}">
+                    </div>
+                </div>
             </div>
             <div class="col-md-6 col-sm-12">
                 <div class="form-group row">

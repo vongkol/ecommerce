@@ -6,7 +6,7 @@
         <meta name="description" content="Phsa24 is the best ecommerce in Cambodia">
         <meta name="keywords" content="Phsa24, Cambodia buy and Sell, The Best Online Shop in Cambodia, Online Shop, Ecommerce, Online Sell">
         <meta name="author" content="Sor Vichey">
-        <title>Shop Homepage - Start Bootstrap Template</title>
+        <title>Phsa 24</title>
         <link href="{{asset('front/bootstrap/bootstrap.min.css')}}" rel="stylesheet">
         <link href="{{asset('front/css/animation.css')}}" rel="stylesheet">
         <link href="{{asset('front/css/shop-homepage.css')}}" rel="stylesheet">

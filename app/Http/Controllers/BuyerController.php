@@ -37,6 +37,7 @@ class BuyerController extends Controller
             'last_name' => $r->last_name,
             'phone' => $r->phone,
             'email' => $r->email,
+            'username' => $r->username
         ];
         $count_email = DB::table('customers')->where('id', "!=", $r->id)
             ->where('email', $r->email)
@@ -135,6 +136,7 @@ class BuyerController extends Controller
                 'first_name' => $r->first_name,
                 'last_name' => $r->last_name,
                 'email' => $r->email,
+                'username' => $r->username,
                 'phone' => $r->phone,
                 'password' => password_hash($r->password, PASSWORD_BCRYPT)
             );

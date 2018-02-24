@@ -80,6 +80,7 @@ class ProductController extends Controller
             'category_id' => $r->category,
             'shop_id' => $r->shop,
             'quantity' => $r->quantity,
+            'discount' => $r->discount,
             'min_price' => $r->min_price,
             'price' => $r->price,
             'max_price' => $r->max_price,

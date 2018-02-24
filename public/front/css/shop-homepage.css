@@ -6,16 +6,53 @@
 
 body {
     font-size: 13px;
+    color: #607D8B;
+}
+p {
+    color: #607D8B;
 }
 .group-buyer {
     margin-top: 135px;
 }
 .card-body {
     padding: 5px;
-    text-align: center;
+}
+.pro {
+    padding: 2px;
+}
+.old-price {
+    font-size: 14px;
+}
+.card-text {
+    color: #607D8B;
+}
+.price, .r-price {
+    font-size: 18px;
+    font-weight: 800;
+}
+.red {
+    color:  rgb(250, 60, 76);
+}
+.dis {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    font-weight: 700;
+    color: #fff;
+    padding: 0 5px;
+    background: rgb(250, 60, 76);
 }
 .card {
     box-shadow: 0 1px 4px 0 rgba(12, 12, 13, 0.2);
+}
+.pd-0 {
+    padding-left: 0;
+}
+.vdoo-category {
+    padding: 5px 0;
+}
+.pd {
+    padding-left: 25px;
 }
 .item-number {
 	color: #666;

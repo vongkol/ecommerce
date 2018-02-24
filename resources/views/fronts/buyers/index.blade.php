@@ -45,6 +45,7 @@
                             <th>Last Name</th>
                             <th>Phone</th>
                             <th>Email</th>
+                            <th>Username</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -54,6 +55,7 @@
                             <td>{{session('customer')->last_name}}</td>
                             <td>{{session('customer')->phone}}</td>
                             <td>{{session('customer')->email}}</td>
+                            <td>{{session('customer')->username}}</td>
                             <td>
                                 <a href="{{url('/buyer/profile/edit')}}"><button class="btn btn-sm">Edit Profile</button></a>
                             </td>

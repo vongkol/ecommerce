@@ -99,6 +99,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{url('/package')}}"><i class="fa fa-cubes"></i>Package</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{url('/slide')}}"><i class="fa fa-picture-o"></i>Slides</a>
+                    </li>
                     <li class="nav-item nav-dropdown">
                         <a href="#" class="nav-link nav-dropdown-toggle">
                             <i class="fa fa-dollar text-danger"></i> Subscription</a>
@@ -135,7 +138,11 @@
                                     <i class="fa fa-th"></i>Package Type
                                 </a>
                             </li>
-
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{url('/logo')}}">
+                                    <i class="fa fa-bullseye"></i>Logo
+                                </a>
+                            </li>
                         </ul>
                     </li>
                 </ul>
@@ -153,7 +160,7 @@
     </div>
 
     <footer class="app-footer">
-        Copy &copy; {{date('Y')}} by <a href="#">Master Malls</a>
+        Copy &copy; {{date('Y')}} by <a href="#">Phsa 24</a>
         <span class="float-right">Powered by <a href="http://vdoo.biz" target="_blank">Vdoo</a>
         </span>
     </footer>
