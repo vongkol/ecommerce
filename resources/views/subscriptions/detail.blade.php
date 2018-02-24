@@ -38,13 +38,13 @@
                                 <input type="hidden" name="status" value="{{$subscription->status}}">
                             </div>
                             <div class="col-lg-2 col-sm-2">
-                                <span class="text-primary">Employer ID</span> : 
+                                <span class="text-primary">Shop Owner ID</span> : 
                                 {{$subscription->shop_owner_id}}
                             </div>
                         </div>
                         <div class="form-group row">
                             <div class="col-lg-6 col-sm-6">
-                                <span class="text-primary">Employer Name</span> :
+                                <span class="text-primary">Shop Owner Name</span> :
                                 {{$subscription->first_name . ' ' . $subscription->last_name}}
                             </div>
                             <div class="col-lg-6 col-sm-6">
@@ -58,7 +58,7 @@
                                 {{$subscription->day_number}}
                             </div>
                             <div class="col-lg-6 col-sm-6">
-                                <span class="text-primary">Number of Job</span>  : 
+                                <span class="text-primary">Number of Products</span>  : 
                                 {{$subscription->product_number}}
                             </div>
                              
